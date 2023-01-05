@@ -16,4 +16,5 @@ The mindset is to separate front-end php files from back-end ones. That means:
 
 - FE PHP files contain mostly HTML codes and some PHP tags for **include/require/use at the header & represent data onto UI by variables or loop**
 - BE PHP file only contain PHP code to process datas from database or UI's form 
+- BE is allow to be *hard to read* as long as it works
 - If any data from database would go into UI, it must be first extract into an array, and then that array is called in the UI
