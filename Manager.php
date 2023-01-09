@@ -12,9 +12,6 @@ class Manager extends ManagerAbstractClass {
             die("Error :" . mysqli_error());
         } else {
             $row = mysqli_fetch_all($result);
-            while ($row == $empNeeded) {
-                print_r($row);
-            }
         }
         return $row;
     }

@@ -6,7 +6,7 @@ use CleanWork\Team;
 
 abstract class ManagerAbstractClass implements IManager
 {
-    protected abstract function chooseEmployees(int $empNeeded) : Team;
+    protected abstract function chooseEmployees(int $empNeeded);
     /**
      * choose cleaning employees from database -> object Team $team
      *
