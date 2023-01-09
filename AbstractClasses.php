@@ -4,10 +4,9 @@ namespace clean_work_design;
 
 use CleanWork\Team;
 
-abstract class Magement implements IMagement
+abstract class ManagerAbstractClass implements IManager
 {
-    protected abstract function chooseEmployees() : Team;
-
+    protected abstract function chooseEmployees(int $empNeeded) : Team;
     /**
      * choose cleaning employees from database -> object Team $team
      *
