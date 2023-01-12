@@ -11,5 +11,17 @@ require_once 'config.php';
         }
         return $conn;
     }
+
+    public static function Order_top(int $rowNum) {
+
+    }
+
+    public static function Order_insert(int $customer_id, int $service_type_id, string $address) {
+
+    }
+
+    public static function Order_selectByID(int $customer_id) {
+        
+    }
 }
 
