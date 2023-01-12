@@ -31,5 +31,9 @@ INSERT INTO customer_order (customer_id, service_type_id, address) VALUES ($cust
         $row = mysqli_query(self::connect(), $query);
 
     }
+
+    public static function customer_insert(string $name, string $email, string $phone) {
+        
+    }
 }
 
