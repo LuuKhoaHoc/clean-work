@@ -19,7 +19,7 @@ abstract class ManagerAbstractClass implements IManager
     public function receiveOrder() {
 
     }
-    public function dispatchCleaningTeam()
+    public function dispatchCleaningTeam(int $empNeeded)
     {
         // Cần biết Order trả ra cái gì để biết số lượng người cần cử đi theo Order đó để
         // xài switch case hoặc if else.
