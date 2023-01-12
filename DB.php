@@ -32,8 +32,10 @@ INSERT INTO customer_order (customer_id, service_type_id, address) VALUES ($cust
 
     }
 
-    public static function customer_insert(string $name, string $email, string $phone) {
-        
+    public static function customer_insert(string $name, string $email, string $phone)
+    {
+        $query = "INSERT INTO customer (id, name, email, phone) VALUES (NULL, $name, $email, $phone)";
+        $row = mysqli_query(self::connect(), $query);
     }
 }
 
