@@ -12,16 +12,24 @@ require_once 'config.php';
         return $conn;
     }
 
-    public static function Order_top(int $rowNum) {
-
+    public static function slt_top($table, int $rowNum)
+    {
+        $query = 'SELECT TOP ' . $rowNum . ' * FROM ' . $table . ';';
+        $row = mysqli_query(self::connect(), $query);
     }
 
-    public static function Order_insert(int $customer_id, int $service_type_id, string $address) {
-
+    public static function order_insert(int $customer_id, int $service_type_id, string $address)
+    {
+        $query = "
+INSERT INTO customer_order (customer_id, service_type_id, address) VALUES ($customer_id, $service_type_id, $address)";
+        $row = mysqli_query(self::connect(), $query);
     }
 
-    public static function Order_selectByID(int $customer_id) {
-        
+    public static function order_selectByID(int $customer_id)
+    {
+        $query = "SELECT * FROM customer_order WHERE id = $customer_id";
+        $row = mysqli_query(self::connect(), $query);
+
     }
 }
 
