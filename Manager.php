@@ -28,8 +28,12 @@ class Manager
         DB::order_insert($cs["id"],$sti, $address, $cmt);
     }
 
-    public function confirmOrder()
+    public function confirmOrder(int $id, int $numState = 3)
     {
+        if (isset($_POST["submit"])) {
+            DB::changeStateOrder($id, $numState);
+        }
+        // TODO: Cần hỏi -customer_id lấy đâu ra để thay đổi state đây, chưa hình dung rõ lắm về cái này
         // Thay đổi state trong order_state table
         // Hàm này chạy lúc bấm nút confirm trong danh sách Order trên admin page
     }

@@ -12,38 +12,56 @@ require_once 'config.php';
         return $conn;
     }
 
-    public static function slt_top($table, int $rowNum)
+    public static function slt_limit($table, int $rowNum) // Hàm select theo limit
     {
         $query = "SELECT * FROM $table LIMIT $rowNum";
         $row = mysqli_query(self::connect(), $query);
         return mysqli_fetch_all($row);
     }
 
-    public static function customer_slt_by_email($email)
+    public static function customer_slt_by_email($email) // Hàm tìm customer theo email
     {
         $query = "SELECT * FROM customer WHERE email = '$email'";
         $row = mysqli_query(self::connect(), $query);
         return mysqli_fetch_array($row);
     }
 
+    // Hàm add order mới vào db
     public static function order_insert(int $customer_id, int $service_type_id, string $address, string $comment)
     {
         $query = "
 INSERT INTO customer_order (customer_id, service_type_id, address, comment) VALUES ('$customer_id', '$service_type_id', '$address', '$comment')";
-        echo $query;
         return mysqli_query(self::connect(), $query);
     }
 
-    public static function order_selectByID(int $customer_id)
+    public static function order_selectByID(int $customer_id) // Hàm tìm order theo ID rồi in ra
     {
         $query = "SELECT * FROM customer_order WHERE id = '$customer_id'";
         $row = mysqli_query(self::connect(), $query);
         return mysqli_fetch_all($row);
     }
 
-    public static function customer_insert(string $name, string $email, string $phone)
+    public static function customer_insert(string $name, string $email, string $phone) // Hàm add customer
     {
         $query = "INSERT INTO customer (id, name, email, phone) VALUES (NULL, '$name', '$email', '$phone')";
+        return mysqli_query(self::connect(), $query);
+    }
+
+    public static function changeStateOrder(int $changeNum, $csID) // Hàm đổi state order theo yêu cầu
+    {
+        $query = "UPDATE customer_order SET state = '$changeNum' WHERE customer_id = '$csID'";
+        return mysqli_query(self::connect(), $query);
+    }
+
+    public static function changeStateEmployees($id) // Hàm đổi state employees theo yêu cầu
+    {
+        $query = "UPDATE employees SET is_free  = 0 WHERE id = '$id'";
+        return mysqli_query(self::connect(), $query);
+    }
+
+    public static function addEmptoTeam(int $order_id, int $employee_id) // Hàm add employees vào team
+    {
+        $query = "INSERT INTO team (order_id, employee_id) VALUES ('$order_id', '$employee_id')";
         return mysqli_query(self::connect(), $query);
     }
 }
