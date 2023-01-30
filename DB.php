@@ -64,5 +64,42 @@ INSERT INTO customer_order (customer_id, service_type_id, address, comment) VALU
         $query = "INSERT INTO team (order_id, employee_id) VALUES ('$order_id', '$employee_id')";
         return mysqli_query(self::connect(), $query);
     }
+    public static function show_order(): array {
+        $query = "SELECT\n"
+
+            . "    ord.`id` AS `order id`,\n"
+
+            . "    `time`,\n"
+
+            . "    `cus`.`name` AS NAME,\n"
+
+            . "    `cus`.`email` AS email,\n"
+
+            . "    `cus`.`phone` AS phone,\n"
+
+            . "    ser.`name` AS service,\n"
+
+            . "    ser.`price` AS price,\n"
+
+            . "    `address`\n"
+
+            . "FROM\n"
+
+            . "    `customer_order` AS ORD\n"
+
+            . "INNER JOIN customer AS cus\n"
+
+            . "ON\n"
+
+            . "    cus.id = ORD.customer_id\n"
+
+            . "INNER JOIN `service type` AS ser\n"
+
+            . "ON\n"
+
+            . "    ser.id = ORD.service_type_id;";
+        $row = mysqli_query(self::connect(), $query);
+        return mysqli_fetch_all($row);
+    }
 }
 
