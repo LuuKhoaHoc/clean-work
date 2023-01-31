@@ -1,0 +1,11 @@
+{
+    "name": "administrator/clean-work",
+    "autoload": {
+        "psr-4": {
+            "Administrator\\CleanWork\\": "./"
+        }
+    },
+    "require": {
+      "ext-mysqli": "*"
+    }
+}
