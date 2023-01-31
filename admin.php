@@ -381,7 +381,7 @@ $orders = DB::show_order();
                                 aria-label="CSS grade: activate to sort column ascending">Address
                             </th>
                             <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
-                                aria-label="CSS grade: activate to sort column ascending">Confirm
+                                aria-label="CSS grade: activate to sort column ascending">State
                             </th>
                         </tr>
                         </thead>
@@ -390,8 +390,9 @@ $orders = DB::show_order();
                                 <?php foreach ($order as $row) { ?>
                                     <td><?= $row ?></td>
                                 <?php } ?>
-                                <td>
-                                    <button class="rounded-lg btn-primary">Confirmed</button>
+                                <td class="btn-group">
+                                    <button class="rounded-lg btn-success">Confirmed</button>
+                                    <button class="rounded-lg btn-danger">Disproved</button>
                                 </td>
                             </tr>
                         <?php } ?>
