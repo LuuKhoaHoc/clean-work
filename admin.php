@@ -306,7 +306,29 @@ $orders = DB::show_order();
                             </li>
                         </ul>
                     </li>
-
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fas fa-scroll"></i>
+                            <p>
+                                Nội dung
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Danh sách nội dung</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Thêm nội dung</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
             </nav>
             <!-- /.sidebar-menu -->
@@ -391,8 +413,12 @@ $orders = DB::show_order();
                                     <td><?= $row ?></td>
                                 <?php } ?>
                                 <td class="btn-group">
-                                    <button class="rounded-lg btn-success">Confirmed</button>
-                                    <button class="rounded-lg btn-danger">Disproved</button>
+                                    <form action="" method="post">
+                                    <button name="" class="rounded-lg btn-success"><a class="text-white" href="<?php  ?>">Confirmed</a>
+                                    </button>
+                                    <button name="" class="rounded-lg btn-danger"><a class="text-white" href="?id=<?= $order[0] ?>">Disproved</a>
+                                    </button>
+                                    </form>
                                 </td>
                             </tr>
                         <?php } ?>
