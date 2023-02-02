@@ -60,4 +60,9 @@ class Manager
         // chuyen state cua Order đó thành 4 ( on-going )
 
     }
+
+    public function dispatchCleaningTeam(int $empNeeded)
+    {
+        // TODO: Implement dispatchCleaningTeam() method.
+    }
 }
