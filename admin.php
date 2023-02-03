@@ -405,6 +405,9 @@ $orders = DB::show_order();
                             <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
                                 aria-label="CSS grade: activate to sort column ascending">State
                             </th>
+                            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
+                                aria-label="CSS grade: activate to sort column ascending">Action
+                            </th>
                         </tr>
                         </thead>
                         <?php foreach ($orders as $order) { ?>

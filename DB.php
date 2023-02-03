@@ -67,39 +67,22 @@ INSERT INTO customer_order (customer_id, service_type_id, address, comment) VALU
 
     public static function show_order(): array
     {
-        $query = "SELECT\n"
-
-            . "    ord.`id` AS `order id`,\n"
-
-            . "    `time`,\n"
-
-            . "    `cus`.`name` AS NAME,\n"
-
-            . "    `cus`.`email` AS email,\n"
-
-            . "    `cus`.`phone` AS phone,\n"
-
-            . "    ser.`name` AS service,\n"
-
-            . "    ser.`price` AS price,\n"
-
-            . "    `address`\n"
-
-            . "FROM\n"
-
-            . "    `customer_order` AS ORD\n"
-
-            . "INNER JOIN customer AS cus\n"
-
-            . "ON\n"
-
-            . "    cus.id = ORD.customer_id\n"
-
-            . "INNER JOIN `service type` AS ser\n"
-
-            . "ON\n"
-
-            . "    ser.id = ORD.service_type_id;";
+        $query = "
+            SELECT
+                ord.id as id,
+                ord.time AS time,
+                cus.name AS customer_name,
+                cus.email AS email,
+                cus.phone AS phone,
+                ser.name AS service,
+                ser.price as price,
+                ord.address AS address,
+                 sta.name AS state
+            FROM `customer_order` AS ORD
+            INNER JOIN `customer` AS cus ON cus.id = ord.customer_id
+            INNER JOIN `service type` AS ser ON ser.id = ord.service_type_id
+            INNER JOIN `order_state` AS sta ON sta.id = ord.state;
+            ";
         $row = mysqli_query(self::connect(), $query);
         return mysqli_fetch_all($row);
     }
@@ -107,41 +90,30 @@ INSERT INTO customer_order (customer_id, service_type_id, address, comment) VALU
     public static function verifying_verified($ord_id)
     {
         $query = "
-        UPDATE
-    customer_order
-SET
-    `customer_order`.`state` = 3
-WHERE
-    `customer_order`.`id` = $ord_id;
+            UPDATE customer_order
+            SET `customer_order`.`state` = 3
+            WHERE `customer_order`.`id` = $ord_id;
 
-CREATE VIEW team_1 AS SELECT
-    `id`
-FROM
-    `employees`
-WHERE
-    `employees`.`is_free` = 1
-LIMIT 3;
+            CREATE VIEW team_1 AS SELECT
+                `id`
+            FROM `employees`
+            WHERE `employees`.`is_free` = 1
+            LIMIT 3;
 
-INSERT INTO `team`(`order_id`, `employee_id`)
-SELECT
-    $ord_id,
-    team_1.`id`
-FROM
-    team_1;
+            INSERT INTO `team`(`order_id`, `employee_id`)
+            SELECT
+                $ord_id,
+                team_1.`id`
+            FROM team_1;
 
-UPDATE
-    `employees`
-SET
-    `employees`.`is_free` = 0
-WHERE
-    `employees`.`id` IN(
-SELECT
-    `id`
-FROM
-    team_1
-);
+            UPDATE `employees`
+            SET `employees`.`is_free` = 0
+            WHERE `employees`.`id` IN(
+            SELECT `id`
+            FROM team_1
+            );
 
-DROP VIEW team_1
+            DROP VIEW team_1;
         ";
         return mysqli_query(self::connect(), $query);
     }
@@ -149,9 +121,9 @@ DROP VIEW team_1
     public static function verified_ongoing($ord_id)
     {
         $query = "
-        UPDATE customer_order
-SET `customer_order`.`state` = 4
-WHERE `customer_order`.`id` = $ord_id;
+            UPDATE customer_order
+            SET `customer_order`.`state` = 4
+            WHERE `customer_order`.`id` = $ord_id;
         ";
         return mysqli_query(self::connect(), $query);
     }
@@ -159,9 +131,9 @@ WHERE `customer_order`.`id` = $ord_id;
     public static function ongoing_inprogress($ord_id)
     {
         $query = "
-        UPDATE customer_order
-SET `customer_order`.`state` = 5
-WHERE `customer_order`.`id` = $ord_id;
+            UPDATE customer_order
+            SET `customer_order`.`state` = 5
+            WHERE `customer_order`.`id` = $ord_id;
         ";
         return mysqli_query(self::connect(), $query);
     }
@@ -169,51 +141,46 @@ WHERE `customer_order`.`id` = $ord_id;
     public static function inprogress_completed($ord_id)
     {
         $query = "
-        UPDATE customer_order
-SET `customer_order`.`state` = 6
-WHERE `customer_order`.`id` = $ord_id;
+            UPDATE customer_order
+            SET `customer_order`.`state` = 6
+            WHERE `customer_order`.`id` = $ord_id;
 
-UPDATE employees
-SET `employees`.`is_free` = 1
-WHERE employees.id IN (SELECT `team`.`employee_id` FROM team WHERE team.order_id = $ord_id);
+            UPDATE employees
+            SET `employees`.`is_free` = 1
+            WHERE employees.id IN (SELECT `team`.`employee_id` FROM team WHERE team.order_id = $ord_id);
 
-INSERT INTO order_history(
-    `id`,
-    `start`,
-    `customer_id`,
-    `service_type_id`,
-    `address`,
-    `comment`,
-    `employee_list`,
-    `result`
-)
-SELECT
-    ORD.id AS id,
-    ORD.time AS START,
-    ORD.customer_id,
-    ORD.service_type_id,
-    ORD.address,
-    ORD.comment,
-    team.employee_list,
-    0
-FROM
-    customer_order AS ORD
-INNER JOIN(
-    SELECT
-        `team`.`order_id`,
-        GROUP_CONCAT(`team`.`employee_id`) AS employee_list
-    FROM
-        `team`
-    GROUP BY
-        order_id
-) AS team
-ON
-    ORD.id = team.`order_id`
-WHERE
-    ORD.id = $ord_id;
+            INSERT INTO order_history(
+                `id`,
+                `start`,
+                `customer_id`,
+                `service_type_id`,
+                `address`,
+                `comment`,
+                `employee_list`,
+                `result`
+            )
+            SELECT
+                ORD.id AS id,
+                ORD.time AS START,
+                ORD.customer_id,
+                ORD.service_type_id,
+                ORD.address,
+                ORD.comment,
+                team.employee_list,
+                0
+            FROM customer_order AS ORD
+            INNER JOIN(
+                SELECT
+                    `team`.`order_id`,
+                    GROUP_CONCAT(`team`.`employee_id`) AS employee_list
+                FROM `team`
+                GROUP BY order_id
+            ) AS team
+            ON ORD.id = team.`order_id`
+            WHERE ORD.id = $ord_id;
 
-DELETE FROM team
-WHERE team.order_id = $ord_id;
+            DELETE FROM team
+            WHERE team.order_id = $ord_id;
         ";
         return mysqli_query(self::connect(), $query);
     }
@@ -221,12 +188,12 @@ WHERE team.order_id = $ord_id;
     public static function completed_finished($ord_id)
     {
         $query = "
-        UPDATE `order_history`
-SET `order_history`.`result` = 1
-WHERE `order_history`.`id` = $ord_id;
+            UPDATE `order_history`
+            SET `order_history`.`result` = 1
+            WHERE `order_history`.`id` = $ord_id;
 
-DELETE FROM customer_order
-WHERE `customer_order`.`id` = $ord_id;
+            DELETE FROM customer_order
+            WHERE `customer_order`.`id` = $ord_id;
         ";
         return mysqli_query(self::connect(), $query);
     }
