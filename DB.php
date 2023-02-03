@@ -1,7 +1,7 @@
 <?php
 require_once 'config.php';
 
-#[AllowDynamicProperties] class DB
+class DB
 {
     public static function connect()
     {
@@ -12,58 +12,179 @@ require_once 'config.php';
         return $conn;
     }
 
-    public static function slt_limit($table, int $rowNum) // Hàm select theo limit
+
+
+
+
+    public static function SelectWithLimit($table, int $rowNum) // Hàm select theo limit
     {
         $query = "SELECT * FROM $table LIMIT $rowNum";
         $row = mysqli_query(self::connect(), $query);
         return mysqli_fetch_all($row);
     }
 
-    public static function customer_slt_by_email($email) // Hàm tìm customer theo email
+    public static function SelectCustomerByEmail($email) // Hàm tìm customer theo email
     {
         $query = "SELECT * FROM customer WHERE email = '$email'";
         $row = mysqli_query(self::connect(), $query);
         return mysqli_fetch_array($row);
     }
 
-    // Hàm add order mới vào db
-    public static function order_insert(int $customer_id, int $service_type_id, string $address, string $comment)
+    public static function SelectOrderByID(int $ord_id) // Hàm tìm order theo ID rồi in ra
     {
-        $query = "
-INSERT INTO customer_order (customer_id, service_type_id, address, comment) VALUES ('$customer_id', '$service_type_id', '$address', '$comment')";
-        return mysqli_query(self::connect(), $query);
-    }
-
-    public static function order_selectByID(int $customer_id) // Hàm tìm order theo ID rồi in ra
-    {
-        $query = "SELECT * FROM customer_order WHERE id = '$customer_id'";
+        $query = "SELECT * FROM customer_order WHERE id = '$ord_id'";
         $row = mysqli_query(self::connect(), $query);
         return mysqli_fetch_all($row);
     }
 
-    public static function customer_insert(string $name, string $email, string $phone) // Hàm add customer
+
+
+
+
+    public static function chooseEmployeesIntoView(int $manpower)
+    {
+        $query = "
+            CREATE VIEW team_1 AS 
+            SELECT `id`
+            FROM `employees`
+            WHERE `employees`.`is_free` = 1
+            LIMIT $manpower;        
+        ";
+        return mysqli_query(self::connect(), $query);
+    }
+
+    // Hàm add order mới vào db
+    public static function InsertIntoOrder(int $customer_id, int $service_type_id, string $address, string $comment)
+    {
+        $query = "
+            INSERT INTO customer_order (customer_id, service_type_id, address, comment) 
+            VALUES ('$customer_id', '$service_type_id', '$address', '$comment')
+        ";
+        return mysqli_query(self::connect(), $query);
+    }
+
+    public static function InsertIntoCustomer(string $name, string $email, string $phone) // Hàm add customer
     {
         $query = "INSERT INTO customer (id, name, email, phone) VALUES (NULL, '$name', '$email', '$phone')";
         return mysqli_query(self::connect(), $query);
     }
 
-    public static function changeStateOrder(int $changeNum, $csID) // Hàm đổi state order theo yêu cầu
+    public static function InsertEmployessIntoTeam(int $ord_id) // Hàm add employees vào team
     {
-        $query = "UPDATE customer_order SET state = '$changeNum' WHERE customer_id = '$csID'";
+        $query = "
+            INSERT INTO `team`(`order_id`, `employee_id`)
+            SELECT
+                $ord_id,
+                team_1.`id`
+            FROM team_1;        
+        ";
         return mysqli_query(self::connect(), $query);
     }
 
-    public static function changeStateEmployees($id) // Hàm đổi state employees theo yêu cầu
+    public static function InsertIntoHistory($ord_id, int $result) {
+        $query = "
+            INSERT INTO order_history(
+                `id`,
+                `start`,
+                `customer_id`,
+                `service_type_id`,
+                `address`,
+                `comment`,
+                `employee_list`,
+                `result`
+            )
+            SELECT
+                ORD.id AS id,
+                ORD.time AS START,
+                ORD.customer_id,
+                ORD.service_type_id,
+                ORD.address,
+                ORD.comment,
+                team.employee_list,
+                $result
+            FROM customer_order AS ORD
+            INNER JOIN(
+                SELECT
+                    `team`.`order_id`,
+                    GROUP_CONCAT(`team`.`employee_id`) AS employee_list
+                FROM `team`
+                GROUP BY order_id
+            ) AS team
+            ON ORD.id = team.`order_id`
+            WHERE ORD.id = $ord_id;
+        ";
+        return mysqli_query(self::connect(),$query);
+    }
+
+
+
+
+
+    public static function UpdateEmployeeStateToBusyFromView() // Hàm đổi state employees theo yêu cầu
     {
-        $query = "UPDATE employees SET is_free  = 0 WHERE id = '$id'";
+        $query = "
+            UPDATE `employees`
+            SET `employees`.`is_free` = 0
+            WHERE `employees`.`id` IN(
+            SELECT `id`
+            FROM team_1
+            );        
+        ";
         return mysqli_query(self::connect(), $query);
     }
 
-    public static function addEmptoTeam(int $order_id, int $employee_id) // Hàm add employees vào team
-    {
-        $query = "INSERT INTO team (order_id, employee_id) VALUES ('$order_id', '$employee_id')";
+    public static function UpdateHistoryResult(int $result_id, int $ord_id) {
+        $query = "
+            UPDATE `order_history`
+            SET `order_history`.`result` = $result_id
+            WHERE `order_history`.`id` = $ord_id;
+        ";
         return mysqli_query(self::connect(), $query);
     }
+
+    public static function UpdateEmployeeStateToFreeFromTeam(int $ord_id)
+    {
+        $query = "
+            UPDATE employees
+            SET `employees`.`is_free` = 1
+            WHERE employees.id IN (SELECT `team`.`employee_id` FROM team WHERE team.order_id = $ord_id);
+        ";
+        return mysqli_query(self::connect(), $query);
+    }
+
+    public static function UpdateOrderState(int $state_id, int $ord_id) // Hàm đổi state order theo yêu cầu
+    {
+        $query = "
+            UPDATE customer_order
+            SET `customer_order`.`state` = $state_id
+            WHERE `customer_order`.`id` = $ord_id;
+            ";
+        return mysqli_query(self::connect(), $query);
+    }
+
+
+
+
+
+    public static function DeleteOrder(int $ord_id) {
+        $query = "
+            DELETE FROM customer_order
+            WHERE `customer_order`.`id` = $ord_id;
+        ";
+        return mysqli_query(self::connect(), $query);
+    }
+
+    public static function DeleteTeam($ord_id) {
+        $query = "
+            DELETE FROM team
+            WHERE team.order_id = $ord_id;
+        ";
+        return mysqli_query(self::connect(), $query);
+    }
+
+
+
+
 
     public static function show_order(): array
     {
@@ -89,162 +210,56 @@ INSERT INTO customer_order (customer_id, service_type_id, address, comment) VALU
 
     public static function verifying_verified($ord_id)
     {
-        $query = "
-            UPDATE customer_order
-            SET `customer_order`.`state` = 3
-            WHERE `customer_order`.`id` = $ord_id;
+        self::UpdateOrderState(3, $ord_id);
 
-            CREATE VIEW team_1 AS SELECT
-                `id`
-            FROM `employees`
-            WHERE `employees`.`is_free` = 1
-            LIMIT 3;
+        self::chooseEmployeesIntoView(3);
 
-            INSERT INTO `team`(`order_id`, `employee_id`)
-            SELECT
-                $ord_id,
-                team_1.`id`
-            FROM team_1;
+        self::InsertEmployessIntoTeam($ord_id);
 
-            UPDATE `employees`
-            SET `employees`.`is_free` = 0
-            WHERE `employees`.`id` IN(
-            SELECT `id`
-            FROM team_1
-            );
+        self::UpdateEmployeeStateToBusyFromView();
 
-            DROP VIEW team_1;
-        ";
+        $query = "DROP VIEW team_1;";
+        mysqli_query(self::connect(), $query);
 
-        echo "<pre>$query</pre>";
-         mysqli_query(self::connect(), $query);
     }
 
     public static function verified_ongoing($ord_id)
     {
-        $query = "
-            UPDATE customer_order
-            SET `customer_order`.`state` = 4
-            WHERE `customer_order`.`id` = $ord_id;
-        ";
-        return mysqli_query(self::connect(), $query);
+        self::UpdateOrderState(4, $ord_id);
     }
 
     public static function ongoing_inprogress($ord_id)
     {
-        $query = "
-            UPDATE customer_order
-            SET `customer_order`.`state` = 5
-            WHERE `customer_order`.`id` = $ord_id;
-        ";
-        return mysqli_query(self::connect(), $query);
+        self::UpdateOrderState(5, $ord_id);
     }
 
     public static function inprogress_completed($ord_id)
     {
-        $query = "
-            UPDATE customer_order
-            SET `customer_order`.`state` = 6
-            WHERE `customer_order`.`id` = $ord_id;
+        self::UpdateOrderState(6, $ord_id);
 
-            UPDATE employees
-            SET `employees`.`is_free` = 1
-            WHERE employees.id IN (SELECT `team`.`employee_id` FROM team WHERE team.order_id = $ord_id);
+        self::UpdateEmployeeStateToFreeFromTeam($ord_id);
 
-            INSERT INTO order_history(
-                `id`,
-                `start`,
-                `customer_id`,
-                `service_type_id`,
-                `address`,
-                `comment`,
-                `employee_list`,
-                `result`
-            )
-            SELECT
-                ORD.id AS id,
-                ORD.time AS START,
-                ORD.customer_id,
-                ORD.service_type_id,
-                ORD.address,
-                ORD.comment,
-                team.employee_list,
-                0
-            FROM customer_order AS ORD
-            INNER JOIN(
-                SELECT
-                    `team`.`order_id`,
-                    GROUP_CONCAT(`team`.`employee_id`) AS employee_list
-                FROM `team`
-                GROUP BY order_id
-            ) AS team
-            ON ORD.id = team.`order_id`
-            WHERE ORD.id = $ord_id;
+        self::InsertIntoHistory($ord_id, 0);
 
-            DELETE FROM team
-            WHERE team.order_id = $ord_id;
-        ";
-        return mysqli_query(self::connect(), $query);
+        self::DeleteTeam($ord_id);
     }
 
     public static function completed_finished($ord_id)
     {
-        $query = "
-            UPDATE `order_history`
-            SET `order_history`.`result` = 1
-            WHERE `order_history`.`id` = $ord_id;
+        self::UpdateHistoryResult(1,$ord_id);
 
-            DELETE FROM customer_order
-            WHERE `customer_order`.`id` = $ord_id;
-        ";
-        return mysqli_query(self::connect(), $query);
+        self::DeleteOrder($ord_id);
     }
 
-    public static function disproved($ord_id) {
-        $query = "
-            UPDATE employees
-            SET `employees`.`is_free` = 1
-            WHERE employees.id IN (SELECT `team`.`employee_id` FROM team WHERE team.order_id = $ord_id);
+    public static function disproved($ord_id)
+    {
+        self::UpdateEmployeeStateToFreeFromTeam($ord_id);
 
-            INSERT INTO order_history(
-                `id`,
-                `start`,
-                `customer_id`,
-                `service_type_id`,
-                `address`,
-                `comment`,
-                `employee_list`,
-                `result`
-            )
-            SELECT
-                ORD.id AS id,
-                ORD.time AS START,
-                ORD.customer_id,
-                ORD.service_type_id,
-                ORD.address,
-                ORD.comment,
-                team.employee_list,
-                -1
-            FROM
-                customer_order AS ORD
-            INNER JOIN(
-                SELECT
-                    `team`.`order_id`,
-                    GROUP_CONCAT(`team`.`employee_id`) AS employee_list
-                FROM `team`
-                GROUP BY order_id
-            ) AS team
-                ON ORD.id = team.`order_id`
-            WHERE ORD.id = $ord_id;
+        self::InsertIntoHistory($ord_id, -1);
 
-            DELETE FROM team
-            WHERE team.order_id = $ord_id;
+        self::DeleteTeam($ord_id);
 
-            DELETE FROM customer_order
-            WHERE `customer_order`.`id` = $ord_id;
-        ";
-        echo "<pre>$query</pre>";
-//        return mysqli_query(self::connect(), $query);
+        self::DeleteOrder($ord_id);
     }
 }
 
