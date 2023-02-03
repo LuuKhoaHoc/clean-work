@@ -115,7 +115,9 @@ INSERT INTO customer_order (customer_id, service_type_id, address, comment) VALU
 
             DROP VIEW team_1;
         ";
-        return mysqli_query(self::connect(), $query);
+
+        echo "<pre>$query</pre>";
+         mysqli_query(self::connect(), $query);
     }
 
     public static function verified_ongoing($ord_id)
@@ -196,6 +198,53 @@ INSERT INTO customer_order (customer_id, service_type_id, address, comment) VALU
             WHERE `customer_order`.`id` = $ord_id;
         ";
         return mysqli_query(self::connect(), $query);
+    }
+
+    public static function disproved($ord_id) {
+        $query = "
+            UPDATE employees
+            SET `employees`.`is_free` = 1
+            WHERE employees.id IN (SELECT `team`.`employee_id` FROM team WHERE team.order_id = $ord_id);
+
+            INSERT INTO order_history(
+                `id`,
+                `start`,
+                `customer_id`,
+                `service_type_id`,
+                `address`,
+                `comment`,
+                `employee_list`,
+                `result`
+            )
+            SELECT
+                ORD.id AS id,
+                ORD.time AS START,
+                ORD.customer_id,
+                ORD.service_type_id,
+                ORD.address,
+                ORD.comment,
+                team.employee_list,
+                -1
+            FROM
+                customer_order AS ORD
+            INNER JOIN(
+                SELECT
+                    `team`.`order_id`,
+                    GROUP_CONCAT(`team`.`employee_id`) AS employee_list
+                FROM `team`
+                GROUP BY order_id
+            ) AS team
+                ON ORD.id = team.`order_id`
+            WHERE ORD.id = $ord_id;
+
+            DELETE FROM team
+            WHERE team.order_id = $ord_id;
+
+            DELETE FROM customer_order
+            WHERE `customer_order`.`id` = $ord_id;
+        ";
+        echo "<pre>$query</pre>";
+//        return mysqli_query(self::connect(), $query);
     }
 }
 
