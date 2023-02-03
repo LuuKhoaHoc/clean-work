@@ -4,8 +4,20 @@
     $orders = DB::show_order();
     var_dump($_POST);
     if (isset($_POST['action'])) {
-        if ($_POST['action']) DB::verifying_verified($_POST['order-id']);
-        else DB::disproved($_POST['order-id']);
+        switch ($_POST['action']) {
+            case "0":
+            case "-1":
+                DB::disproved($_POST['order-id']);
+                break;
+            case "1":
+                DB::verifying_verified($_POST['order-id']);
+                break;
+            case "2":
+                DB::verified_ongoing($_POST['order-id']);
+                break;
+            default:
+        }
+        header("Refresh:0");
     }
 
     ?>
@@ -20,10 +32,22 @@
                 <td><?= $row ?></td>
             <?php } ?>
             <td class="btn-group">
-                <form action="admin_simplified.php" method="post">
+                <form action="" method="post">
+                    <?php
+                    echo match ($order[8]) {
+                        "verifying" => '
+                            <button class="rounded-lg btn-success" type="submit" name="action" value="1">Confirmed</button>
+                            <button class="rounded-lg btn-danger" type="submit" name="action" value="0">Disproved</button>
+                            ',
+                        "verified" => '
+                            <button class="rounded-lg btn-danger" type="submit" name="action" value="2">Dispatch</button>
+                            ',
+                        default => '
+                            <button class="rounded-lg btn-danger" type="submit" name="action" value="-1">Disproved</button>
+                            ',
+                    };
+                    ?>
                     <input type="hidden" name="order-id" value="<?= $order[0] ?>">
-                    <button class="rounded-lg btn-success" type="submit" name="action" value="1">Confirmed</button>
-                    <button class="rounded-lg btn-danger" type="submit" name="action" value="0">Disproved</button>
                 </form>
             </td>
         </tr>

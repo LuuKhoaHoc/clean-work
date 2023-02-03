@@ -13,9 +13,6 @@ class DB
     }
 
 
-
-
-
     public static function SelectWithLimit($table, int $rowNum) // Hàm select theo limit
     {
         $query = "SELECT * FROM $table LIMIT $rowNum";
@@ -36,9 +33,6 @@ class DB
         $row = mysqli_query(self::connect(), $query);
         return mysqli_fetch_all($row);
     }
-
-
-
 
 
     public static function chooseEmployeesIntoView(int $manpower)
@@ -81,7 +75,8 @@ class DB
         return mysqli_query(self::connect(), $query);
     }
 
-    public static function InsertIntoHistory($ord_id, int $result) {
+    public static function InsertIntoHistory($ord_id, int $result)
+    {
         $query = "
             INSERT INTO order_history(
                 `id`,
@@ -103,7 +98,7 @@ class DB
                 team.employee_list,
                 $result
             FROM customer_order AS ORD
-            INNER JOIN(
+            LEFT JOIN (
                 SELECT
                     `team`.`order_id`,
                     GROUP_CONCAT(`team`.`employee_id`) AS employee_list
@@ -113,11 +108,8 @@ class DB
             ON ORD.id = team.`order_id`
             WHERE ORD.id = $ord_id;
         ";
-        return mysqli_query(self::connect(),$query);
+        return mysqli_query(self::connect(), $query);
     }
-
-
-
 
 
     public static function UpdateEmployeeStateToBusyFromView() // Hàm đổi state employees theo yêu cầu
@@ -133,7 +125,8 @@ class DB
         return mysqli_query(self::connect(), $query);
     }
 
-    public static function UpdateHistoryResult(int $result_id, int $ord_id) {
+    public static function UpdateHistoryResult(int $result_id, int $ord_id)
+    {
         $query = "
             UPDATE `order_history`
             SET `order_history`.`result` = $result_id
@@ -163,10 +156,8 @@ class DB
     }
 
 
-
-
-
-    public static function DeleteOrder(int $ord_id) {
+    public static function DeleteOrder(int $ord_id)
+    {
         $query = "
             DELETE FROM customer_order
             WHERE `customer_order`.`id` = $ord_id;
@@ -174,16 +165,14 @@ class DB
         return mysqli_query(self::connect(), $query);
     }
 
-    public static function DeleteTeam($ord_id) {
+    public static function DeleteTeam($ord_id)
+    {
         $query = "
             DELETE FROM team
             WHERE team.order_id = $ord_id;
         ";
         return mysqli_query(self::connect(), $query);
     }
-
-
-
 
 
     public static function show_order(): array
@@ -246,7 +235,7 @@ class DB
 
     public static function completed_finished($ord_id)
     {
-        self::UpdateHistoryResult(1,$ord_id);
+        self::UpdateHistoryResult(1, $ord_id);
 
         self::DeleteOrder($ord_id);
     }

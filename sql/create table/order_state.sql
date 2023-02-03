@@ -5,10 +5,10 @@ create table `order_state` (
 );
 
 insert into `order_state` (id, name)
-values  (1, 'waiting'),
+values  (1, 'begin'),
         (2, 'verifying'),
         (3, 'verified'),
-        (4, 'on going'),
+        (4, 'on a way'),
         (5, 'in progress'),
-        (6, 'completed'),
-        (7, 'finished');
+        (6, 'finished'),
+        (7, 'ended');
