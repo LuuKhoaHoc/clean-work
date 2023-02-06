@@ -15,6 +15,15 @@
             case "2":
                 DB::verified_ongoing($_POST['order-id']);
                 break;
+            case "3":
+                DB::ongoing_inprogress($_POST['order-id']);
+                break;
+            case "4":
+                DB::inprogress_completed($_POST['order-id']);
+                break;
+            case "5":
+                DB::completed_finished($_POST['order-id']);
+                break;
             default:
         }
         header("Refresh:0");
@@ -53,5 +62,120 @@
         </tr>
     <?php } ?>
 </table>
+
+<h3>Verifying Orders</h3>
+<table>
+    <?php
+    $orders = DB::show_order(2);
+    foreach ($orders as $order) { ?>
+        <tr>
+            <?php foreach ($order as $row) { ?>
+                <td><?= $row ?></td>
+            <?php } ?>
+            <td class="btn-group">
+                <form action="" method="post">
+                    <button class="rounded-lg btn-success" type="submit" name="action" value="1">Confirmed</button>
+                    <button class="rounded-lg btn-danger" type="submit" name="action" value="0">Disproved</button>
+
+                    <input type="hidden" name="order-id" value="<?= $order[0] ?>">
+                </form>
+            </td>
+        </tr>
+    <?php } ?>
+</table>
+
+<h3>Verified Orders</h3>
+<table>
+    <?php
+    $orders = DB::show_order(3);
+    foreach ($orders as $order) { ?>
+        <tr>
+            <?php foreach ($order as $row) { ?>
+                <td><?= $row ?></td>
+            <?php } ?>
+            <td class="btn-group">
+                <form action="" method="post">
+                    <button class="rounded-lg btn-success" type="submit" name="action" value="2">Dispatch</button>
+                    <button class="rounded-lg btn-danger" type="submit" name="action" value="0">Disproved</button>
+
+                    <input type="hidden" name="order-id" value="<?= $order[0] ?>">
+                </form>
+            </td>
+        </tr>
+    <?php } ?>
+</table>
+
+<h3>On-the-way Orders</h3>
+<table>
+    <?php
+    $orders = DB::show_order(4);
+    foreach ($orders as $order) { ?>
+        <tr>
+            <?php foreach ($order as $row) { ?>
+                <td><?= $row ?></td>
+            <?php } ?>
+            <td class="btn-group">
+                <form action="" method="post">
+                    <button class="rounded-lg btn-danger" type="submit" name="action" value="0">Disproved</button>
+
+                    <input type="hidden" name="order-id" value="<?= $order[0] ?>">
+                </form>
+            </td>
+        </tr>
+    <?php } ?>
+</table>
+
+<h3>In-progress Orders</h3>
+<table>
+    <?php
+    $orders = DB::show_order(5);
+    foreach ($orders as $order) { ?>
+        <tr>
+            <?php foreach ($order as $row) { ?>
+                <td><?= $row ?></td>
+            <?php } ?>
+            <td class="btn-group">
+                <form action="" method="post">
+                    <button class="rounded-lg btn-danger" type="submit" name="action" value="0">Disproved</button>
+
+                    <input type="hidden" name="order-id" value="<?= $order[0] ?>">
+                </form>
+            </td>
+        </tr>
+    <?php } ?>
+</table>
+
+<h3>Finished Orders</h3>
+<table>
+    <?php
+    $orders = DB::show_order(6);
+    foreach ($orders as $order) { ?>
+        <tr>
+            <?php foreach ($order as $row) { ?>
+                <td><?= $row ?></td>
+            <?php } ?>
+            <td class="btn-group">
+                <form action="" method="post">
+                    <button class="rounded-lg btn-success" type="submit" name="action" value="5">Payed</button>
+                    <button class="rounded-lg btn-danger" type="submit" name="action" value="0">Disproved</button>
+
+                    <input type="hidden" name="order-id" value="<?= $order[0] ?>">
+                </form>
+            </td>
+        </tr>
+    <?php } ?>
+</table>
 <h2>History</h2>
+
+<table>
+    <?php
+    $orders = DB::SelectWithLimit('order_history',100);
+    foreach ($orders as $order) { ?>
+        <tr>
+            <?php foreach ($order as $row) { ?>
+                <td><?= $row ?></td>
+            <?php } ?>
+        </tr>
+    <?php } ?>
+</table>
 <h2>Statistic</h2>

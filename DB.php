@@ -175,7 +175,7 @@ class DB
     }
 
 
-    public static function show_order(): array
+    public static function show_order($state_id = -1): array
     {
         $query = "
             SELECT
@@ -191,8 +191,9 @@ class DB
             FROM `customer_order` AS ORD
             INNER JOIN `customer` AS cus ON cus.id = ord.customer_id
             INNER JOIN `service type` AS ser ON ser.id = ord.service_type_id
-            INNER JOIN `order_state` AS sta ON sta.id = ord.state;
-            ";
+            INNER JOIN `order_state` AS sta ON sta.id = ord.state
+        ";
+        if ($state_id != -1) $query .= "WHERE ord.state = $state_id";
         $row = mysqli_query(self::connect(), $query);
         return mysqli_fetch_all($row);
     }
