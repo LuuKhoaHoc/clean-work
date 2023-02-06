@@ -1,6 +1,5 @@
 <?php
 require 'DB.php';
-$orders = DB::show_order();
 if (isset($_POST['action'])) {
     switch ($_POST['action']) {
         case "0":
@@ -13,10 +12,20 @@ if (isset($_POST['action'])) {
         case "2":
             DB::verified_ongoing($_POST['order-id']);
             break;
+        case "3":
+            DB::ongoing_inprogress($_POST['order-id']);
+            break;
+        case "4":
+            DB::inprogress_completed($_POST['order-id']);
+            break;
+        case "5":
+            DB::completed_finished($_POST['order-id']);
+            break;
         default:
     }
-    header("Refresh:0.5");
+    header("Refresh:0");
 }
+
 ?>
 
 <!doctype html>
@@ -41,36 +50,84 @@ if (isset($_POST['action'])) {
 <body class="sidebar-mini layout-fixed" style="height: auto">
 <div class="wrapper">
 
-    <!-- Main Sidebar Container -->
-    <aside class="main-sidebar sidebar-dark-primary elevation-4">
-        <!-- Brand Logo -->
-        <a href="public/index3.html" class="brand-link">
-            <img src="public/dist/img/AdminLTELogo.png" alt="AdminLTE Logo"
-                 class="brand-image img-circle elevation-3" style="opacity: .8">
-            <span class="brand-text font-weight-light">Admin Page</span>
-        </a>
-        <!-- Sidebar -->
-        <div class="sidebar">
-            <!-- Sidebar user (optional) -->
-            <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-                <div class="image">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand navbar-primary navbar-dark">
+        <!-- Left navbar links -->
+        <ul class="navbar-nav">
+            <a href="" class="brand-link">
+                <img src="public/images/bubbles.png" alt="Clean Work Logo"
+                     class="brand-image img-circle elevation-3" style="opacity: .8">
+                <span class="brand-text text-white text-uppercase">Clean Work</span>
+            </a>
+        </ul>
+
+        <!-- Right navbar links -->
+        <ul class="navbar-nav ml-auto">
+            <!-- Navbar Search -->
+            <li class="nav-item">
+                <a class="nav-link" data-widget="navbar-search" data-target="#navbar-search3" href="#" role="button">
+                    <i class="fas fa-search"></i>
+                </a>
+                <div class="navbar-search-block" id="navbar-search3">
+                    <form class="form-inline">
+                        <div class="input-group input-group-sm">
+                            <input class="form-control form-control-navbar" type="search" placeholder="Search"
+                                   aria-label="Search">
+                            <div class="input-group-append">
+                                <button class="btn btn-navbar" type="submit">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                                <button class="btn btn-navbar" type="button" data-widget="navbar-search">
+                                    <i class="fas fa-times"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link user-panel" data-toggle="dropdown" href="#">
                     <img src="public/dist/img/user2-160x160.jpg"
-                         class="img-circle elevation-2" alt="User Image">
+                         class="img-circle" alt="User Image">
+                </a>
+                <div class="dropdown-menu dropdown-menu-right">
+                    <div class="dropdown-divider"></div>
+                    <div class="user-panel mt-2 mb-2 d-flex justify-content-center align-items-center">
+                        <img src="public/dist/img/user2-160x160.jpg"
+                             class="img-circle elevation-2" alt="User Image">
+                        <div class="info">
+                            <a href="" class="d-block text-center">admin@leowind.com</a>
+                        </div>
+                    </div>
+                    <div class="dropdown-divider"></div>
+                    <div class="d-flex justify-content-around">
+                        <a href="" class="d-block">Inbox</a>
+                        <a href="" class="d-block">Đăng xuất</a>
+                    </div>
                 </div>
-                <div class="info">
-                    <a href="" class="d-block">Admin</a>
-                    <a href="" class="d-block text-center">Đăng xuất</a>
-                </div>
-            </div>
-        </div>
-        <!-- /.sidebar -->
-    </aside>
-    <div class="content-wrapper" style="min-height: 1604.8px;">
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-widget="fullscreen" href="#" role="button">
+                    <i class="fas fa-expand-arrows-alt"></i>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
+                    <i class="fas fa-th-large"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <!-- /.Navbar -->
+    <div class="" style="min-height: 1605px;">
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
+                        <h1>--Admin Page--</h1>
+
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
@@ -136,22 +193,22 @@ if (isset($_POST['action'])) {
                             </th>
                         </tr>
                         </thead>
-                        <?php foreach ($orders as $order) { ?>
+                        <?php
+                        $orders = DB::show_order(2);
+                        foreach ($orders as $order) { ?>
                             <tr>
                                 <?php foreach ($order as $row) { ?>
                                     <td><?= $row ?></td>
                                 <?php } ?>
                                 <td class="btn-group">
                                     <form action="" method="post">
-                                        <?php
-                                        echo match ($order[8]) {
-                                            "verifying" => '
-                    <button class="rounded-lg btn-success" type="submit" name="action" value="1">Confirmed</button>
-                    <button class="rounded-lg btn-danger" type="submit" name="action" value="0">Disproved</button>',
-                                            default => '
-                    <button class="rounded-lg btn-danger" type="submit" name="action" value="-1">Disproved</button>',
-                                        };
-                                        ?>
+                                        <button class="rounded-lg btn-success" type="submit" name="action" value="1">
+                                            Confirmed
+                                        </button>
+                                        <button class="rounded-lg btn-danger" type="submit" name="action" value="0">
+                                            Disproved
+                                        </button>
+
                                         <input type="hidden" name="order-id" value="<?= $order[0] ?>">
                                     </form>
                                 </td>
@@ -214,22 +271,22 @@ if (isset($_POST['action'])) {
                             </th>
                         </tr>
                         </thead>
-                        <?php foreach ($orders as $order) { ?>
+                        <?php
+                        $orders = DB::show_order(3);
+                        foreach ($orders as $order) { ?>
                             <tr>
                                 <?php foreach ($order as $row) { ?>
                                     <td><?= $row ?></td>
                                 <?php } ?>
                                 <td class="btn-group">
                                     <form action="" method="post">
-                                        <?php
-                                        echo match ($order[8]) {
-                                            "verified" => '
-                    <button class="rounded-lg btn-danger" type="submit" name="action" value="2">Dispatch</button>
-                    <button class="rounded-lg btn-danger" type="submit" name="action" value="0">Disproved</button> ',
-                                            default => '
-                    <button class="rounded-lg btn-danger" type="submit" name="action" value="-1">Disproved</button>',
-                                        };
-                                        ?>
+                                        <button class="rounded-lg btn-success" type="submit" name="action" value="2">
+                                            Dispatch
+                                        </button>
+                                        <button class="rounded-lg btn-danger" type="submit" name="action" value="0">
+                                            Disproved
+                                        </button>
+
                                         <input type="hidden" name="order-id" value="<?= $order[0] ?>">
                                     </form>
                                 </td>
@@ -292,16 +349,19 @@ if (isset($_POST['action'])) {
                             </th>
                         </tr>
                         </thead>
-                        <?php foreach ($orders as $order) { ?>
+                        <?php
+                        $orders = DB::show_order(4);
+                        foreach ($orders as $order) { ?>
                             <tr>
                                 <?php foreach ($order as $row) { ?>
                                     <td><?= $row ?></td>
                                 <?php } ?>
                                 <td class="btn-group">
                                     <form action="" method="post">
-                                        <button class="rounded-lg btn-danger" type="submit" name="action" value="-1">
+                                        <button class="rounded-lg btn-danger" type="submit" name="action" value="0">
                                             Disproved
                                         </button>
+
                                         <input type="hidden" name="order-id" value="<?= $order[0] ?>">
                                     </form>
                                 </td>
@@ -364,24 +424,97 @@ if (isset($_POST['action'])) {
                             </th>
                         </tr>
                         </thead>
-                        <?php foreach ($orders as $order) { ?>
+                        <?php
+                        $orders = DB::show_order(5);
+                        foreach ($orders as $order) { ?>
                             <tr>
                                 <?php foreach ($order as $row) { ?>
                                     <td><?= $row ?></td>
                                 <?php } ?>
                                 <td class="btn-group">
                                     <form action="" method="post">
-                                        <?php
-                                        echo match ($order[8]) {
-                                            "in_progress" => '
-                    <button class="rounded-lg btn-danger" type="submit" name="action" value="-1">Receive</button>
-                    <button class="rounded-lg btn-danger" type="submit" name="action" value="-1">Disproved</button>
-                                            ',
-                                            default => '
-                    <button class="rounded-lg btn-danger" type="submit" name="action" value="-1">Disproved</button>
-                    ',
-                                        };
-                                        ?>
+                                        <button class="rounded-lg btn-danger" type="submit" name="action" value="0">
+                                            Disproved
+                                        </button>
+
+                                        <input type="hidden" name="order-id" value="<?= $order[0] ?>">
+                                    </form>
+                                </td>
+                            </tr>
+                        <?php } ?>
+                    </table>
+                </div>
+                <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+            <!-- card -->
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Finished Table</h3>
+
+                    <div class="card-tools">
+                        <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                            <i class="fas fa-minus"></i>
+                        </button>
+
+                    </div>
+                </div>
+                <div class="card-body">
+                    <table id="example2" class="table table-bordered table-hover dataTable dtr-inline"
+                           aria-describedby="example2_info">
+                        <caption style="font-size: larger; font-weight: bold; line-height: 36px;">Table show order
+                        </caption>
+                        <thead>
+                        <tr>
+                            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
+                                aria-label="Rendering engine: activate to sort column ascending">ID
+                            </th>
+                            <th class="sorting sorting_desc" tabindex="0" aria-controls="example2" rowspan="1"
+                                colspan="1" aria-label="Browser: activate to sort column ascending"
+                                aria-sort="descending">Time
+                            </th>
+                            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
+                                aria-label="Platform(s): activate to sort column ascending">Name
+                            </th>
+                            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
+                                aria-label="Engine version: activate to sort column ascending">Email
+                            </th>
+                            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
+                                aria-label="CSS grade: activate to sort column ascending">Phone
+                            </th>
+                            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
+                                aria-label="CSS grade: activate to sort column ascending">Service
+                            </th>
+                            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
+                                aria-label="CSS grade: activate to sort column ascending">Price
+                            </th>
+                            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
+                                aria-label="CSS grade: activate to sort column ascending">Address
+                            </th>
+                            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
+                                aria-label="CSS grade: activate to sort column ascending">State
+                            </th>
+                            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
+                                aria-label="CSS grade: activate to sort column ascending">Action
+                            </th>
+                        </tr>
+                        </thead>
+                        <?php
+                        $orders = DB::show_order(6);
+                        foreach ($orders as $order) { ?>
+                            <tr>
+                                <?php foreach ($order as $row) { ?>
+                                    <td><?= $row ?></td>
+                                <?php } ?>
+                                <td class="btn-group">
+                                    <form action="" method="post">
+                                        <button class="rounded-lg btn-success" type="submit" name="action" value="5">
+                                            Payed
+                                        </button>
+                                        <button class="rounded-lg btn-danger" type="submit" name="action" value="0">
+                                            Disproved
+                                        </button>
+
                                         <input type="hidden" name="order-id" value="<?= $order[0] ?>">
                                     </form>
                                 </td>
