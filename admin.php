@@ -47,9 +47,8 @@ if (isset($_POST['action'])) {
     <!-- Theme style -->
     <link rel="stylesheet" href="./public/dist/css/adminlte.min.css">
 </head>
-<body class="sidebar-mini layout-fixed" style="height: auto">
-<div class="wrapper">
-
+<body class="sidebar-mini layout-fixed container" style="height: auto">
+<div class="wrapper bg-light border">
     <!-- Navbar -->
     <nav class="navbar navbar-expand navbar-primary navbar-dark">
         <!-- Left navbar links -->
@@ -96,14 +95,14 @@ if (isset($_POST['action'])) {
                     <div class="user-panel mt-2 mb-2 d-flex justify-content-center align-items-center">
                         <img src="public/dist/img/user2-160x160.jpg"
                              class="img-circle elevation-2" alt="User Image">
-                        <div class="info">
-                            <a href="" class="d-block text-center">admin@leowind.com</a>
-                        </div>
                     </div>
+                        <div class="info">
+                            <a href="" class="d-block text-black text-center">admin@leowind.com</a>
+                        </div>
                     <div class="dropdown-divider"></div>
                     <div class="d-flex justify-content-around">
-                        <a href="" class="d-block">Inbox</a>
-                        <a href="" class="d-block">Đăng xuất</a>
+                        <a href="" class="d-block text-green">Inbox</a>
+                        <a href="" class="d-block text-danger">Đăng xuất</a>
                     </div>
                 </div>
             </li>
@@ -529,7 +528,7 @@ if (isset($_POST['action'])) {
         </section>
         <!-- /.content -->
     </div>
-    <footer class="main-footer">
+    <footer class="main-footer ml-0">
         <div class="float-right d-none d-sm-block">
             <b>Version</b> 3.2.0
         </div>
