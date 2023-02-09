@@ -34,6 +34,7 @@
 
 <h1>--ADMIN SCREEN--</h1>
 <h2>Current orders</h2>
+
 <table>
     <?php foreach ($orders as $order) { ?>
         <tr>
@@ -169,7 +170,7 @@
 
 <table>
     <?php
-    $orders = DB::SelectWithLimit('order_history',100);
+    $orders = DB::SelectWithLimit('order_history', 100);
     foreach ($orders as $order) { ?>
         <tr>
             <?php foreach ($order as $row) { ?>
@@ -179,3 +180,51 @@
     <?php } ?>
 </table>
 <h2>Statistic</h2>
+<table>
+    <tr>
+        <th>Earn this month</th>
+        <td>
+            <?php
+            $query = "
+                SELECT SUM(ser.price)
+                FROM order_history AS ord
+                INNER JOIN `service type` AS ser ON ser.id = ord.service_type_id
+                WHERE result > 0 AND month(end) = month(now());
+            ";
+            $row = mysqli_query(DB::connect(), $query);
+            echo '$' . mysqli_fetch_all($row)[0][0];
+            ?>
+        </td>
+    </tr>
+    <tr>
+        <th>new order</th>
+        <td>
+        <td>
+            <?php
+            $query = "
+                SELECT COUNT(*) FROM `customer_order`;
+            ";
+            $row = mysqli_query(DB::connect(), $query);
+            echo mysqli_fetch_all($row)[0][0];
+            ?>
+        </td>
+    </tr>
+    <?php
+        $query = "
+        SELECT 
+	DATE_FORMAT(start, '%a') as weekday,
+    COUNT(*)
+FROM `order_history`
+GROUP BY weekday;
+        ";
+
+    $row = mysqli_query(DB::connect(), $query);
+    $orderPerWeekday = mysqli_fetch_all($row);
+    foreach ($orderPerWeekday as $day) {
+    ?>
+    <tr>
+        <th> Orders on <?= $day[0] ?></th>
+        <td><?= $day[1] ?></td>
+    </tr>
+    <?php } ?>
+</table>
