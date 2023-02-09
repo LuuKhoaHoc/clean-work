@@ -31,12 +31,56 @@ if (isset($_POST['action'])) {
           href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&amp;display=fallback">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="./public/plugins/fontawesome-free/css/all.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <!-- DataTables -->
     <link rel="stylesheet" href="./public/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" href="./public/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
     <link rel="stylesheet" href="./public/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="./public/dist/css/adminlte.min.css">
+    <style type="text/css">/* Chart.js */
+        @keyframes chartjs-render-animation {
+            from {
+                opacity: .99
+            }
+            to {
+                opacity: 1
+            }
+        }
+
+        .chartjs-render-monitor {
+            animation: chartjs-render-animation 1ms
+        }
+
+        .chartjs-size-monitor, .chartjs-size-monitor-expand, .chartjs-size-monitor-shrink {
+            position: absolute;
+            direction: ltr;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            overflow: hidden;
+            pointer-events: none;
+            visibility: hidden;
+            z-index: -1
+        }
+
+        .chartjs-size-monitor-expand > div {
+            position: absolute;
+            width: 1000000px;
+            height: 1000000px;
+            left: 0;
+            top: 0
+        }
+
+        .chartjs-size-monitor-shrink > div {
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            left: 0;
+            top: 0
+        }</style>
 </head>
 <body class="sidebar-mini layout-fixed" style="height: auto">
 <div class="wrapper">
@@ -46,12 +90,6 @@ if (isset($_POST['action'])) {
         <ul class="navbar-nav">
             <li class="nav-item">
                 <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
-            </li>
-            <li class="nav-item d-none d-sm-inline-block">
-                <a href="../../index3.html" class="nav-link">Home</a>
-            </li>
-            <li class="nav-item d-none d-sm-inline-block">
-                <a href="#" class="nav-link">Contact</a>
             </li>
         </ul>
 
@@ -186,35 +224,22 @@ if (isset($_POST['action'])) {
     <!-- Main Sidebar Container -->
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
         <!-- Brand Logo -->
-        <a href="public/index3.html" class="brand-link">
-            <img src="public/dist/img/AdminLTELogo.png" alt="AdminLTE Logo"
+        <a href="" class="brand-link">
+            <img src="public/images/bubbles.png" alt="Clean Work Logo"
                  class="brand-image img-circle elevation-3" style="opacity: .8">
-            <span class="brand-text font-weight-light">Admin Page</span>
+            <span class="brand-text text-white text-uppercase">Clean Work</span>
         </a>
         <!-- Sidebar -->
         <div class="sidebar">
             <!-- Sidebar user (optional) -->
-            <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+            <div class="user-panel mt-3 pb-3 mb-3 d-flex align-items-center justify-content-center">
                 <div class="image">
                     <img src="public/dist/img/user2-160x160.jpg"
                          class="img-circle elevation-2" alt="User Image">
                 </div>
                 <div class="info">
-                    <a href="" class="d-block">Admin</a>
-                    <a href="" class="d-block text-center">Đăng xuất</a>
-                </div>
-            </div>
-            <!-- SidebarSearch Form -->
-            <div class="form-inline">
-                <div class="input-group" data-widget="sidebar-search">
-                    <input class="form-control form-control-sidebar"
-                           type="search" placeholder="Search"
-                           aria-label="Search">
-                    <div class="input-group-append">
-                        <button class="btn btn-sidebar">
-                            <i class="fas fa-search fa-fw"></i>
-                        </button>
-                    </div>
+                    <a href="" class="d-block">SuperAdmin@gmail.com</a>
+                    <a href="" class="d-block text-center text-danger">Đăng xuất</a>
                 </div>
             </div>
             <!-- Sidebar Menu -->
@@ -223,7 +248,7 @@ if (isset($_POST['action'])) {
                     data-widget="treeview" role="menu" data-accordion="false">
 
                     <li class="nav-item">
-                        <a href="index.php" class="nav-link">
+                        <a href="" class="nav-link">
                             <i class="nav-icon fas fa-tachometer-alt"></i>
                             <p>
                                 Dashboard
@@ -357,107 +382,185 @@ if (isset($_POST['action'])) {
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>---ADMIN SCREEN---</h1>
+                        <h1>Welcome to super admin page <strong class="text-green">[Admin_Name]</strong></h1>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item active">Admin Page</li>
+                            <li class="breadcrumb-item active">SuperAdmin Page</li>
                         </ol>
                     </div>
                 </div>
-            </div><!-- /.container-fluid -->
+            </div>
         </section>
 
         <!-- Main content -->
         <section class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-3 col-6">
+                        <!-- small box -->
+                        <div class="small-box bg-info">
+                            <div class="inner">
+                                <h3>150</h3>
 
-            <!-- Default box -->
-            <div class="card">
-                <div class="card-header">
-                    <h3 class="card-title">Orders Table</h3>
+                                <p>New Orders</p>
+                            </div>
+                            <div class="icon">
+                                <i class="ion ion-bag"></i>
+                            </div>
+                            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                        </div>
+                    </div>
+                    <!-- ./col -->
+                    <div class="col-lg-3 col-6">
+                        <!-- small box -->
+                        <div class="small-box bg-success">
+                            <div class="inner">
+                                <h3>53<sup style="font-size: 20px">%</sup></h3>
 
-                    <div class="card-tools">
-                        <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
-                            <i class="fas fa-minus"></i>
-                        </button>
-                        <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
-                            <i class="fas fa-times"></i>
-                        </button>
+                                <p>Bounce Rate</p>
+                            </div>
+                            <div class="icon">
+                                <i class="ion ion-stats-bars"></i>
+                            </div>
+                            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                        </div>
+                    </div>
+                    <!-- ./col -->
+                    <div class="col-lg-3 col-6">
+                        <!-- small box -->
+                        <div class="small-box bg-warning">
+                            <div class="inner">
+                                <h3>44</h3>
+
+                                <p>User Registrations</p>
+                            </div>
+                            <div class="icon">
+                                <i class="ion ion-person-add"></i>
+                            </div>
+                            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                        </div>
+                    </div>
+                    <!-- ./col -->
+                    <div class="col-lg-3 col-6">
+                        <!-- small box -->
+                        <div class="small-box bg-danger">
+                            <div class="inner">
+                                <h3>65</h3>
+
+                                <p>Unique Visitors</p>
+                            </div>
+                            <div class="icon">
+                                <i class="ion ion-pie-graph"></i>
+                            </div>
+                            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                        </div>
+                    </div>
+                    <!-- ./col -->
+                </div>
+                <div class="row">
+                    <div class="card col-lg-10">
+                        <div class="card-header border-0">
+                            <div class="d-flex justify-content-between">
+                                <h3 class="card-title">Sales</h3>
+                                <a href="javascript:void(0);">View Report</a>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="d-flex">
+                                <p class="d-flex flex-column">
+                                    <span class="text-bold text-lg">$18,230.00</span>
+                                    <span>Sales Over Time</span>
+                                </p>
+                                <p class="ml-auto d-flex flex-column text-right">
+                    <span class="text-success">
+                      <i class="fas fa-arrow-up"></i> 33.1%
+                    </span>
+                                    <span class="text-muted">Since last month</span>
+                                </p>
+                            </div>
+                            <!-- /.d-flex -->
+
+                            <div class="position-relative mb-4">
+                                <div class="chartjs-size-monitor">
+                                    <div class="chartjs-size-monitor-expand">
+                                        <div class=""></div>
+                                    </div>
+                                    <div class="chartjs-size-monitor-shrink">
+                                        <div class=""></div>
+                                    </div>
+                                </div>
+                                <canvas id="sales-chart" style="display: block; width: 764px; height: 200px;"
+                                        class="chartjs-render-monitor" width="764" height="200"></canvas>
+                            </div>
+
+                            <div class="d-flex flex-row justify-content-end">
+                  <span class="mr-2">
+                    <i class="fas fa-square text-primary"></i> This year
+                  </span>
+
+                                <span>
+                    <i class="fas fa-square text-gray"></i> Last year
+                  </span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.card -->
+
+                    <div class="card col-lg-2">
+                        <div class="card-header border-0">
+                            <h3 class="card-title">Online Store Overview</h3>
+                            <div class="card-tools">
+                                <a href="#" class="btn btn-sm btn-tool">
+                                    <i class="fas fa-download"></i>
+                                </a>
+                                <a href="#" class="btn btn-sm btn-tool">
+                                    <i class="fas fa-bars"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center border-bottom mb-3">
+                                <p class="text-success text-xl">
+                                    <i class="ion ion-ios-refresh-empty"></i>
+                                </p>
+                                <p class="d-flex flex-column text-right">
+                    <span class="font-weight-bold">
+                      <i class="ion ion-android-arrow-up text-success"></i> 12%
+                    </span>
+                                    <span class="text-muted">CONVERSION RATE</span>
+                                </p>
+                            </div>
+                            <!-- /.d-flex -->
+                            <div class="d-flex justify-content-between align-items-center border-bottom mb-3">
+                                <p class="text-warning text-xl">
+                                    <i class="ion ion-ios-cart-outline"></i>
+                                </p>
+                                <p class="d-flex flex-column text-right">
+                    <span class="font-weight-bold">
+                      <i class="ion ion-android-arrow-up text-warning"></i> 0.8%
+                    </span>
+                                    <span class="text-muted">SALES RATE</span>
+                                </p>
+                            </div>
+                            <!-- /.d-flex -->
+                            <div class="d-flex justify-content-between align-items-center mb-0">
+                                <p class="text-danger text-xl">
+                                    <i class="ion ion-ios-people-outline"></i>
+                                </p>
+                                <p class="d-flex flex-column text-right">
+                    <span class="font-weight-bold">
+                      <i class="ion ion-android-arrow-down text-danger"></i> 1%
+                    </span>
+                                    <span class="text-muted">REGISTRATION RATE</span>
+                                </p>
+                            </div>
+                            <!-- /.d-flex -->
+                        </div>
                     </div>
                 </div>
-                <div class="card-body">
-                    <table id="example2" class="table table-bordered table-hover dataTable dtr-inline"
-                           aria-describedby="example2_info">
-                        <caption style="font-size: larger; font-weight: bold; line-height: 36px;">Table show order
-                        </caption>
-                        <thead>
-                        <tr>
-                            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
-                                aria-label="Rendering engine: activate to sort column ascending">ID
-                            </th>
-                            <th class="sorting sorting_desc" tabindex="0" aria-controls="example2" rowspan="1"
-                                colspan="1" aria-label="Browser: activate to sort column ascending"
-                                aria-sort="descending">Time
-                            </th>
-                            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
-                                aria-label="Platform(s): activate to sort column ascending">Name
-                            </th>
-                            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
-                                aria-label="Engine version: activate to sort column ascending">Email
-                            </th>
-                            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
-                                aria-label="CSS grade: activate to sort column ascending">Phone
-                            </th>
-                            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
-                                aria-label="CSS grade: activate to sort column ascending">Service
-                            </th>
-                            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
-                                aria-label="CSS grade: activate to sort column ascending">Price
-                            </th>
-                            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
-                                aria-label="CSS grade: activate to sort column ascending">Address
-                            </th>
-                            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
-                                aria-label="CSS grade: activate to sort column ascending">State
-                            </th>
-                            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
-                                aria-label="CSS grade: activate to sort column ascending">Action
-                            </th>
-                        </tr>
-                        </thead>
-                        <?php foreach ($orders as $order) { ?>
-                            <tr>
-                                <?php foreach ($order as $row) { ?>
-                                    <td><?= $row ?></td>
-                                <?php } ?>
-                                <td class="btn-group">
-                                    <form action="" method="post">
-                                        <?php
-                                        echo match ($order[8]) {
-                                            "verifying" => '
-                                                            <button class="rounded-lg btn-success" type="submit" name="action" value="1">Confirmed</button>
-                                                            <button class="rounded-lg btn-danger" type="submit" name="action" value="0">Disproved</button>
-                                                            ',
-                                            "verified" => '
-                                                        <button class="rounded-lg btn-danger" type="submit" name="action" value="2">Dispatch</button>
-                                                        ',
-                                            default => '
-                                                        <button class="rounded-lg btn-danger" type="submit" name="action" value="-1">Disproved</button>
-                                                        ',
-                                        };
-                                        ?>
-                                        <input type="hidden" name="order-id" value="<?= $order[0] ?>">
-                                    </form>
-                                </td>
-                            </tr>
-                        <?php } ?>
-                    </table>
-                </div>
-                <!-- /.card-body -->
             </div>
-            <!-- /.card -->
-
         </section>
         <!-- /.content -->
     </div>
@@ -475,6 +578,7 @@ if (isset($_POST['action'])) {
     <!-- /.control-sidebar -->
 </div>
 <!-- ./wrapper -->
+
 <!-- jQuery -->
 <script src="public/plugins/jquery/jquery.min.js"></script>
 <!-- Bootstrap 4 -->
@@ -483,6 +587,8 @@ if (isset($_POST['action'])) {
 <!-- bs-custom-file-input -->
 <script src="public/plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
 <script src="public/dist/js/adminlte.min.js"></script>
+<script src="public/dist/js/adminlte.js"></script>
+<script src="public/plugins/chart.js/Chart.min.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="public/dist/js/demo.js"></script>
 <!-- Page specific script -->
@@ -503,6 +609,8 @@ if (isset($_POST['action'])) {
         });
     });
 </script>
+<!--Custom JS-->
+<script src="public/js/dashboard-chart.js"></script>
 <!-- DataTables  -->
 <script src="public/plugins/datatables/jquery.dataTables.min.js"></script>
 <script src="public/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>

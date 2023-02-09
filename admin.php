@@ -63,28 +63,6 @@ if (isset($_POST['action'])) {
         <!-- Right navbar links -->
         <ul class="navbar-nav ml-auto">
             <!-- Navbar Search -->
-            <li class="nav-item">
-                <a class="nav-link" data-widget="navbar-search" data-target="#navbar-search3" href="#" role="button">
-                    <i class="fas fa-search"></i>
-                </a>
-                <div class="navbar-search-block" id="navbar-search3">
-                    <form class="form-inline">
-                        <div class="input-group input-group-sm">
-                            <input class="form-control form-control-navbar" type="search" placeholder="Search"
-                                   aria-label="Search">
-                            <div class="input-group-append">
-                                <button class="btn btn-navbar" type="submit">
-                                    <i class="fas fa-search"></i>
-                                </button>
-                                <button class="btn btn-navbar" type="button" data-widget="navbar-search">
-                                    <i class="fas fa-times"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </li>
-
             <li class="nav-item dropdown">
                 <a class="nav-link user-panel" data-toggle="dropdown" href="#">
                     <img src="public/dist/img/user2-160x160.jpg"
@@ -96,9 +74,9 @@ if (isset($_POST['action'])) {
                         <img src="public/dist/img/user2-160x160.jpg"
                              class="img-circle elevation-2" alt="User Image">
                     </div>
-                        <div class="info">
-                            <a href="" class="d-block text-black text-center">admin@leowind.com</a>
-                        </div>
+                    <div class="info">
+                        <a href="" class="d-block text-black text-center">admin@leowind.com</a>
+                    </div>
                     <div class="dropdown-divider"></div>
                     <div class="d-flex justify-content-around">
                         <a href="" class="d-block text-green">Inbox</a>
@@ -139,7 +117,7 @@ if (isset($_POST['action'])) {
         </section>
 
         <!-- Main content -->
-        <section class="content">
+        <section id="data-tables" class="content">
 
             <!-- card -->
             <div class="card">
@@ -231,41 +209,41 @@ if (isset($_POST['action'])) {
                     </div>
                 </div>
                 <div class="card-body">
-                    <table id="example2" class="table table-bordered table-hover dataTable dtr-inline"
-                           aria-describedby="example2_info">
+                    <table id="example3" class="table table-bordered table-hover dataTable dtr-inline"
+                           aria-describedby="example3_info">
                         <caption style="font-size: larger; font-weight: bold; line-height: 36px;">Table show order
                         </caption>
                         <thead>
                         <tr>
-                            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
+                            <th class="sorting" tabindex="0" aria-controls="example3" rowspan="1" colspan="1"
                                 aria-label="Rendering engine: activate to sort column ascending">ID
                             </th>
-                            <th class="sorting sorting_desc" tabindex="0" aria-controls="example2" rowspan="1"
+                            <th class="sorting sorting_desc" tabindex="0" aria-controls="example3" rowspan="1"
                                 colspan="1" aria-label="Browser: activate to sort column ascending"
                                 aria-sort="descending">Time
                             </th>
-                            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
+                            <th class="sorting" tabindex="0" aria-controls="example3" rowspan="1" colspan="1"
                                 aria-label="Platform(s): activate to sort column ascending">Name
                             </th>
-                            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
+                            <th class="sorting" tabindex="0" aria-controls="example3" rowspan="1" colspan="1"
                                 aria-label="Engine version: activate to sort column ascending">Email
                             </th>
-                            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
+                            <th class="sorting" tabindex="0" aria-controls="example3" rowspan="1" colspan="1"
                                 aria-label="CSS grade: activate to sort column ascending">Phone
                             </th>
-                            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
+                            <th class="sorting" tabindex="0" aria-controls="example3" rowspan="1" colspan="1"
                                 aria-label="CSS grade: activate to sort column ascending">Service
                             </th>
-                            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
+                            <th class="sorting" tabindex="0" aria-controls="example3" rowspan="1" colspan="1"
                                 aria-label="CSS grade: activate to sort column ascending">Price
                             </th>
-                            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
+                            <th class="sorting" tabindex="0" aria-controls="example3" rowspan="1" colspan="1"
                                 aria-label="CSS grade: activate to sort column ascending">Address
                             </th>
-                            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
+                            <th class="sorting" tabindex="0" aria-controls="example3" rowspan="1" colspan="1"
                                 aria-label="CSS grade: activate to sort column ascending">State
                             </th>
-                            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
+                            <th class="sorting" tabindex="0" aria-controls="example3" rowspan="1" colspan="1"
                                 aria-label="CSS grade: activate to sort column ascending">Action
                             </th>
                         </tr>
@@ -309,41 +287,41 @@ if (isset($_POST['action'])) {
                     </div>
                 </div>
                 <div class="card-body">
-                    <table id="example2" class="table table-bordered table-hover dataTable dtr-inline"
-                           aria-describedby="example2_info">
+                    <table id="example4" class="table table-bordered table-hover dataTable dtr-inline"
+                           aria-describedby="example4_info">
                         <caption style="font-size: larger; font-weight: bold; line-height: 36px;">Table show order
                         </caption>
                         <thead>
                         <tr>
-                            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
+                            <th class="sorting" tabindex="0" aria-controls="example4" rowspan="1" colspan="1"
                                 aria-label="Rendering engine: activate to sort column ascending">ID
                             </th>
-                            <th class="sorting sorting_desc" tabindex="0" aria-controls="example2" rowspan="1"
+                            <th class="sorting sorting_desc" tabindex="0" aria-controls="example4" rowspan="1"
                                 colspan="1" aria-label="Browser: activate to sort column ascending"
                                 aria-sort="descending">Time
                             </th>
-                            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
+                            <th class="sorting" tabindex="0" aria-controls="example4" rowspan="1" colspan="1"
                                 aria-label="Platform(s): activate to sort column ascending">Name
                             </th>
-                            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
+                            <th class="sorting" tabindex="0" aria-controls="example4" rowspan="1" colspan="1"
                                 aria-label="Engine version: activate to sort column ascending">Email
                             </th>
-                            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
+                            <th class="sorting" tabindex="0" aria-controls="example4" rowspan="1" colspan="1"
                                 aria-label="CSS grade: activate to sort column ascending">Phone
                             </th>
-                            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
+                            <th class="sorting" tabindex="0" aria-controls="example4" rowspan="1" colspan="1"
                                 aria-label="CSS grade: activate to sort column ascending">Service
                             </th>
-                            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
+                            <th class="sorting" tabindex="0" aria-controls="example4" rowspan="1" colspan="1"
                                 aria-label="CSS grade: activate to sort column ascending">Price
                             </th>
-                            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
+                            <th class="sorting" tabindex="0" aria-controls="example4" rowspan="1" colspan="1"
                                 aria-label="CSS grade: activate to sort column ascending">Address
                             </th>
-                            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
+                            <th class="sorting" tabindex="0" aria-controls="example4" rowspan="1" colspan="1"
                                 aria-label="CSS grade: activate to sort column ascending">State
                             </th>
-                            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
+                            <th class="sorting" tabindex="0" aria-controls="example4" rowspan="1" colspan="1"
                                 aria-label="CSS grade: activate to sort column ascending">Action
                             </th>
                         </tr>
@@ -384,41 +362,41 @@ if (isset($_POST['action'])) {
                     </div>
                 </div>
                 <div class="card-body">
-                    <table id="example2" class="table table-bordered table-hover dataTable dtr-inline"
-                           aria-describedby="example2_info">
+                    <table id="example5" class="table table-bordered table-hover dataTable dtr-inline"
+                           aria-describedby="example5_info">
                         <caption style="font-size: larger; font-weight: bold; line-height: 36px;">Table show order
                         </caption>
                         <thead>
                         <tr>
-                            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
+                            <th class="sorting" tabindex="0" aria-controls="example5" rowspan="1" colspan="1"
                                 aria-label="Rendering engine: activate to sort column ascending">ID
                             </th>
-                            <th class="sorting sorting_desc" tabindex="0" aria-controls="example2" rowspan="1"
+                            <th class="sorting sorting_desc" tabindex="0" aria-controls="example5" rowspan="1"
                                 colspan="1" aria-label="Browser: activate to sort column ascending"
                                 aria-sort="descending">Time
                             </th>
-                            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
+                            <th class="sorting" tabindex="0" aria-controls="example5" rowspan="1" colspan="1"
                                 aria-label="Platform(s): activate to sort column ascending">Name
                             </th>
-                            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
+                            <th class="sorting" tabindex="0" aria-controls="example5" rowspan="1" colspan="1"
                                 aria-label="Engine version: activate to sort column ascending">Email
                             </th>
-                            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
+                            <th class="sorting" tabindex="0" aria-controls="example5" rowspan="1" colspan="1"
                                 aria-label="CSS grade: activate to sort column ascending">Phone
                             </th>
-                            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
+                            <th class="sorting" tabindex="0" aria-controls="example5" rowspan="1" colspan="1"
                                 aria-label="CSS grade: activate to sort column ascending">Service
                             </th>
-                            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
+                            <th class="sorting" tabindex="0" aria-controls="example5" rowspan="1" colspan="1"
                                 aria-label="CSS grade: activate to sort column ascending">Price
                             </th>
-                            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
+                            <th class="sorting" tabindex="0" aria-controls="example5" rowspan="1" colspan="1"
                                 aria-label="CSS grade: activate to sort column ascending">Address
                             </th>
-                            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
+                            <th class="sorting" tabindex="0" aria-controls="example5" rowspan="1" colspan="1"
                                 aria-label="CSS grade: activate to sort column ascending">State
                             </th>
-                            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
+                            <th class="sorting" tabindex="0" aria-controls="example5" rowspan="1" colspan="1"
                                 aria-label="CSS grade: activate to sort column ascending">Action
                             </th>
                         </tr>
@@ -459,41 +437,41 @@ if (isset($_POST['action'])) {
                     </div>
                 </div>
                 <div class="card-body">
-                    <table id="example2" class="table table-bordered table-hover dataTable dtr-inline"
-                           aria-describedby="example2_info">
+                    <table id="example6" class="table table-bordered table-hover dataTable dtr-inline"
+                           aria-describedby="example6_info">
                         <caption style="font-size: larger; font-weight: bold; line-height: 36px;">Table show order
                         </caption>
                         <thead>
                         <tr>
-                            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
+                            <th class="sorting" tabindex="0" aria-controls="example6" rowspan="1" colspan="1"
                                 aria-label="Rendering engine: activate to sort column ascending">ID
                             </th>
-                            <th class="sorting sorting_desc" tabindex="0" aria-controls="example2" rowspan="1"
+                            <th class="sorting sorting_desc" tabindex="0" aria-controls="example6" rowspan="1"
                                 colspan="1" aria-label="Browser: activate to sort column ascending"
                                 aria-sort="descending">Time
                             </th>
-                            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
+                            <th class="sorting" tabindex="0" aria-controls="example6" rowspan="1" colspan="1"
                                 aria-label="Platform(s): activate to sort column ascending">Name
                             </th>
-                            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
+                            <th class="sorting" tabindex="0" aria-controls="example6" rowspan="1" colspan="1"
                                 aria-label="Engine version: activate to sort column ascending">Email
                             </th>
-                            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
+                            <th class="sorting" tabindex="0" aria-controls="example6" rowspan="1" colspan="1"
                                 aria-label="CSS grade: activate to sort column ascending">Phone
                             </th>
-                            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
+                            <th class="sorting" tabindex="0" aria-controls="example6" rowspan="1" colspan="1"
                                 aria-label="CSS grade: activate to sort column ascending">Service
                             </th>
-                            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
+                            <th class="sorting" tabindex="0" aria-controls="example6" rowspan="1" colspan="1"
                                 aria-label="CSS grade: activate to sort column ascending">Price
                             </th>
-                            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
+                            <th class="sorting" tabindex="0" aria-controls="example6" rowspan="1" colspan="1"
                                 aria-label="CSS grade: activate to sort column ascending">Address
                             </th>
-                            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
+                            <th class="sorting" tabindex="0" aria-controls="example6" rowspan="1" colspan="1"
                                 aria-label="CSS grade: activate to sort column ascending">State
                             </th>
-                            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
+                            <th class="sorting" tabindex="0" aria-controls="example6" rowspan="1" colspan="1"
                                 aria-label="CSS grade: activate to sort column ascending">Action
                             </th>
                         </tr>
@@ -560,6 +538,42 @@ if (isset($_POST['action'])) {
             "autoWidth": false,
         });
         $('#example2').DataTable({
+            "paging": true,
+            "lengthChange": false,
+            "searching": false,
+            "ordering": true,
+            "info": true,
+            "autoWidth": false,
+            "responsive": true,
+        });
+        $('#example3').DataTable({
+            "paging": true,
+            "lengthChange": false,
+            "searching": false,
+            "ordering": true,
+            "info": true,
+            "autoWidth": false,
+            "responsive": true,
+        });
+        $('#example4').DataTable({
+            "paging": true,
+            "lengthChange": false,
+            "searching": false,
+            "ordering": true,
+            "info": true,
+            "autoWidth": false,
+            "responsive": true,
+        });
+        $('#example5').DataTable({
+            "paging": true,
+            "lengthChange": false,
+            "searching": false,
+            "ordering": true,
+            "info": true,
+            "autoWidth": false,
+            "responsive": true,
+        });
+        $('#example6').DataTable({
             "paging": true,
             "lengthChange": false,
             "searching": false,
