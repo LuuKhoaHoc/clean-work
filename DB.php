@@ -213,17 +213,17 @@ class DB
 
     }
 
-    public static function verified_ongoing($ord_id)
+    public static function verified_ontheway($ord_id)
     {
         self::UpdateOrderState(4, $ord_id);
     }
 
-    public static function ongoing_inprogress($ord_id)
+    public static function ontheway_inprogress($ord_id)
     {
         self::UpdateOrderState(5, $ord_id);
     }
 
-    public static function inprogress_completed($ord_id)
+    public static function inprogress_finished($ord_id)
     {
         self::UpdateOrderState(6, $ord_id);
 
@@ -234,7 +234,7 @@ class DB
         self::DeleteTeam($ord_id);
     }
 
-    public static function completed_finished($ord_id)
+    public static function finished_ended($ord_id)
     {
         self::UpdateHistoryResult(1, $ord_id);
 

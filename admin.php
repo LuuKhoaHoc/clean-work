@@ -10,16 +10,16 @@ if (isset($_POST['action'])) {
             DB::verifying_verified($_POST['order-id']);
             break;
         case "2":
-            DB::verified_ongoing($_POST['order-id']);
+            DB::verified_ontheway($_POST['order-id']);
             break;
         case "3":
-            DB::ongoing_inprogress($_POST['order-id']);
+            DB::ontheway_inprogress($_POST['order-id']);
             break;
         case "4":
-            DB::inprogress_completed($_POST['order-id']);
+            DB::inprogress_finished($_POST['order-id']);
             break;
         case "5":
-            DB::completed_finished($_POST['order-id']);
+            DB::finished_ended($_POST['order-id']);
             break;
         default:
     }

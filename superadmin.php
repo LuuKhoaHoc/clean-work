@@ -11,7 +11,7 @@ if (isset($_POST['action'])) {
             DB::verifying_verified($_POST['order-id']);
             break;
         case "2":
-            DB::verified_ongoing($_POST['order-id']);
+            DB::verified_ontheway($_POST['order-id']);
             break;
         default:
     }

@@ -13,16 +13,16 @@
                 DB::verifying_verified($_POST['order-id']);
                 break;
             case "2":
-                DB::verified_ongoing($_POST['order-id']);
+                DB::verified_ontheway($_POST['order-id']);
                 break;
             case "3":
-                DB::ongoing_inprogress($_POST['order-id']);
+                DB::ontheway_inprogress($_POST['order-id']);
                 break;
             case "4":
-                DB::inprogress_completed($_POST['order-id']);
+                DB::inprogress_finished($_POST['order-id']);
                 break;
             case "5":
-                DB::completed_finished($_POST['order-id']);
+                DB::finished_ended($_POST['order-id']);
                 break;
             default:
         }
@@ -137,8 +137,8 @@
             <?php } ?>
             <td class="btn-group">
                 <form action="" method="post">
+                    <button class="rounded-lg btn-success" type="submit" name="action" value="4">Received</button>
                     <button class="rounded-lg btn-danger" type="submit" name="action" value="0">Disproved</button>
-
                     <input type="hidden" name="order-id" value="<?= $order[0] ?>">
                 </form>
             </td>
@@ -192,7 +192,7 @@
                 WHERE result > 0 AND month(end) = month(now());
             ";
             $row = mysqli_query(DB::connect(), $query);
-            echo '$' . mysqli_fetch_all($row)[0][0];
+            echo '$'.mysqli_fetch_all($row)[0][0];
             ?>
         </td>
     </tr>
@@ -210,21 +210,21 @@
         </td>
     </tr>
     <?php
-        $query = "
-        SELECT 
-	DATE_FORMAT(start, '%a') as weekday,
-    COUNT(*)
-FROM `order_history`
-GROUP BY weekday;
-        ";
+    $query = "
+                SELECT
+                DATE_FORMAT(start, '%a') as weekday,
+                COUNT(*)
+                FROM `order_history`
+                GROUP BY weekday;
+                ";
 
     $row = mysqli_query(DB::connect(), $query);
     $orderPerWeekday = mysqli_fetch_all($row);
     foreach ($orderPerWeekday as $day) {
-    ?>
-    <tr>
-        <th> Orders on <?= $day[0] ?></th>
-        <td><?= $day[1] ?></td>
-    </tr>
+        ?>
+        <tr>
+            <th> Orders on <?= $day[0] ?></th>
+            <td><?= $day[1] ?></td>
+        </tr>
     <?php } ?>
 </table>
