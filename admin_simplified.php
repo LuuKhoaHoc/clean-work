@@ -34,7 +34,7 @@
 
 <h1>--ADMIN SCREEN--</h1>
 <h2>Current orders</h2>
-
+<button disabled>ádfsdf</button>
 <table>
     <?php foreach ($orders as $order) { ?>
         <tr>
@@ -210,7 +210,7 @@
         </td>
     </tr>
     <?php
-        $query = "
+    $query = "
         SELECT 
 	DATE_FORMAT(start, '%a') as weekday,
     COUNT(*)
@@ -219,12 +219,24 @@ GROUP BY weekday;
         ";
 
     $row = mysqli_query(DB::connect(), $query);
-    $orderPerWeekday = mysqli_fetch_all($row);
-    foreach ($orderPerWeekday as $day) {
-    ?>
-    <tr>
-        <th> Orders on <?= $day[0] ?></th>
-        <td><?= $day[1] ?></td>
-    </tr>
+    $temp = mysqli_fetch_all($row);
+    foreach ($temp as $day) {
+        ?>
+        <tr>
+            <th> Orders on <?= $day[0] ?></th>
+            <td><?= $day[1] ?></td>
+        </tr>
     <?php } ?>
+    <tr>
+        <th>New customer</th>
+        <td>
+            <?php
+            $query = "
+                SELECT count(*) FROM `customer` WHERE `customer`.time > Last_day(adddate(now(), interval -1 month));
+            ";
+            $row = mysqli_query(DB::connect(), $query);
+            echo mysqli_fetch_all($row)[0][0];
+            ?>
+        </td>
+    </tr>
 </table>
