@@ -192,7 +192,7 @@
                 WHERE result > 0 AND month(end) = month(now());
             ";
             $row = mysqli_query(DB::connect(), $query);
-            echo '$' . mysqli_fetch_all($row)[0][0];
+            echo '$'.mysqli_fetch_all($row)[0][0];
             ?>
         </td>
     </tr>
