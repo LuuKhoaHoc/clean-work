@@ -471,7 +471,7 @@ if (isset($_POST['action'])) {
                             <div class="inner">
                                 <h3>65</h3>
 
-                                <p>Unique Visitors</p>
+                                <p>Total Orders</p>
                             </div>
                             <div class="icon">
                                 <i class="ion ion-pie-graph"></i>
@@ -653,15 +653,34 @@ if (isset($_POST['action'])) {
 
         var $salesChart = $('#sales-chart')
         // eslint-disable-next-line no-unused-vars
+        <?php
+        $query = "
+                SELECT MONTH(ORD.`end`) as MONTH, SUM(ser.price) as Money
+                 FROM `order_history` AS ORD INNER JOIN `service type` AS ser ON ser.id = ORD.service_type_id
+                 WHERE ORD.result > 0 GROUP BY MONTH ORDER BY MONTH;";
+        $row = mysqli_query(DB::connect(), $query);
+        $arr = mysqli_fetch_all($row);
+        $data = array();
+        $data1 = array();
+        foreach ($arr as $item) {
+            $month_name = date("M", mktime(0, 0, 0, $item[0], 10));
+            $data[] = "'".$month_name."'";
+        }
+        foreach ($arr as $item) {
+            $data1[] = $item[1];
+        }
+        $month =strtoupper(implode(",",$data));
+        $money = implode(",",$data1);
+        ?>
         var salesChart = new Chart($salesChart, {
             type: 'bar',
             data: {
-                labels: ['DEC', 'JAN', 'FEB', 'MAR', 'ARL', 'MAY', 'JUNE'],
+                labels: [<?= $month ?>],
                 datasets: [
                     {
                         backgroundColor: '#007bff',
                         borderColor: '#007bff',
-                        data: [1000, 2000, 3000, 2500, 2700, 2500, 3000]
+                        data: [<?= $money ?>]
                     },
                     {
                         backgroundColor: '#ced4da',
@@ -717,71 +736,6 @@ if (isset($_POST['action'])) {
             }
         })
 
-        var $visitorsChart = $('#visitors-chart')
-        // eslint-disable-next-line no-unused-vars
-        var visitorsChart = new Chart($visitorsChart, {
-            data: {
-                labels: ['18th', '20th', '22nd', '24th', '26th', '28th', '30th'],
-                datasets: [{
-                    type: 'line',
-                    data: [100, 120, 170, 167, 180, 177, 160],
-                    backgroundColor: 'transparent',
-                    borderColor: '#007bff',
-                    pointBorderColor: '#007bff',
-                    pointBackgroundColor: '#007bff',
-                    fill: false
-                    // pointHoverBackgroundColor: '#007bff',
-                    // pointHoverBorderColor    : '#007bff'
-                },
-                    {
-                        type: 'line',
-                        data: [60, 80, 70, 67, 80, 77, 100],
-                        backgroundColor: 'tansparent',
-                        borderColor: '#ced4da',
-                        pointBorderColor: '#ced4da',
-                        pointBackgroundColor: '#ced4da',
-                        fill: false
-                        // pointHoverBackgroundColor: '#ced4da',
-                        // pointHoverBorderColor    : '#ced4da'
-                    }]
-            },
-            options: {
-                maintainAspectRatio: false,
-                tooltips: {
-                    mode: mode,
-                    intersect: intersect
-                },
-                hover: {
-                    mode: mode,
-                    intersect: intersect
-                },
-                legend: {
-                    display: false
-                },
-                scales: {
-                    yAxes: [{
-                        // display: false,
-                        gridLines: {
-                            display: true,
-                            lineWidth: '4px',
-                            color: 'rgba(0, 0, 0, .2)',
-                            zeroLineColor: 'transparent'
-                        },
-                        ticks: $.extend({
-                            beginAtZero: true,
-                            suggestedMax: 200
-                        }, ticksStyle)
-                    }],
-                    xAxes: [{
-                        display: true,
-                        gridLines: {
-                            display: false
-                        },
-                        ticks: ticksStyle
-                    }]
-                }
-            }
-        })
     })
 
     // lgtm [js/unused-local-variable]

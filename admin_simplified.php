@@ -248,13 +248,31 @@
             echo mysqli_fetch_all($row)[0][0];
             ?>
         </td>
-    </tr><tr>
+    </tr>
+    <tr>
         <th>Month and money</th>
         <td>
             <?php
-            $query = "SELECT MONTH(ORD.`end`) AS MONTH, SUM(ser.price) FROM `order_history` AS ORD INNER JOIN `service type` AS ser ON ser.id = ORD.service_type_id WHERE ORD.result > 0 GROUP BY MONTH ORDER BY MONTH;";
+            $query = "
+                SELECT MONTH(ORD.`end`) as MONTH, SUM(ser.price) as Money
+                 FROM `order_history` AS ORD INNER JOIN `service type` AS ser ON ser.id = ORD.service_type_id
+                 WHERE ORD.result > 0 GROUP BY MONTH ORDER BY MONTH;";
             $row = mysqli_query(DB::connect(), $query);
-            var_dump(mysqli_fetch_all($row));
+            $arr = mysqli_fetch_all($row);
+            $data = array();
+            $data1 = array();
+            foreach ($arr as $item) {
+                $month_name = date("M", mktime(0, 0, 0, $item[0], 10));
+                $data[] = "'".$month_name."'";
+            }
+            foreach ($arr as $item) {
+                $data1[] = $item[1];
+            }
+            $month = implode(",",$data);
+            $money = implode(",",$data1);
+
+            echo strtoupper($month);
+
             ?>
         </td>
     </tr>
