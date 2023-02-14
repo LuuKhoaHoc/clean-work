@@ -404,9 +404,7 @@ if (isset($_POST['action'])) {
                             <div class="inner">
                                 <h3>
                                     <?php
-                                    $query = "SELECT COUNT(*) FROM `customer_order`;";
-                                    $row = mysqli_query(DB::connect(), $query);
-                                    echo mysqli_fetch_all($row)[0][0];
+                                    DB::countNewOrder();
                                     ?>
                                 </h3>
 
@@ -425,14 +423,7 @@ if (isset($_POST['action'])) {
                             <div class="inner">
                                 <h3>
                                     <?php
-                                    $query = "
-                                        SELECT SUM(ser.price)
-                                        FROM order_history AS ord
-                                        INNER JOIN `service type` AS ser ON ser.id = ord.service_type_id
-                                        WHERE result > 0 AND month(end) = month(now());
-                                    ";
-                                    $row = mysqli_query(DB::connect(), $query);
-                                    echo '$' . mysqli_fetch_all($row)[0][0];
+                                    DB::earnThisMonth();
                                     ?>
                                 </h3>
 
@@ -451,9 +442,7 @@ if (isset($_POST['action'])) {
                             <div class="inner">
                                 <h3>
                                     <?php
-                                    $query = "SELECT count(*) FROM `customer` WHERE `customer`.time > Last_day(adddate(now(), interval -1 month));";
-                                    $row = mysqli_query(DB::connect(), $query);
-                                    echo mysqli_fetch_all($row)[0][0];
+                                    DB::countCusThisMonth();
                                     ?>
                                 </h3>
                                 <p>New Customers</p>
@@ -469,7 +458,7 @@ if (isset($_POST['action'])) {
                         <!-- small box -->
                         <div class="small-box bg-danger">
                             <div class="inner">
-                                <h3>65</h3>
+                                <h3><?php DB::totalOrders(); ?></h3>
 
                                 <p>Total Orders</p>
                             </div>
@@ -492,11 +481,10 @@ if (isset($_POST['action'])) {
                         <div class="card-body">
                             <div class="d-flex">
                                 <p class="d-flex flex-column">
-                                    <span class="text-bold text-lg">
+                                    <span class="text-bold text-lg text-green">
+                                        $
                                          <?php
-                                         $query = "SELECT SUM(ser.price) FROM `order_history` AS ORD INNER JOIN `service type` AS ser ON ser.id = ORD.service_type_id WHERE ord.result > 0;";
-                                         $row = mysqli_query(DB::connect(), $query);
-                                         echo '$' . mysqli_fetch_all($row)[0][0];
+                                         DB::totalMoney();
                                          ?>
                                     </span>
                                     <span>Sales Over Time</span>
@@ -654,23 +642,16 @@ if (isset($_POST['action'])) {
         var $salesChart = $('#sales-chart')
         // eslint-disable-next-line no-unused-vars
         <?php
-        $query = "
-                SELECT MONTH(ORD.`end`) as MONTH, SUM(ser.price) as Money
-                 FROM `order_history` AS ORD INNER JOIN `service type` AS ser ON ser.id = ORD.service_type_id
-                 WHERE ORD.result > 0 GROUP BY MONTH ORDER BY MONTH;";
-        $row = mysqli_query(DB::connect(), $query);
-        $arr = mysqli_fetch_all($row);
+        $arr = DB::monthWithMoney();
         $data = array();
         $data1 = array();
         foreach ($arr as $item) {
             $month_name = date("M", mktime(0, 0, 0, $item[0], 10));
             $data[] = "'".$month_name."'";
-        }
-        foreach ($arr as $item) {
             $data1[] = $item[1];
         }
-        $month =strtoupper(implode(",",$data));
-        $money = implode(",",$data1);
+        $month = strtoupper(implode(",", $data));
+        $money = implode(",", $data1);
         ?>
         var salesChart = new Chart($salesChart, {
             type: 'bar',
