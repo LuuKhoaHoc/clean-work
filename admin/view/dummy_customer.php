@@ -1,4 +1,7 @@
 <?php
+
+use Administrator\CleanWork\classes\DB;
+
 require_once "DB.php";
 
 if (isset($_POST['action'])) {
@@ -17,13 +20,13 @@ if (isset($_POST['action'])) {
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&amp;display=fallback">
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="./public/plugins/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="../../public/plugins/fontawesome-free/css/all.min.css">
     <!-- DataTables -->
-    <link rel="stylesheet" href="./public/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
-    <link rel="stylesheet" href="./public/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
-    <link rel="stylesheet" href="./public/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+    <link rel="stylesheet" href="../../public/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="../../public/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+    <link rel="stylesheet" href="../../public/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
     <!-- Theme style -->
-    <link rel="stylesheet" href="./public/dist/css/adminlte.min.css">
+    <link rel="stylesheet" href="../../public/dist/css/adminlte.min.css">
 </head>
 <body class="sidebar-mini layout-fixed container" style="height: auto">
 <div class="wrapper bg-light border">
@@ -32,7 +35,7 @@ if (isset($_POST['action'])) {
         <!-- Left navbar links -->
         <ul class="navbar-nav">
             <a href="" class="brand-link">
-                <img src="public/images/bubbles.png" alt="Clean Work Logo"
+                <img src="../../public/images/bubbles.png" alt="Clean Work Logo"
                      class="brand-image img-circle elevation-3" style="opacity: .8">
                 <span class="brand-text text-white text-uppercase">Clean Work</span>
             </a>
@@ -43,7 +46,7 @@ if (isset($_POST['action'])) {
             <!-- Navbar Search -->
             <li class="nav-item dropdown mr-2">
                 <a class="nav-item user-panel d-flex align-items-center" href="#">
-                    <img src="public/dist/img/avatar.png"
+                    <img src="../../public/dist/img/avatar.png"
                          class="img-circle" alt="User Image">
                     <span class="text-center text-white ml-2">0778978372</span>
                 </a>
@@ -133,7 +136,7 @@ if (isset($_POST['action'])) {
                         </tr>
                         </thead>
                         <?php
-                        $orders = DB::show_order();
+                        $orders = admin_Model::show_order();
                         foreach ($orders as $order) { ?>
                             <tr>
                                 <?php foreach ($order as $row) { ?>
@@ -168,13 +171,13 @@ if (isset($_POST['action'])) {
 </div>
 <!-- ./wrapper -->
 <!-- jQuery -->
-<script src="public/plugins/jquery/jquery.min.js"></script>
+<script src="../../public/plugins/jquery/jquery.min.js"></script>
 <!-- Bootstrap 4 -->
-<script src="public/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="../../public/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- AdminLTE App -->
 <!-- bs-custom-file-input -->
-<script src="public/plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
-<script src="public/dist/js/adminlte.min.js"></script>
+<script src="../../public/plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
+<script src="../../public/dist/js/adminlte.min.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script>
     $(function () {
@@ -194,9 +197,9 @@ if (isset($_POST['action'])) {
     });
 </script>
 <!-- DataTables  -->
-<script src="public/plugins/datatables/jquery.dataTables.min.js"></script>
-<script src="public/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
-<script src="public/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
-<script src="public/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+<script src="../../public/plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="../../public/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+<script src="../../public/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+<script src="../../public/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
 </body>
 </html>

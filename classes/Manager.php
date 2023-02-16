@@ -1,8 +1,8 @@
 <?php
+
+namespace Administrator\CleanWork\classes;
 require_once "interfaces.php";
 require_once "DB.php";
-
-use clean_work_design\IManager;
 
 class Manager
 {
@@ -22,10 +22,10 @@ class Manager
     public function receiveOrder(string $name, string $email, string $phone, string $address, int $sti, string $cmt)
     {
         if (empty(DB::SelectCustomerByEmail($email))) {
-            DB::InsertIntoCustomer($name,$email,$phone);
+            DB::InsertIntoCustomer($name, $email, $phone);
         }
         $cs = DB::SelectCustomerByEmail($email);
-        DB::InsertIntoOrder($cs["id"],$sti, $address, $cmt);
+        DB::InsertIntoOrder($cs["id"], $sti, $address, $cmt);
     }
 
     public function confirmOrder(int $id, int $numState = 3)

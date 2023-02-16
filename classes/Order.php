@@ -2,26 +2,7 @@
 
 namespace CleanWork;
 
-enum OrderState
-{
-    case WAITING;
-    case VERIFYING;
-    case VERIFIED;
-    case ON_GOING;
-    case IN_PROGRESS;
-    case COMPLETED;
-    case FINISHED;
-
-}
-
-enum ServiceType
-{
-    case KITCHEN_CLEANING;
-    case CAR_WASHING;
-    case OFFICE_CLEANING;
-    case FACTORY_CLEANING;
-
-}
+use Administrator\CleanWork\classes\Customer;
 
 class Order
 {

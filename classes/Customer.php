@@ -1,6 +1,8 @@
 <?php
 
-namespace CleanWork;
+namespace Administrator\CleanWork\classes;
+
+use CleanWork\Order;
 
 class Customer
 {

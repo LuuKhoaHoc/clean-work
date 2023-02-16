@@ -1,17 +1,19 @@
 <?php
-require 'DB.php';
-$orders = DB::show_order();
+
+require 'admin/model/superadmin_Model.php';
+
+$orders = superadmin_Model::show_order();
 if (isset($_POST['action'])) {
     switch ($_POST['action']) {
         case "0":
         case "-1":
-            DB::disproved($_POST['order-id']);
+            superadmin_Model::disproved($_POST['order-id']);
             break;
         case "1":
-            DB::verifying_verified($_POST['order-id']);
+            superadmin_Model::verifying_verified($_POST['order-id']);
             break;
         case "2":
-            DB::verified_ontheway($_POST['order-id']);
+            superadmin_Model::verified_ontheway($_POST['order-id']);
             break;
         default:
     }
@@ -403,9 +405,7 @@ if (isset($_POST['action'])) {
                         <div class="small-box bg-info">
                             <div class="inner">
                                 <h3>
-                                    <?php
-                                    DB::countNewOrder();
-                                    ?>
+                                    <?= superadmin_Model::countNewOrder(); ?>
                                 </h3>
 
                                 <p>New Orders</p>
@@ -422,9 +422,7 @@ if (isset($_POST['action'])) {
                         <div class="small-box bg-success">
                             <div class="inner">
                                 <h3>
-                                    <?php
-                                    DB::earnThisMonth();
-                                    ?>
+                                    <?= superadmin_Model::earnThisMonth(); ?>
                                 </h3>
 
                                 <p>Earn This Month</p>
@@ -441,9 +439,7 @@ if (isset($_POST['action'])) {
                         <div class="small-box bg-warning">
                             <div class="inner">
                                 <h3>
-                                    <?php
-                                    DB::countCusThisMonth();
-                                    ?>
+                                    <?= superadmin_Model::countCusThisMonth(); ?>
                                 </h3>
                                 <p>New Customers</p>
                             </div>
@@ -458,7 +454,7 @@ if (isset($_POST['action'])) {
                         <!-- small box -->
                         <div class="small-box bg-danger">
                             <div class="inner">
-                                <h3><?php DB::totalOrders(); ?></h3>
+                                <h3><?= superadmin_Model::totalOrders(); ?></h3>
 
                                 <p>Total Orders</p>
                             </div>
@@ -482,10 +478,7 @@ if (isset($_POST['action'])) {
                             <div class="d-flex">
                                 <p class="d-flex flex-column">
                                     <span class="text-bold text-lg text-green">
-                                        $
-                                         <?php
-                                         DB::totalMoney();
-                                         ?>
+                                        $ <?= superadmin_Model::totalMoney(); ?>
                                     </span>
                                     <span>Sales Over Time</span>
                                 </p>
@@ -642,12 +635,12 @@ if (isset($_POST['action'])) {
         var $salesChart = $('#sales-chart')
         // eslint-disable-next-line no-unused-vars
         <?php
-        $arr = DB::monthWithMoney();
+        $arr = superadmin_Model::monthWithMoney();
         $data = array();
         $data1 = array();
         foreach ($arr as $item) {
             $month_name = date("M", mktime(0, 0, 0, $item[0], 10));
-            $data[] = "'".$month_name."'";
+            $data[] = "'" . $month_name . "'";
             $data1[] = $item[1];
         }
         $month = strtoupper(implode(",", $data));

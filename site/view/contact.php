@@ -17,11 +17,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,700;1,400&display=swap"
           rel="stylesheet">
 
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../public/css/bootstrap.min.css" rel="stylesheet">
 
-    <link href="css/bootstrap-icons.css" rel="stylesheet">
+    <link href="../../public/css/bootstrap-icons.css" rel="stylesheet">
 
-    <link href="css/tooplate-clean-work.css" rel="stylesheet">
+    <link href="../../public/css/tooplate-clean-work.css" rel="stylesheet">
     <!--
 
     Tooplate 2132 Clean Work
@@ -65,8 +65,8 @@
 
 <nav class="navbar navbar-expand-lg">
     <div class="container">
-        <a class="navbar-brand" href="index.html">
-            <img src="images/bubbles.png" class="logo img-fluid" alt="">
+        <a class="navbar-brand" href="../../index.html">
+            <img src="../../public/images/bubbles.png" class="logo img-fluid" alt="">
 
             <span class="ms-2">Clean Work</span>
         </a>
@@ -79,7 +79,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="index.html">Home</a>
+                    <a class="nav-link" href="../../index.html">Home</a>
                 </li>
 
                 <li class="nav-item">
@@ -126,7 +126,7 @@
                 <div class="col-lg-4 col-12 d-flex justify-content-lg-end align-items-center ms-auto">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb justify-content-center">
-                            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                            <li class="breadcrumb-item"><a href="../../index.html">Home</a></li>
 
                             <li class="breadcrumb-item active" aria-current="page">Contact</li>
                         </ol>
@@ -237,7 +237,7 @@
 
             <div class="col-lg-12 col-12 d-flex align-items-center mb-4 pb-2">
                 <div>
-                    <img src="images/bubbles.png" class="logo img-fluid" alt="">
+                    <img src="../../public/images/bubbles.png" class="logo img-fluid" alt="">
                 </div>
 
                 <ul class="footer-menu d-flex flex-wrap ms-5">
@@ -375,15 +375,15 @@
 </footer>
 
 <!-- JAVASCRIPT FILES -->
-<script src="js/jquery.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/jquery.backstretch.min.js"></script>
-<script src="js/counter.js"></script>
-<script src="js/countdown.js"></script>
-<script src="js/init.js"></script>
-<script src="js/modernizr.js"></script>
-<script src="js/animated-headline.js"></script>
-<script src="js/custom.js"></script>
+<script src="../../public/js/jquery.min.js"></script>
+<script src="../../public/js/bootstrap.min.js"></script>
+<script src="../../public/js/jquery.backstretch.min.js"></script>
+<script src="../../public/js/counter.js"></script>
+<script src="../../public/js/countdown.js"></script>
+<script src="../../public/js/init.js"></script>
+<script src="../../public/js/modernizr.js"></script>
+<script src="../../public/js/animated-headline.js"></script>
+<script src="../../public/js/custom.js"></script>
 
 </body>
 </html>

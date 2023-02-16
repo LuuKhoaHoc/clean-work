@@ -1,4 +1,7 @@
 <?php
+
+use Administrator\CleanWork\classes\Manager;
+
 include_once "Manager.php";
 $manager = new Manager();
 var_dump($_POST);

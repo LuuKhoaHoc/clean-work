@@ -1,25 +1,26 @@
 <?php
-require 'DB.php';
+
+require 'admin/model/admin_Model.php';
 if (isset($_POST['action'])) {
     switch ($_POST['action']) {
         case "0":
         case "-1":
-            DB::disproved($_POST['order-id']);
+            admin_Model::disproved($_POST['order-id']);
             break;
         case "1":
-            DB::verifying_verified($_POST['order-id']);
+            admin_Model::verifying_verified($_POST['order-id']);
             break;
         case "2":
-            DB::verified_ontheway($_POST['order-id']);
+            admin_Model::verified_ontheway($_POST['order-id']);
             break;
         case "3":
-            DB::ontheway_inprogress($_POST['order-id']);
+            admin_Model::ontheway_inprogress($_POST['order-id']);
             break;
         case "4":
-            DB::inprogress_finished($_POST['order-id']);
+            admin_Model::inprogress_finished($_POST['order-id']);
             break;
         case "5":
-            DB::finished_ended($_POST['order-id']);
+            admin_Model::finished_ended($_POST['order-id']);
             break;
         default:
     }
@@ -171,7 +172,7 @@ if (isset($_POST['action'])) {
                         </tr>
                         </thead>
                         <?php
-                        $orders = DB::show_order(2);
+                        $orders = admin_Model::show_order(2);
                         foreach ($orders as $order) { ?>
                             <tr>
                                 <?php foreach ($order as $row) { ?>
@@ -249,7 +250,7 @@ if (isset($_POST['action'])) {
                         </tr>
                         </thead>
                         <?php
-                        $orders = DB::show_order(3);
+                        $orders = admin_Model::show_order(3);
                         foreach ($orders as $order) { ?>
                             <tr>
                                 <?php foreach ($order as $row) { ?>
@@ -327,7 +328,7 @@ if (isset($_POST['action'])) {
                         </tr>
                         </thead>
                         <?php
-                        $orders = DB::show_order(4);
+                        $orders = admin_Model::show_order(4);
                         foreach ($orders as $order) { ?>
                             <tr>
                                 <?php foreach ($order as $row) { ?>
@@ -402,7 +403,7 @@ if (isset($_POST['action'])) {
                         </tr>
                         </thead>
                         <?php
-                        $orders = DB::show_order(5);
+                        $orders = admin_Model::show_order(5);
                         foreach ($orders as $order) { ?>
                             <tr>
                                 <?php foreach ($order as $row) { ?>
@@ -477,7 +478,7 @@ if (isset($_POST['action'])) {
                         </tr>
                         </thead>
                         <?php
-                        $orders = DB::show_order(6);
+                        $orders = admin_Model::show_order(6);
                         foreach ($orders as $order) { ?>
                             <tr>
                                 <?php foreach ($order as $row) { ?>

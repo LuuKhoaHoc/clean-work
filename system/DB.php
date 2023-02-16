@@ -1,39 +1,41 @@
 <?php
+
+namespace Administrator\CleanWork\system;
 require_once 'config.php';
 
 class DB
 {
-    public static function SelectWithLimit($table, int $rowNum) // Hàm select theo limit
+    public static function SelectWithLimit($table, int $rowNum): array // Hàm select theo limit
     {
         $query = "SELECT * FROM $table LIMIT $rowNum";
         $row = mysqli_query(self::connect(), $query);
         return mysqli_fetch_all($row);
     }
 
-    public static function connect()
+    public static function connect(): \mysqli
     {
-        $conn = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
+        $conn = new \mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
         if (!$conn) {
-            die('Error: Connection failed '.mysqli_error());
+            die('Error: Connection failed ' . mysqli_error());
         }
         return $conn;
     }
 
-    public static function SelectCustomerByEmail($email) // Hàm tìm customer theo email
+    public static function SelectCustomerByEmail($email): array // Hàm tìm customer theo email
     {
         $query = "SELECT * FROM customer WHERE email = '$email'";
         $row = mysqli_query(self::connect(), $query);
         return mysqli_fetch_array($row);
     }
 
-    public static function SelectOrderByID(int $ord_id) // Hàm tìm order theo ID rồi in ra
+    public static function SelectOrderByID(int $ord_id): array // Hàm tìm order theo ID rồi in ra
     {
         $query = "SELECT * FROM customer_order WHERE id = '$ord_id'";
         $row = mysqli_query(self::connect(), $query);
         return mysqli_fetch_all($row);
     }
 
-    public static function InsertIntoOrder(int $customer_id, int $service_type_id, string $address, string $comment)
+    public static function InsertIntoOrder(int $customer_id, int $service_type_id, string $address, string $comment): bool|\mysqli_result
     {
         $query = "
             INSERT INTO customer_order (customer_id, service_type_id, address, comment) 
@@ -44,7 +46,7 @@ class DB
 
     // Hàm add order mới vào db
 
-    public static function InsertIntoCustomer(string $name, string $email, string $phone) // Hàm add customer
+    public static function InsertIntoCustomer(string $name, string $email, string $phone): bool|\mysqli_result // Hàm add customer
     {
         $query = "INSERT INTO customer (id, name, email, phone) VALUES (NULL, '$name', '$email', '$phone')";
         return mysqli_query(self::connect(), $query);
@@ -75,7 +77,7 @@ class DB
         return mysqli_fetch_all($row);
     }
 
-    public static function verifying_verified($ord_id)
+    public static function verifying_verified($ord_id): void
     {
         self::UpdateOrderState(3, $ord_id);
 
@@ -137,7 +139,7 @@ class DB
         return mysqli_query(self::connect(), $query);
     }
 
-    public static function verified_ontheway($ord_id)
+    public static function verified_ontheway($ord_id): void
     {
         self::UpdateOrderState(4, $ord_id);
     }
@@ -264,7 +266,7 @@ class DB
             INNER JOIN `service type` AS ser ON ser.id = ord.service_type_id
             WHERE result > 0 AND month(end) = month(now());";
         $row = mysqli_query(self::connect(), $query);
-        echo '$'.mysqli_fetch_all($row)[0][0];
+        echo '$' . mysqli_fetch_all($row)[0][0];
     }
 
     public static function countCusThisMonth()
@@ -291,7 +293,9 @@ class DB
         $row = mysqli_query(DB::connect(), $query);
         echo mysqli_fetch_all($row)[0][0];
     }
-    public static function monthWithMoney() {
+
+    public static function monthWithMoney()
+    {
         $query = "
         SELECT MONTH(ORD.`end`) as MONTH, SUM(ser.price) as Money
         FROM `order_history` AS ORD INNER JOIN `service type` AS ser ON ser.id = ORD.service_type_id
