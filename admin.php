@@ -31,6 +31,7 @@ if (isset($_POST['action'])) {
 
 <!doctype html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -48,6 +49,7 @@ if (isset($_POST['action'])) {
     <!-- Theme style -->
     <link rel="stylesheet" href="./public/dist/css/adminlte.min.css">
 </head>
+
 <body class="sidebar-mini layout-fixed container" style="height: auto">
 <div class="wrapper bg-light border">
     <!-- Navbar -->
@@ -120,393 +122,25 @@ if (isset($_POST['action'])) {
         <!-- Main content -->
         <section id="data-tables" class="content">
 
-            <!-- card -->
-            <div class="card">
-                <div class="card-header">
-                    <h3 class="card-title">Verifying Table</h3>
+            <?php
+            include 'admin/view/table_show_order.php';
+            $table = new card_of_table_show_order();
 
-                    <div class="card-tools">
-                        <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
-                            <i class="fas fa-minus"></i>
-                        </button>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <table id="example2" class="table table-bordered table-hover dataTable dtr-inline"
-                           aria-describedby="example2_info">
-                        <caption style="font-size: larger; font-weight: bold; line-height: 36px;">Table show order
-                        </caption>
-                        <thead>
-                        <tr>
-                            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
-                                aria-label="Rendering engine: activate to sort column ascending">ID
-                            </th>
-                            <th class="sorting sorting_desc" tabindex="0" aria-controls="example2" rowspan="1"
-                                colspan="1" aria-label="Browser: activate to sort column ascending"
-                                aria-sort="descending">Time
-                            </th>
-                            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
-                                aria-label="Platform(s): activate to sort column ascending">Name
-                            </th>
-                            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
-                                aria-label="Engine version: activate to sort column ascending">Email
-                            </th>
-                            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
-                                aria-label="CSS grade: activate to sort column ascending">Phone
-                            </th>
-                            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
-                                aria-label="CSS grade: activate to sort column ascending">Service
-                            </th>
-                            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
-                                aria-label="CSS grade: activate to sort column ascending">Price
-                            </th>
-                            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
-                                aria-label="CSS grade: activate to sort column ascending">Address
-                            </th>
-                            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
-                                aria-label="CSS grade: activate to sort column ascending">State
-                            </th>
-                            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
-                                aria-label="CSS grade: activate to sort column ascending">Action
-                            </th>
-                        </tr>
-                        </thead>
-                        <?php
-                        $orders = admin_Model::show_order(2);
-                        foreach ($orders as $order) { ?>
-                            <tr>
-                                <?php foreach ($order as $row) { ?>
-                                    <td><?= $row ?></td>
-                                <?php } ?>
-                                <td class="btn-group">
-                                    <form action="" method="post">
-                                        <button class="rounded-lg btn-success" type="submit" name="action" value="1">
-                                            Confirmed
-                                        </button>
-                                        <button class="rounded-lg btn-danger" type="submit" name="action" value="0">
-                                            Disproved
-                                        </button>
+            $table->show('Verifying Table', 2, 'Confirmed');
 
-                                        <input type="hidden" name="order-id" value="<?= $order[0] ?>">
-                                    </form>
-                                </td>
-                            </tr>
-                        <?php } ?>
-                    </table>
-                </div>
-                <!-- /.card-body -->
-            </div>
-            <!-- /.card -->
-            <!-- card -->
-            <div class="card">
-                <div class="card-header">
-                    <h3 class="card-title">Verified Table</h3>
+            $table->show('Verified Table', 3, 'Dispatch');
 
-                    <div class="card-tools">
-                        <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
-                            <i class="fas fa-minus"></i>
-                        </button>
+            $table->show('On The Way Table', 4);
 
-                    </div>
-                </div>
-                <div class="card-body">
-                    <table id="example3" class="table table-bordered table-hover dataTable dtr-inline"
-                           aria-describedby="example3_info">
-                        <caption style="font-size: larger; font-weight: bold; line-height: 36px;">Table show order
-                        </caption>
-                        <thead>
-                        <tr>
-                            <th class="sorting" tabindex="0" aria-controls="example3" rowspan="1" colspan="1"
-                                aria-label="Rendering engine: activate to sort column ascending">ID
-                            </th>
-                            <th class="sorting sorting_desc" tabindex="0" aria-controls="example3" rowspan="1"
-                                colspan="1" aria-label="Browser: activate to sort column ascending"
-                                aria-sort="descending">Time
-                            </th>
-                            <th class="sorting" tabindex="0" aria-controls="example3" rowspan="1" colspan="1"
-                                aria-label="Platform(s): activate to sort column ascending">Name
-                            </th>
-                            <th class="sorting" tabindex="0" aria-controls="example3" rowspan="1" colspan="1"
-                                aria-label="Engine version: activate to sort column ascending">Email
-                            </th>
-                            <th class="sorting" tabindex="0" aria-controls="example3" rowspan="1" colspan="1"
-                                aria-label="CSS grade: activate to sort column ascending">Phone
-                            </th>
-                            <th class="sorting" tabindex="0" aria-controls="example3" rowspan="1" colspan="1"
-                                aria-label="CSS grade: activate to sort column ascending">Service
-                            </th>
-                            <th class="sorting" tabindex="0" aria-controls="example3" rowspan="1" colspan="1"
-                                aria-label="CSS grade: activate to sort column ascending">Price
-                            </th>
-                            <th class="sorting" tabindex="0" aria-controls="example3" rowspan="1" colspan="1"
-                                aria-label="CSS grade: activate to sort column ascending">Address
-                            </th>
-                            <th class="sorting" tabindex="0" aria-controls="example3" rowspan="1" colspan="1"
-                                aria-label="CSS grade: activate to sort column ascending">State
-                            </th>
-                            <th class="sorting" tabindex="0" aria-controls="example3" rowspan="1" colspan="1"
-                                aria-label="CSS grade: activate to sort column ascending">Action
-                            </th>
-                        </tr>
-                        </thead>
-                        <?php
-                        $orders = admin_Model::show_order(3);
-                        foreach ($orders as $order) { ?>
-                            <tr>
-                                <?php foreach ($order as $row) { ?>
-                                    <td><?= $row ?></td>
-                                <?php } ?>
-                                <td class="btn-group">
-                                    <form action="" method="post">
-                                        <button class="rounded-lg btn-success" type="submit" name="action" value="2">
-                                            Dispatch
-                                        </button>
-                                        <button class="rounded-lg btn-danger" type="submit" name="action" value="0">
-                                            Disproved
-                                        </button>
+            $table->show('In Progress Table', 5);
 
-                                        <input type="hidden" name="order-id" value="<?= $order[0] ?>">
-                                    </form>
-                                </td>
-                            </tr>
-                        <?php } ?>
-                    </table>
-                </div>
-                <!-- /.card-body -->
-            </div>
-            <!-- /.card -->
-            <!-- card -->
-            <div class="card">
-                <div class="card-header">
-                    <h3 class="card-title">On The Way Table</h3>
-
-                    <div class="card-tools">
-                        <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
-                            <i class="fas fa-minus"></i>
-                        </button>
-
-                    </div>
-                </div>
-                <div class="card-body">
-                    <table id="example4" class="table table-bordered table-hover dataTable dtr-inline"
-                           aria-describedby="example4_info">
-                        <caption style="font-size: larger; font-weight: bold; line-height: 36px;">Table show order
-                        </caption>
-                        <thead>
-                        <tr>
-                            <th class="sorting" tabindex="0" aria-controls="example4" rowspan="1" colspan="1"
-                                aria-label="Rendering engine: activate to sort column ascending">ID
-                            </th>
-                            <th class="sorting sorting_desc" tabindex="0" aria-controls="example4" rowspan="1"
-                                colspan="1" aria-label="Browser: activate to sort column ascending"
-                                aria-sort="descending">Time
-                            </th>
-                            <th class="sorting" tabindex="0" aria-controls="example4" rowspan="1" colspan="1"
-                                aria-label="Platform(s): activate to sort column ascending">Name
-                            </th>
-                            <th class="sorting" tabindex="0" aria-controls="example4" rowspan="1" colspan="1"
-                                aria-label="Engine version: activate to sort column ascending">Email
-                            </th>
-                            <th class="sorting" tabindex="0" aria-controls="example4" rowspan="1" colspan="1"
-                                aria-label="CSS grade: activate to sort column ascending">Phone
-                            </th>
-                            <th class="sorting" tabindex="0" aria-controls="example4" rowspan="1" colspan="1"
-                                aria-label="CSS grade: activate to sort column ascending">Service
-                            </th>
-                            <th class="sorting" tabindex="0" aria-controls="example4" rowspan="1" colspan="1"
-                                aria-label="CSS grade: activate to sort column ascending">Price
-                            </th>
-                            <th class="sorting" tabindex="0" aria-controls="example4" rowspan="1" colspan="1"
-                                aria-label="CSS grade: activate to sort column ascending">Address
-                            </th>
-                            <th class="sorting" tabindex="0" aria-controls="example4" rowspan="1" colspan="1"
-                                aria-label="CSS grade: activate to sort column ascending">State
-                            </th>
-                            <th class="sorting" tabindex="0" aria-controls="example4" rowspan="1" colspan="1"
-                                aria-label="CSS grade: activate to sort column ascending">Action
-                            </th>
-                        </tr>
-                        </thead>
-                        <?php
-                        $orders = admin_Model::show_order(4);
-                        foreach ($orders as $order) { ?>
-                            <tr>
-                                <?php foreach ($order as $row) { ?>
-                                    <td><?= $row ?></td>
-                                <?php } ?>
-                                <td class="btn-group">
-                                    <form action="" method="post">
-                                        <button class="rounded-lg btn-danger" type="submit" name="action" value="0">
-                                            Disproved
-                                        </button>
-
-                                        <input type="hidden" name="order-id" value="<?= $order[0] ?>">
-                                    </form>
-                                </td>
-                            </tr>
-                        <?php } ?>
-                    </table>
-                </div>
-                <!-- /.card-body -->
-            </div>
-            <!-- /.card -->
-            <!-- card -->
-            <div class="card">
-                <div class="card-header">
-                    <h3 class="card-title">In Progress Table</h3>
-
-                    <div class="card-tools">
-                        <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
-                            <i class="fas fa-minus"></i>
-                        </button>
-
-                    </div>
-                </div>
-                <div class="card-body">
-                    <table id="example5" class="table table-bordered table-hover dataTable dtr-inline"
-                           aria-describedby="example5_info">
-                        <caption style="font-size: larger; font-weight: bold; line-height: 36px;">Table show order
-                        </caption>
-                        <thead>
-                        <tr>
-                            <th class="sorting" tabindex="0" aria-controls="example5" rowspan="1" colspan="1"
-                                aria-label="Rendering engine: activate to sort column ascending">ID
-                            </th>
-                            <th class="sorting sorting_desc" tabindex="0" aria-controls="example5" rowspan="1"
-                                colspan="1" aria-label="Browser: activate to sort column ascending"
-                                aria-sort="descending">Time
-                            </th>
-                            <th class="sorting" tabindex="0" aria-controls="example5" rowspan="1" colspan="1"
-                                aria-label="Platform(s): activate to sort column ascending">Name
-                            </th>
-                            <th class="sorting" tabindex="0" aria-controls="example5" rowspan="1" colspan="1"
-                                aria-label="Engine version: activate to sort column ascending">Email
-                            </th>
-                            <th class="sorting" tabindex="0" aria-controls="example5" rowspan="1" colspan="1"
-                                aria-label="CSS grade: activate to sort column ascending">Phone
-                            </th>
-                            <th class="sorting" tabindex="0" aria-controls="example5" rowspan="1" colspan="1"
-                                aria-label="CSS grade: activate to sort column ascending">Service
-                            </th>
-                            <th class="sorting" tabindex="0" aria-controls="example5" rowspan="1" colspan="1"
-                                aria-label="CSS grade: activate to sort column ascending">Price
-                            </th>
-                            <th class="sorting" tabindex="0" aria-controls="example5" rowspan="1" colspan="1"
-                                aria-label="CSS grade: activate to sort column ascending">Address
-                            </th>
-                            <th class="sorting" tabindex="0" aria-controls="example5" rowspan="1" colspan="1"
-                                aria-label="CSS grade: activate to sort column ascending">State
-                            </th>
-                            <th class="sorting" tabindex="0" aria-controls="example5" rowspan="1" colspan="1"
-                                aria-label="CSS grade: activate to sort column ascending">Action
-                            </th>
-                        </tr>
-                        </thead>
-                        <?php
-                        $orders = admin_Model::show_order(5);
-                        foreach ($orders as $order) { ?>
-                            <tr>
-                                <?php foreach ($order as $row) { ?>
-                                    <td><?= $row ?></td>
-                                <?php } ?>
-                                <td class="btn-group">
-                                    <form action="" method="post">
-                                        <button class="rounded-lg btn-danger" type="submit" name="action" value="0">
-                                            Disproved
-                                        </button>
-
-                                        <input type="hidden" name="order-id" value="<?= $order[0] ?>">
-                                    </form>
-                                </td>
-                            </tr>
-                        <?php } ?>
-                    </table>
-                </div>
-                <!-- /.card-body -->
-            </div>
-            <!-- /.card -->
-            <!-- card -->
-            <div class="card">
-                <div class="card-header">
-                    <h3 class="card-title">Finished Table</h3>
-
-                    <div class="card-tools">
-                        <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
-                            <i class="fas fa-minus"></i>
-                        </button>
-
-                    </div>
-                </div>
-                <div class="card-body">
-                    <table id="example6" class="table table-bordered table-hover dataTable dtr-inline"
-                           aria-describedby="example6_info">
-                        <caption style="font-size: larger; font-weight: bold; line-height: 36px;">Table show order
-                        </caption>
-                        <thead>
-                        <tr>
-                            <th class="sorting" tabindex="0" aria-controls="example6" rowspan="1" colspan="1"
-                                aria-label="Rendering engine: activate to sort column ascending">ID
-                            </th>
-                            <th class="sorting sorting_desc" tabindex="0" aria-controls="example6" rowspan="1"
-                                colspan="1" aria-label="Browser: activate to sort column ascending"
-                                aria-sort="descending">Time
-                            </th>
-                            <th class="sorting" tabindex="0" aria-controls="example6" rowspan="1" colspan="1"
-                                aria-label="Platform(s): activate to sort column ascending">Name
-                            </th>
-                            <th class="sorting" tabindex="0" aria-controls="example6" rowspan="1" colspan="1"
-                                aria-label="Engine version: activate to sort column ascending">Email
-                            </th>
-                            <th class="sorting" tabindex="0" aria-controls="example6" rowspan="1" colspan="1"
-                                aria-label="CSS grade: activate to sort column ascending">Phone
-                            </th>
-                            <th class="sorting" tabindex="0" aria-controls="example6" rowspan="1" colspan="1"
-                                aria-label="CSS grade: activate to sort column ascending">Service
-                            </th>
-                            <th class="sorting" tabindex="0" aria-controls="example6" rowspan="1" colspan="1"
-                                aria-label="CSS grade: activate to sort column ascending">Price
-                            </th>
-                            <th class="sorting" tabindex="0" aria-controls="example6" rowspan="1" colspan="1"
-                                aria-label="CSS grade: activate to sort column ascending">Address
-                            </th>
-                            <th class="sorting" tabindex="0" aria-controls="example6" rowspan="1" colspan="1"
-                                aria-label="CSS grade: activate to sort column ascending">State
-                            </th>
-                            <th class="sorting" tabindex="0" aria-controls="example6" rowspan="1" colspan="1"
-                                aria-label="CSS grade: activate to sort column ascending">Action
-                            </th>
-                        </tr>
-                        </thead>
-                        <?php
-                        $orders = admin_Model::show_order(6);
-                        foreach ($orders as $order) { ?>
-                            <tr>
-                                <?php foreach ($order as $row) { ?>
-                                    <td><?= $row ?></td>
-                                <?php } ?>
-                                <td class="btn-group">
-                                    <form action="" method="post">
-                                        <button class="rounded-lg btn-success" type="submit" name="action" value="5">
-                                            Payed
-                                        </button>
-                                        <button class="rounded-lg btn-danger" type="submit" name="action" value="0">
-                                            Disproved
-                                        </button>
-
-                                        <input type="hidden" name="order-id" value="<?= $order[0] ?>">
-                                    </form>
-                                </td>
-                            </tr>
-                        <?php } ?>
-                    </table>
-                </div>
-                <!-- /.card-body -->
-            </div>
-            <!-- /.card -->
+            $table->show('Finished Table', 6, 'Payed');
+            ?>
 
         </section>
         <!-- /.content -->
     </div>
+
     <footer class="main-footer ml-0">
         <div class="float-right d-none d-sm-block">
             <b>Version</b> 3.2.0
