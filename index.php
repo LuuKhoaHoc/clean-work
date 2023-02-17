@@ -34,34 +34,7 @@ Free Bootstrap 5 HTML Template
     </head>
     
     <body>
-
-        <header class="site-header">
-            <div class="container">
-                <div class="row">
-                    
-                    <div class="col-lg-12 col-12 d-flex flex-wrap">
-                        <p class="d-flex me-4 mb-0">
-                            <i class="bi-house-fill me-2"></i>
-                            One-Stop Cleaning Service
-                        </p>
-
-                        <p class="d-flex d-lg-block d-md-block d-none me-4 mb-0">
-                            <i class="bi-clock-fill me-2"></i>
-                            <strong class="me-2">Mon - Fri</strong> 8:00 AM - 5:30 PM
-                        </p>
-
-                        <p class="site-header-icon-wrap text-white d-flex mb-0 ms-auto">
-                            <i class="site-header-icon bi-whatsapp me-2"></i>
-
-                            <a href="tel: 110-220-9800" class="text-white">
-                                110 220 9800
-                            </a>
-                        </p>
-                    </div>
-
-                </div>
-            </div>
-        </header>
+        <?php include 'site/view/header.html'?>
 
         <nav class="navbar navbar-expand-lg">
             <div class="container">
@@ -82,18 +55,18 @@ Free Bootstrap 5 HTML Template
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="site/view/about.html">About Us</a>
+                            <a class="nav-link" href="site/view/about.php">About Us</a>
                         </li>
 
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#section_5" id="navbarLightDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Pages</a>
 
                             <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarLightDropdownMenuLink">
-                                <li><a class="dropdown-item" href="site/view/services.html">Our Services</a></li>
+                                <li><a class="dropdown-item" href="site/view/services.php">Our Services</a></li>
 
-                                <li><a class="dropdown-item" href="site/view/coming-soon.html">Coming Soon</a></li>
+                                <li><a class="dropdown-item" href="site/view/coming-soon.php">Coming Soon</a></li>
 
-                                <li><a class="dropdown-item" href="site/view/page-404.html">Page 404</a></li>
+                                <li><a class="dropdown-item" href="site/view/page-404.php">Page 404</a></li>
                             </ul>
                         </li>
 
@@ -197,7 +170,7 @@ Free Bootstrap 5 HTML Template
                                 <div class="row">
                                     <div class="col-lg-5 col-md-5 col-12">
                                         <div class="services-image-wrap">
-                                            <a href="site/view/services-detail.html">
+                                            <a href="site/view/services-detail.php">
                                                 <img src="public/images/services/people-taking-care-office-cleaning.jpg" class="services-image img-fluid" alt="">
                                                 <img src="public/images/services/person-taking-care-office.jpg" class="services-image services-image-hover img-fluid" alt="">
 
@@ -221,7 +194,7 @@ Free Bootstrap 5 HTML Template
                                     <div class="col-lg-7 col-md-7 col-12 d-flex align-items-center">
                                         <div class="services-info mt-4 mt-lg-0 mt-md-0">
                                             <h4 class="services-title mb-1 mb-lg-2">
-                                                <a class="services-title-link" href="site/view/services-detail.html">Office Cleaning</a>
+                                                <a class="services-title-link" href="site/view/services-detail.php">Office Cleaning</a>
                                             </h4>
 
                                             <p>Best Cleaning Service Provider Ipsum dolor sit consectetur kengan</p>
@@ -235,7 +208,7 @@ Free Bootstrap 5 HTML Template
                                                     <i class="bi-star"></i>
                                                 </div>
 
-                                                <a href="site/view/services-detail.html" class="custom-btn btn button button--atlas mt-2 ms-auto">
+                                                <a href="site/view/services-detail.php" class="custom-btn btn button button--atlas mt-2 ms-auto">
                                                     <span>Learn More</span>
 
                                                     <div class="marquee" aria-hidden="true">
@@ -259,7 +232,7 @@ Free Bootstrap 5 HTML Template
                                 <div class="row">
                                     <div class="col-lg-5 col-md-5 col-12">
                                         <div class="services-image-wrap">
-                                            <a href="site/view/services-detail.html">
+                                            <a href="site/view/services-detail.php">
                                                 <img src="public/images/services/young-smiling-woman-wearing-rubber-gloves-cleaning-stove.jpg" class="services-image img-fluid" alt="">
                                                 <img src="public/images/services/woman-holding-rag-detergent-cleaning-cooker.jpg" class="services-image services-image-hover img-fluid" alt="">
 
@@ -283,7 +256,7 @@ Free Bootstrap 5 HTML Template
                                     <div class="col-lg-7 col-md-7 col-12 d-flex align-items-center">
                                         <div class="services-info mt-4 mt-lg-0 mt-md-0">
                                             <h4 class="services-title mb-1 mb-lg-2">
-                                                <a class="services-title-link" href="site/view/services-detail.html">Kitchen Cleaning</a>
+                                                <a class="services-title-link" href="site/view/services-detail.php">Kitchen Cleaning</a>
                                             </h4>
 
                                             <p>Best Cleaning Service Provider Ipsum dolor sit consectetur kengan</p>
@@ -297,7 +270,7 @@ Free Bootstrap 5 HTML Template
                                                     <i class="bi-star-fill"></i>
                                                 </div>
 
-                                                <a href="site/view/services-detail.html" class="custom-btn btn button button--atlas mt-2 ms-auto">
+                                                <a href="site/view/services-detail.php" class="custom-btn btn button button--atlas mt-2 ms-auto">
                                                     <span>Learn More</span>
 
                                                     <div class="marquee" aria-hidden="true">
@@ -321,7 +294,7 @@ Free Bootstrap 5 HTML Template
                                 <div class="row">
                                     <div class="col-lg-5 col-md-5 col-12">
                                         <div class="services-image-wrap">
-                                            <a href="site/view/services-detail.html">
+                                            <a href="site/view/services-detail.php">
                                                 <img src="public/images/services/man-polishing-car-inside-car-service.jpg" class="services-image img-fluid" alt="">
                                                 <img src="public/images/services/man-polishing-car-inside.jpg" class="services-image services-image-hover img-fluid" alt="">
 
@@ -345,7 +318,7 @@ Free Bootstrap 5 HTML Template
                                     <div class="col-lg-7 col-md-7 col-12 d-flex align-items-center">
                                         <div class="services-info mt-4 mt-lg-0 mt-md-0">
                                             <h4 class="services-title mb-1 mb-lg-2">
-                                                <a class="services-title-link" href="site/view/services-detail.html">Car Washing</a>
+                                                <a class="services-title-link" href="site/view/services-detail.php">Car Washing</a>
                                             </h4>
 
                                             <p>Best Cleaning Service Provider Ipsum dolor sit consectetur kengan</p>
@@ -359,7 +332,7 @@ Free Bootstrap 5 HTML Template
                                                     <i class="bi-star-fill"></i>
                                                 </div>
 
-                                                <a href="site/view/services-detail.html" class="custom-btn btn button button--atlas mt-2 ms-auto">
+                                                <a href="site/view/services-detail.php" class="custom-btn btn button button--atlas mt-2 ms-auto">
                                                     <span>Learn More</span>
 
                                                     <div class="marquee" aria-hidden="true">
@@ -383,7 +356,7 @@ Free Bootstrap 5 HTML Template
                                 <div class="row">
                                     <div class="col-lg-5 col-md-5 col-12">
                                         <div class="services-image-wrap">
-                                            <a href="site/view/services-detail.html">
+                                            <a href="site/view/services-detail.php">
                                                 <img src="public/images/services/professional-industrial-cleaner-protective-uniform-cleaning-floor-food-processing-plant.jpg" class="services-image img-fluid" alt="">
                                                 <img src="public/images/services/close-up-mop-cleaning-industrial-plant-floor.jpg" class="services-image services-image-hover img-fluid" alt="">
 
@@ -407,7 +380,7 @@ Free Bootstrap 5 HTML Template
                                     <div class="col-lg-7 col-md-7 col-12 d-flex align-items-center">
                                         <div class="services-info mt-4 mt-lg-0 mt-md-0">
                                             <h4 class="services-title mb-1 mb-lg-2">
-                                                <a class="services-title-link" href="site/view/services-detail.html">Factory Cleaning</a>
+                                                <a class="services-title-link" href="site/view/services-detail.php">Factory Cleaning</a>
                                             </h4>
 
                                             <p>Best Cleaning Service Provider Ipsum dolor sit consectetur kengan</p>
@@ -421,7 +394,7 @@ Free Bootstrap 5 HTML Template
                                                     <i class="bi-star"></i>
                                                 </div>
 
-                                                <a href="site/view/services-detail.html" class="custom-btn btn button button--atlas mt-2 ms-auto">
+                                                <a href="site/view/services-detail.php" class="custom-btn btn button button--atlas mt-2 ms-auto">
                                                     <span>Learn More</span>
 
                                                     <div class="marquee" aria-hidden="true">
@@ -618,7 +591,6 @@ Free Bootstrap 5 HTML Template
                 </div>
             </section>
         </main>
-
 
         <footer class="site-footer">
             <div class="container">
