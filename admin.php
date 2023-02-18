@@ -124,17 +124,16 @@ if (isset($_POST['action'])) {
 
             <?php
             include 'admin/view/table_show_order.php';
-            $table = new card_of_table_show_order();
 
-            $table->show('Verifying Table', 2, 'Confirmed');
+            table_show_order::show_table_in_card('Verifying Table', 2, 'Confirmed');
 
-            $table->show('Verified Table', 3, 'Dispatch');
+            table_show_order::show_table_in_card('Verified Table', 3, 'Dispatch');
 
-            $table->show('On The Way Table', 4);
+            table_show_order::show_table_in_card('On The Way Table', 4);
 
-            $table->show('In Progress Table', 5);
+            table_show_order::show_table_in_card('In Progress Table', 5);
 
-            $table->show('Finished Table', 6, 'Payed');
+            table_show_order::show_table_in_card('Finished Table', 6, 'Payed');
             ?>
 
         </section>

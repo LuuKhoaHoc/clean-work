@@ -50,7 +50,7 @@ class superadmin_Model extends admin_Model
         SELECT MONTH(ORD.`end`) as MONTH, SUM(ser.price) as Money
         FROM `order_history` AS ORD INNER JOIN `service type` AS ser ON ser.id = ORD.service_type_id
         WHERE ORD.result > 0 GROUP BY MONTH ORDER BY MONTH;";
-        $row = mysqli_query(DB::connect(), $query);
+        $row = mysqli_query(parent::connect(), $query);
         return mysqli_fetch_all($row);
     }
 }

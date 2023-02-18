@@ -400,71 +400,17 @@ if (isset($_POST['action'])) {
         <section class="content">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-lg-3 col-6">
-                        <!-- small box -->
-                        <div class="small-box bg-info">
-                            <div class="inner">
-                                <h3>
-                                    <?= superadmin_Model::countNewOrder(); ?>
-                                </h3>
+                    <?php
+                    include "admin/view/small_box_info.php";
 
-                                <p>New Orders</p>
-                            </div>
-                            <div class="icon">
-                                <i class="ion ion-bag"></i>
-                            </div>
-                            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-                        </div>
-                    </div>
-                    <!-- ./col -->
-                    <div class="col-lg-3 col-6">
-                        <!-- small box -->
-                        <div class="small-box bg-success">
-                            <div class="inner">
-                                <h3>
-                                    <?= superadmin_Model::earnThisMonth(); ?>
-                                </h3>
+                    small_box_info::show_box('New Order', superadmin_Model::countNewOrder(), 'info', 'bag');
 
-                                <p>Earn This Month</p>
-                            </div>
-                            <div class="icon">
-                                <i class="ion ion-stats-bars"></i>
-                            </div>
-                            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-                        </div>
-                    </div>
-                    <!-- ./col -->
-                    <div class="col-lg-3 col-6">
-                        <!-- small box -->
-                        <div class="small-box bg-warning">
-                            <div class="inner">
-                                <h3>
-                                    <?= superadmin_Model::countCusThisMonth(); ?>
-                                </h3>
-                                <p>New Customers</p>
-                            </div>
-                            <div class="icon">
-                                <i class="ion ion-person-add"></i>
-                            </div>
-                            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-                        </div>
-                    </div>
-                    <!-- ./col -->
-                    <div class="col-lg-3 col-6">
-                        <!-- small box -->
-                        <div class="small-box bg-danger">
-                            <div class="inner">
-                                <h3><?= superadmin_Model::totalOrders(); ?></h3>
+                    small_box_info::show_box('Earn This Month', superadmin_Model::earnThisMonth(), 'success', 'stats-bars');
 
-                                <p>Total Orders</p>
-                            </div>
-                            <div class="icon">
-                                <i class="ion ion-pie-graph"></i>
-                            </div>
-                            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-                        </div>
-                    </div>
-                    <!-- ./col -->
+                    small_box_info::show_box('New Customers', superadmin_Model::countCusThisMonth(), 'warning', 'person-add');
+
+                    small_box_info::show_box('Total Orders', superadmin_Model::totalMoney(), 'danger', 'pie-graph');
+                    ?>
                 </div>
                 <div class="row">
                     <div class="card col-lg-10">
@@ -529,45 +475,24 @@ if (isset($_POST['action'])) {
                                 </a>
                             </div>
                         </div>
+
                         <div class="card-body">
                             <div class="d-flex justify-content-between align-items-center border-bottom mb-3">
-                                <p class="text-success text-xl">
-                                    <i class="ion ion-ios-refresh-empty"></i>
-                                </p>
-                                <p class="d-flex flex-column text-right">
-                    <span class="font-weight-bold">
-                      <i class="ion ion-android-arrow-up text-success"></i> 12%
-                    </span>
-                                    <span class="text-muted">CONVERSION RATE</span>
-                                </p>
+                                <?php small_box_info::show_card('CONVERSION RATE', '12%', 'up', 'ion ion-ios-refresh-empty', 'success'); ?>
                             </div>
                             <!-- /.d-flex -->
                             <div class="d-flex justify-content-between align-items-center border-bottom mb-3">
-                                <p class="text-warning text-xl">
-                                    <i class="ion ion-ios-cart-outline"></i>
-                                </p>
-                                <p class="d-flex flex-column text-right">
-                    <span class="font-weight-bold">
-                      <i class="ion ion-android-arrow-up text-warning"></i> 0.8%
-                    </span>
-                                    <span class="text-muted">SALES RATE</span>
-                                </p>
+                                <?php small_box_info::show_card('SALES RATE', '0.8%', 'up', 'ion ion-ios-cart-outline', 'warning'); ?>
                             </div>
                             <!-- /.d-flex -->
                             <div class="d-flex justify-content-between align-items-center mb-0">
-                                <p class="text-danger text-xl">
-                                    <i class="ion ion-ios-people-outline"></i>
-                                </p>
-                                <p class="d-flex flex-column text-right">
-                    <span class="font-weight-bold">
-                      <i class="ion ion-android-arrow-down text-danger"></i> 1%
-                    </span>
-                                    <span class="text-muted">REGISTRATION RATE</span>
-                                </p>
+                                <?php small_box_info::show_card('REGISTRATION RATE', '1%', 'down', 'ion ion-ios-people-outline', 'danger'); ?>
                             </div>
                             <!-- /.d-flex -->
                         </div>
+
                     </div>
+
                 </div>
             </div>
         </section>
@@ -619,101 +544,7 @@ if (isset($_POST['action'])) {
     });
 </script>
 <!--Custom JS-->
-<script>
-    /* global Chart:false */
-    $(function () {
-        'use strict'
-
-        var ticksStyle = {
-            fontColor: '#495057',
-            fontStyle: 'bold'
-        }
-
-        var mode = 'index'
-        var intersect = true
-
-        var $salesChart = $('#sales-chart')
-        // eslint-disable-next-line no-unused-vars
-        <?php
-        $arr = superadmin_Model::monthWithMoney();
-        $data = array();
-        $data1 = array();
-        foreach ($arr as $item) {
-            $month_name = date("M", mktime(0, 0, 0, $item[0], 10));
-            $data[] = "'" . $month_name . "'";
-            $data1[] = $item[1];
-        }
-        $month = strtoupper(implode(",", $data));
-        $money = implode(",", $data1);
-        ?>
-        var salesChart = new Chart($salesChart, {
-            type: 'bar',
-            data: {
-                labels: [<?= $month ?>],
-                datasets: [
-                    {
-                        backgroundColor: '#007bff',
-                        borderColor: '#007bff',
-                        data: [<?= $money ?>]
-                    },
-                    {
-                        backgroundColor: '#ced4da',
-                        borderColor: '#ced4da',
-                        data: [700, 1700, 2700, 2000, 1800, 1500, 2000]
-                    }
-                ]
-            },
-            options: {
-                maintainAspectRatio: false,
-                tooltips: {
-                    mode: mode,
-                    intersect: intersect
-                },
-                hover: {
-                    mode: mode,
-                    intersect: intersect
-                },
-                legend: {
-                    display: false
-                },
-                scales: {
-                    yAxes: [{
-                        // display: false,
-                        gridLines: {
-                            display: true,
-                            lineWidth: '4px',
-                            color: 'rgba(0, 0, 0, .2)',
-                            zeroLineColor: 'transparent'
-                        },
-                        ticks: $.extend({
-                            beginAtZero: true,
-
-                            // Include a dollar sign in the ticks
-                            callback: function (value) {
-                                if (value >= 1000) {
-                                    value /= 1000
-                                    value += 'k'
-                                }
-
-                                return '$' + value
-                            }
-                        }, ticksStyle)
-                    }],
-                    xAxes: [{
-                        display: true,
-                        gridLines: {
-                            display: false
-                        },
-                        ticks: ticksStyle
-                    }]
-                }
-            }
-        })
-
-    })
-
-    // lgtm [js/unused-local-variable]
-</script>
+<?php include 'admin/view/chart.php' ?>
 <!-- DataTables  -->
 <script src="public/plugins/datatables/jquery.dataTables.min.js"></script>
 <script src="public/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
