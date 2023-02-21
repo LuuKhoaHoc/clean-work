@@ -1,3 +1,8 @@
+<?php
+include_once "../../config.php";
+require_once PATH_SYSTEM . "/DB.php";
+?>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -17,13 +22,12 @@
     <th>Action</th>
     </thead>
     <?php
-    include 'classes/DB.php';
     $query = "
                 SELECT emp.id, emp.name, emp.phone, employee_rank.name
                 FROM employees AS emp
                 INNER JOIN  employee_rank ON `emp`.rank_id = employee_rank.id;
             ";
-    $row = mysqli_query(\Administrator\CleanWork\classes\DB::connect(), $query);
+    $row = mysqli_query(\Administrator\CleanWork\system\DB::connect(), $query);
     $data = mysqli_fetch_all($row);
     foreach ($data as $emp) {
         ?>

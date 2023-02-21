@@ -65,27 +65,29 @@ if (isset($_POST['action'])) {
 
         <!-- Right navbar links -->
         <ul class="navbar-nav ml-auto">
-            <!-- Navbar Search -->
-            <li class="nav-item dropdown">
-                <a class="nav-link user-panel" data-toggle="dropdown" href="#">
-                    <img src="public/dist/img/user2-160x160.jpg"
-                         class="img-circle" alt="User Image">
+            <!--            Navbar user-->
+            <li class="nav-item dropdown user-menu">
+                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
+                    <img src="public/dist/img/user2-160x160.jpg" class="user-image img-circle elevation-2"
+                         alt="User Image">
+                    <span class="d-none d-md-inline">admin@leowind.com</span>
                 </a>
-                <div class="dropdown-menu dropdown-menu-right">
-                    <div class="dropdown-divider"></div>
-                    <div class="user-panel mt-2 mb-2 d-flex justify-content-center align-items-center">
-                        <img src="public/dist/img/user2-160x160.jpg"
-                             class="img-circle elevation-2" alt="User Image">
-                    </div>
-                    <div class="info">
-                        <a href="" class="d-block text-black text-center">admin@leowind.com</a>
-                    </div>
-                    <div class="dropdown-divider"></div>
-                    <div class="d-flex justify-content-around">
-                        <a href="" class="d-block text-green">Inbox</a>
-                        <a href="" class="d-block text-danger">Đăng xuất</a>
-                    </div>
-                </div>
+                <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+                    <!-- User image -->
+                    <li class="user-header bg-primary">
+                        <img src="public/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+
+                        <p>
+                            admin@leowind.com
+                            <small>Member since Nov. 2012</small>
+                        </p>
+                    </li>
+                    <!-- Menu Footer-->
+                    <li class="user-footer">
+                        <a href="#" class="btn btn-default btn-flat">Profile</a>
+                        <a href="#" class="btn btn-default btn-flat float-right">Sign out</a>
+                    </li>
+                </ul>
             </li>
             <li class="nav-item">
                 <a class="nav-link" data-widget="fullscreen" href="#" role="button">
