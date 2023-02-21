@@ -513,6 +513,8 @@ if (isset($_POST['action'])) {
 </div>
 <!-- ./wrapper -->
 
+<!--Custom JS-->
+<?php include 'admin/view/chart.php' ?>
 <!-- jQuery -->
 <script src="public/plugins/jquery/jquery.min.js"></script>
 <!-- Bootstrap 4 -->
@@ -543,8 +545,6 @@ if (isset($_POST['action'])) {
         });
     });
 </script>
-<!--Custom JS-->
-<?php include 'admin/view/chart.php' ?>
 <!-- DataTables  -->
 <script src="public/plugins/datatables/jquery.dataTables.min.js"></script>
 <script src="public/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>

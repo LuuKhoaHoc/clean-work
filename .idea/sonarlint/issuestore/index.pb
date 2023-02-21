@@ -23,8 +23,6 @@ T
 $public/plugins/chart.js/Chart.min.js,c\e\ce6339397cfd502a6c8a431ac0dd9f614aa08d9b
 L
 public/js/dashboard-chart.js,5\8\58c7b024903b0c91c6cdd96cc8e352eaf09dd0f4
-O
-admin/view/table_show_order.php,9\1\91abfa19472e0159c97ecffcf7211dc620995ff3
 Q
 !admin/controller/receiveOrder.php,7\f\7f89e4681678c55edb035c00269e88542fe14e1e
 M
