@@ -27,7 +27,7 @@ require_once PATH_SYSTEM."/DB.php";
 <body>
 <div class="card">
     <div class="card-header">
-        <div class="row d-flex">
+        <div class="row d-flex align-items-center">
             <div class="col-sm-12 col-md-6">
                 <select class="form-control " name="position" id="position">
                     <option value="0">--None--</option>
@@ -36,14 +36,13 @@ require_once PATH_SYSTEM."/DB.php";
                     <option value="3">Director</option>
                 </select>
             </div>
-            <div class="col-sm-12 col-md-6 ">
-                <div class= "d-flex justify-content-end" style="row-gap: 10px;">
-                <button class="btn-success rounded">Promote</button>
-                <button class="btn-warning rounded">Demote</button>
-                <button class="btn-danger rounded">Dismissed</button>
+            <div class="col-sm-12 col-md-6">
+                <div class="d-flex" style="gap: 10px">
+                    <button class="btn-success rounded">Promote</button>
+                    <button class="btn-warning rounded">Demote</button>
+                    <button class="btn-danger rounded">Dismissed</button>
                 </div>
             </div>
-            <div class="col-sm-12 col-md-6"></div>
         </div>
     </div>
     <!-- /.card-header -->
