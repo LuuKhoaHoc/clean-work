@@ -1,5 +1,4 @@
 <?php
-const DB_HOST = "localhost";
-const DB_NAME = "clean_work";
-const DB_USER = "root";
-const DB_PASSWORD = "";
+
+const PATH_APPLICATION = __DIR__ . "/admin";
+const PATH_SYSTEM = __DIR__ . "/system";

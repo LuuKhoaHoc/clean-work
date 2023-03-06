@@ -1,6 +1,6 @@
 <?php
 
-namespace CleanWork;
+namespace Administrator\CleanWork\classes;
 
 class Payment
 {
