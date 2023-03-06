@@ -9,14 +9,19 @@ class superadmin_Model extends admin_Model
         return mysqli_fetch_all($row)[0][0];
     }
 
-    public static function earnThisMonth()
+    public static function earnThisMonth(): string
     {
         $query = "SELECT SUM(ser.price)
             FROM order_history AS ord
             INNER JOIN `service type` AS ser ON ser.id = ord.service_type_id
             WHERE result > 0 AND month(end) = month(now());";
         $row = mysqli_query(self::connect(), $query);
-        return '$' . mysqli_fetch_all($row)[0][0];
+        $result = mysqli_fetch_all($row)[0][0];
+        if ($result == "") {
+        return '$ 0';
+        } else {
+            return '$' . $result;
+        }
     }
 
     public static function countCusThisMonth()
@@ -31,7 +36,7 @@ class superadmin_Model extends admin_Model
     {
         $query = "SELECT COUNT(*) FROM `order_history` WHERE result > 0;";
         $row = mysqli_query(self::connect(), $query);
-        return mysqli_fetch_all($row)[0][0];
+        return  mysqli_fetch_all($row)[0][0];
     }
 
     public static function totalMoney()
@@ -41,7 +46,7 @@ class superadmin_Model extends admin_Model
             INNER JOIN `service type` AS ser ON ser.id = ORD.service_type_id
             WHERE ord.result > 0;";
         $row = mysqli_query(parent::connect(), $query);
-        return mysqli_fetch_all($row)[0][0];
+        return '$ '. mysqli_fetch_all($row)[0][0];
     }
 
     public static function monthWithMoney()

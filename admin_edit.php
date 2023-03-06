@@ -6,19 +6,21 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <?php include "admin/view/super_admin_header.php"; ?>
     <title>Super Admin Page</title>
-
-    <!-- Google Font: Source Sans Pro -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&amp;display=fallback">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="public/plugins/fontawesome-free/css/all.min.css">
-    <!-- Theme style -->
-    <link rel="stylesheet" href="public/dist/css/adminlte.min.css">
 </head>
-<body>
+<body class="sidebar-mini layout-fixed" style="height: auto">
+<div class="wrapper">
+
+    <!-- Navbar -->
+    <?php include "admin/view/super_admin_nav.php"; ?>
+    <!-- /.Navbar -->
+
+    <!-- Main Sidebar Container -->
+    <?php include "admin/view/super_admin_aside.php"; ?>
+    <!--    ./ Main Sidebar Container -->
 <div class="content-wrapper" style="min-height: 1604.8px;">
+
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <div class="container-fluid">
@@ -183,14 +185,18 @@
     </section>
     <!-- /.content -->
 </div>
-<!-- jQuery -->
-<script src="public/plugins/jquery/jquery.min.js"></script>
-<!-- Bootstrap 4 -->
-<script src="public/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-<!-- AdminLTE App -->
-<script src="public/dist/js/adminlte.min.js"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="public/dist/js/demo.js"></script>
 
+    <!--    Main Footer-->
+    <?php include "admin/view/super_admin_main-footer.php"; ?>
+    <!--    ./Main Footer-->
+
+    <!-- Control Sidebar -->
+    <aside class="control-sidebar control-sidebar-dark">
+        <!-- Control sidebar content goes here -->
+    </aside>
+    <!-- /.control-sidebar -->
+
+</div>
+<?php include "admin/view/super_admin_footer.php"; ?>
 </body>
 </html>
