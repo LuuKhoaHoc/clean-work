@@ -1,28 +1,8 @@
-<?php
-include_once "../../config.php";
-require_once PATH_SYSTEM."/DB.php";
-?>
 
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Employees</title>
-    <link rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&amp;display=fallback">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="../../public/plugins/fontawesome-free/css/all.min.css">
-    <!-- Ionicons -->
-    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-    <!-- DataTables -->
-    <link rel="stylesheet" href="../../public/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
-    <link rel="stylesheet" href="../../public/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
-    <link rel="stylesheet" href="../../public/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
-    <!-- Theme style -->
-    <link rel="stylesheet" href="../../public/dist/css/adminlte.min.css">
+<?php include "admin/view/super_admin_header.php"; ?>
 </head>
 <body>
 <div class="card">
@@ -119,40 +99,6 @@ require_once PATH_SYSTEM."/DB.php";
 </div>
 
 
-<!-- jQuery -->
-<script src="../../public/plugins/jquery/jquery.min.js"></script>
-<!-- Bootstrap 4 -->
-<script src="../../public/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-<!-- AdminLTE App -->
-<!-- bs-custom-file-input -->
-<script src="../../public/plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
-<script src="../../public/dist/js/adminlte.min.js"></script>
-<script src="../../public/dist/js/adminlte.js"></script>
-<script src="../../public/plugins/chart.js/Chart.min.js"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="../../public/dist/js/demo.js"></script>
-<!-- Page specific script -->
-<script>
-    $(function () {
-        $("#example1").DataTable({
-            "responsive": true,
-            "autoWidth": false,
-        });
-        $('#example2').DataTable({
-            "paging": true,
-            "lengthChange": false,
-            "searching": false,
-            "ordering": true,
-            "info": true,
-            "autoWidth": false,
-            "responsive": true,
-        });
-    });
-</script>
-<!-- DataTables  -->
-<script src="../../public/plugins/datatables/jquery.dataTables.min.js"></script>
-<script src="../../public/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
-<script src="../../public/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
-<script src="../../public/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+<?php include "admin/view/super_admin_footer.php"; ?>
 </body>
 </html>

@@ -24,8 +24,8 @@ if (isset($_POST['action'])) {
 <!doctype html>
 <html lang="en">
 <head>
-    <?php include "admin/includes/super_admin_header.php"; ?>
-    <title>Admin Page</title>
+    <?php include "admin/view/super_admin_header.php"; ?>
+    <title>Super Admin Page</title>
     <style type="text/css">/* Chart.js */
         @keyframes chartjs-render-animation {
             from {
@@ -73,11 +73,11 @@ if (isset($_POST['action'])) {
 <div class="wrapper">
 
     <!-- Navbar -->
-    <?php include "admin/includes/super_admin_nav.php"; ?>
+    <?php include "admin/view/super_admin_nav.php"; ?>
     <!-- /.Navbar -->
 
     <!-- Main Sidebar Container -->
-    <?php include "admin/includes/super_admin_aside.php"; ?>
+    <?php include "admin/view/super_admin_aside.php"; ?>
 <!--    ./ Main Sidebar Container -->
 
     <div class="content-wrapper" style="min-height: 1605px;">
@@ -756,7 +756,7 @@ if (isset($_POST['action'])) {
     </div>
 
 <!--    Main Footer-->
-    <?php include "admin/includes/super_admin_main-footer.php"; ?>
+    <?php include "admin/view/super_admin_main-footer.php"; ?>
 <!--    ./Main Footer-->
 
     <!-- Control Sidebar -->
@@ -768,6 +768,6 @@ if (isset($_POST['action'])) {
 <!-- ./wrapper -->
 
 
-<?php include "admin/includes/super_admin_footer.php" ?>
+<?php include "admin/view/super_admin_footer.php" ?>
 </body>
 </html>

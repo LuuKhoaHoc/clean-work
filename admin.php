@@ -104,13 +104,10 @@ if (isset($_POST['action'])) {
     <!-- /.Navbar -->
     <div class="" style="min-height: 1605px;">
         <!-- Content Header (Page header) -->
-        <section class="content-header">
+        <section class="content-header" style="background: url(public/images/OJXLCW0.jpg) center">
             <div class="container-fluid">
                 <div class="row mb-2">
-                    <div class="col-sm-6">
-                        <h1>--Admin Page--</h1>
-
-                    </div>
+                    <div class="col-sm-6"><h1 class="text-red">Admin Page</h1></div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="#">Home</a></li>
