@@ -18,7 +18,7 @@ class superadmin_Model extends admin_Model
         $row = mysqli_query(self::connect(), $query);
         $result = mysqli_fetch_all($row)[0][0];
         if ($result == "") {
-        return '$ 0';
+            return '$ 0';
         } else {
             return '$' . $result;
         }
@@ -36,7 +36,7 @@ class superadmin_Model extends admin_Model
     {
         $query = "SELECT COUNT(*) FROM `order_history` WHERE result > 0;";
         $row = mysqli_query(self::connect(), $query);
-        return  mysqli_fetch_all($row)[0][0];
+        return mysqli_fetch_all($row)[0][0];
     }
 
     public static function totalMoney()
@@ -46,7 +46,7 @@ class superadmin_Model extends admin_Model
             INNER JOIN `service type` AS ser ON ser.id = ORD.service_type_id
             WHERE ord.result > 0;";
         $row = mysqli_query(parent::connect(), $query);
-        return '$ '. mysqli_fetch_all($row)[0][0];
+        return '$ ' . mysqli_fetch_all($row)[0][0];
     }
 
     public static function monthWithMoney()
@@ -55,6 +55,17 @@ class superadmin_Model extends admin_Model
         SELECT MONTH(ORD.`end`) as MONTH, SUM(ser.price) as Money
         FROM `order_history` AS ORD INNER JOIN `service type` AS ser ON ser.id = ORD.service_type_id
         WHERE ORD.result > 0 GROUP BY MONTH ORDER BY MONTH;";
+        $row = mysqli_query(parent::connect(), $query);
+        return mysqli_fetch_all($row);
+    }
+
+    public static function showEmp()
+    {
+        $query = "
+        SELECT emp.id, emp.name, emp.phone, employee_rank.name
+        FROM employees AS emp
+        INNER JOIN  employee_rank ON `emp`.rank_id = employee_rank.id;
+    ";
         $row = mysqli_query(parent::connect(), $query);
         return mysqli_fetch_all($row);
     }

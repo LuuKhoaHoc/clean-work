@@ -1,6 +1,6 @@
 <?php
 
-use Administrator\CleanWork\classes\DB;
+use Administrator\CleanWork\system\DB;
 
 require_once "DB.php";
 

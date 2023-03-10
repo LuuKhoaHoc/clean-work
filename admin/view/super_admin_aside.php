@@ -33,46 +33,39 @@
                 </li>
                 <li class="nav-item">
                     <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-bars"></i>
+                        <i class="nav-icon fas fa-clipboard-check"></i>
                         <p>
-                            Thể loại
-                            <i class="right fas fa-angle-left"></i>
+                             Orders
                         </p>
                     </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="index.php?module=category&action=index" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Danh sách</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="index.php?module=category&action=create" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Thêm thể loại</p>
-                            </a>
-                        </li>
-                    </ul>
                 </li>
                 <li class="nav-item">
                     <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-archive"></i>
+                        <i class="nav-icon fas fa-file-alt"></i>
                         <p>
-                            Dịch vụ
+                            View Report
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-user-tie"></i>
+                        <p>
+                            Employees
                             <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="index.php?module=product&action=index" class="nav-link">
+                            <a href="index.php?module=user&action=index" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Danh sách</p>
+                                <p>List</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="index.php?module=product&action=create" class="nav-link">
+                            <a href="index.php?module=user&action=create" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Thêm dịch vụ</p>
+                                <p>Add Employees</p>
                             </a>
                         </li>
                     </ul>
@@ -81,69 +74,31 @@
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-users"></i>
                         <p>
-                            Thành viên
-                            <i class="right fas fa-angle-left"></i>
+                            Customer
                         </p>
                     </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="index.php?module=user&action=index" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Danh sách</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="index.php?module=user&action=create" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Thêm thành viên</p>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-cart-arrow-down"></i>
-                        <p>
-                            Đơn hàng
-                            <i class="right fas fa-angle-left"></i>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Danh sách</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Thêm đơn hàng</p>
-                            </a>
-                        </li>
-                    </ul>
                 </li>
                 <li class="nav-item">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-scroll"></i>
                         <p>
-                            Nội dung
+                            Pages
                             <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
+                        <?php
+
+
+                        ?>
                         <li class="nav-item">
                             <a href="" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Danh sách nội dung</p>
+                                <p>List</p>
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a href="" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Thêm nội dung</p>
-                            </a>
-                        </li>
+                        <?php  ?>
+
                     </ul>
                 </li>
             </ul>
