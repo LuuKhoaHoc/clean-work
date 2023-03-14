@@ -88,16 +88,23 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <?php
-
-
+                        $query = "
+                        SELECT * FROM pages
+                        ";
+                        $row = mysqli_query(\Administrator\CleanWork\system\DB::connect(), $query);
+                        $res = mysqli_fetch_all($row);
+                        foreach ($res as $page) {
+                            display($page[0]);
+                        }
+                        function display($page) {
                         ?>
                         <li class="nav-item">
                             <a href="" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>List</p>
+                                <p><?= $page ?></p>
                             </a>
                         </li>
-                        <?php  ?>
+                        <?php } ?>
 
                     </ul>
                 </li>
