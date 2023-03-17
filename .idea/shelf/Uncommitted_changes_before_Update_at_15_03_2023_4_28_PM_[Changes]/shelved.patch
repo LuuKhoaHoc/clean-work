@@ -1,0 +1,56 @@
+Index: public/js/addOnFunction.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>// Function show and hide password\r\nfunction hideAndShow() {\r\n    let x = document.getElementById(\"password\");\r\n    let y = document.getElementById(\"lock-icon\")\r\n    if (x.type === \"password\") {\r\n        x.type = \"text\";\r\n        y.className = \"fas fa-eye\"\r\n    } else {\r\n        x.type = \"password\";\r\n        y.className = \"fas fa-eye-slash\"\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/public/js/addOnFunction.js b/public/js/addOnFunction.js
+--- a/public/js/addOnFunction.js	(revision 2c8bc6a188de8566dcfacd2bbdaf2a81bed37d06)
++++ b/public/js/addOnFunction.js	(date 1678872414586)
+@@ -1,12 +1,12 @@
+ // Function show and hide password
+ function hideAndShow() {
+-    let x = document.getElementById("password");
+-    let y = document.getElementById("lock-icon")
+-    if (x.type === "password") {
+-        x.type = "text";
+-        y.className = "fas fa-eye"
+-    } else {
+-        x.type = "password";
+-        y.className = "fas fa-eye-slash"
+-    }
+-}
+\ No newline at end of file
++  let x = document.getElementById("password");
++  let y = document.getElementById("lock-icon");
++  if (x.type === "password") {
++    x.type = "text";
++    y.className = "fas fa-eye";
++  } else {
++    x.type = "password";
++    y.className = "fas fa-eye-slash";
++  }
++}
+Index: .idea/php.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"MessDetectorOptionsConfiguration\">\r\n    <option name=\"transferred\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PHPCSFixerOptionsConfiguration\">\r\n    <option name=\"transferred\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PHPCodeSnifferOptionsConfiguration\">\r\n    <option name=\"transferred\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PhpProjectSharedConfiguration\" php_language_level=\"8.2\" />\r\n  <component name=\"PhpStanOptionsConfiguration\">\r\n    <option name=\"transferred\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PsalmOptionsConfiguration\">\r\n    <option name=\"transferred\" value=\"true\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/php.xml b/.idea/php.xml
+--- a/.idea/php.xml	(revision 2c8bc6a188de8566dcfacd2bbdaf2a81bed37d06)
++++ b/.idea/php.xml	(date 1678872379188)
+@@ -9,6 +9,11 @@
+   <component name="PHPCodeSnifferOptionsConfiguration">
+     <option name="transferred" value="true" />
+   </component>
++  <component name="PhpIncludePathManager">
++    <include_path>
++      <path value="$PROJECT_DIR$/../../php" />
++    </include_path>
++  </component>
+   <component name="PhpProjectSharedConfiguration" php_language_level="8.2" />
+   <component name="PhpStanOptionsConfiguration">
+     <option name="transferred" value="true" />
