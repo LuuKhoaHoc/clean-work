@@ -104,7 +104,7 @@
   </div>
   <!-- /.register-box -->
 
-  <?php include_once "admin/view/super_admin_footer.php" ?>
+  <?php include_once "admin/view/public/super_admin_footer.php" ?>
 
 </body>
 

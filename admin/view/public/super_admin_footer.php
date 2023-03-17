@@ -50,7 +50,7 @@
     });
 </script>
 <!--Custom JS-->
-<?php include_once 'admin/view/chart.php' ?>
+<?php include_once 'admin/view/public/chart.php' ?>
 <!-- DataTables  -->
 <script src="public/plugins/datatables/jquery.dataTables.min.js"></script>
 <script src="public/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>

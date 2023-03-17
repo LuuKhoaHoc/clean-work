@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg">
     <div class="container">
         <a class="navbar-brand" href="../../index.php">
-            <img src="../../public/images/bubbles.png" class="logo img-fluid" alt="">
+            <img src="public/images/bubbles.png" class="logo img-fluid" alt="">
 
             <span class="ms-2">Clean Work</span>
         </a>
@@ -37,7 +37,7 @@
                 </li>
 
                 <li class="nav-item ms-3">
-                    <a class="nav-link custom-btn custom-border-btn custom-btn-bg-white btn" href="#">Get started</a>
+                    <a class="nav-link custom-btn custom-border-btn custom-btn-bg-white btn" href="site/view/public_guest/login.php">Get started</a>
                 </li>
             </ul>
         </div>

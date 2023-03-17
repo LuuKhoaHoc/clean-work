@@ -4,11 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8226da43-c5da-488b-8f80-c7f15faca93a" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/view/super_admin_aside.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/view/super_admin_aside.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+    <list default="true" id="8226da43-c5da-488b-8f80-c7f15faca93a" name="Changes" comment="Sửa một số thứ, thêm show info customer và thêm đổi password customer">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/view/public/super_admin_footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/view/public/super_admin_footer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/view/public/sign_up.php" beforeDir="false" afterPath="$PROJECT_DIR$/site/view/public/sign_up.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/view/public_guest/about.php" beforeDir="false" afterPath="$PROJECT_DIR$/site/view/public_guest/about.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/view/public_guest/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/site/view/public_guest/footer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/view/public_guest/home.php" beforeDir="false" afterPath="$PROJECT_DIR$/site/view/public_guest/home.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/view/public_guest/nav.html" beforeDir="false" afterPath="$PROJECT_DIR$/site/view/public_guest/nav.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/view/public_guest/page-404.php" beforeDir="false" afterPath="$PROJECT_DIR$/site/view/public_guest/page-404.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/view/public_guest/services-detail.php" beforeDir="false" afterPath="$PROJECT_DIR$/site/view/public_guest/services-detail.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/view/public_guest/services.php" beforeDir="false" afterPath="$PROJECT_DIR$/site/view/public_guest/services.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/view/public_guest/sign_up.php" beforeDir="false" afterPath="$PROJECT_DIR$/site/view/public_guest/sign_up.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,6 +27,11 @@
     <execution />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="Hocc" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -38,7 +50,7 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="PhpWorkspaceProjectConfiguration">
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP">
     <include_path>
       <path value="$PROJECT_DIR$/../../php" />
     </include_path>
@@ -56,7 +68,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/xampp/htdocs/newCleanWork&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/xampp/htdocs/clean-work&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -66,11 +78,18 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\xampp\htdocs\clean-work" />
       <recent name="C:\xampp\htdocs\clean-work\newCleanWork" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\clean-work\newCleanWork\View" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="ComposerRunConfigurationType" factoryName="Composer Script">
+      <option name="pathToComposerJson" value="D:\xampp\htdocs\clean-work\composer.json" />
+      <method v="2" />
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -87,10 +106,35 @@
       <workItem from="1678462472382" duration="5612000" />
       <workItem from="1678519859155" duration="1183000" />
       <workItem from="1678672962779" duration="3092000" />
+      <workItem from="1678939092498" duration="1544000" />
+      <workItem from="1679027174153" duration="1341000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="Foq" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
