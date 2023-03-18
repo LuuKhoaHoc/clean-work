@@ -4,7 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8226da43-c5da-488b-8f80-c7f15faca93a" name="Changes" comment="Sửa đường link" />
+    <list default="true" id="8226da43-c5da-488b-8f80-c7f15faca93a" name="Changes" comment="Sửa đường link">
+      <change beforePath="$PROJECT_DIR$/.htaccess" beforeDir="false" afterPath="$PROJECT_DIR$/.htaccess" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_03_2023_11_02_AM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_03_2023_11_02_AM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_03_2023_4_26_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_03_2023_4_26_PM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_03_2023_4_28_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_03_2023_4_28_PM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_03_2023_4_30_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_03_2023_4_30_PM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/controller/Customer_Account_Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/site/controller/Customer_Account_Controller.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/model/Customer_Model.php" beforeDir="false" afterPath="$PROJECT_DIR$/site/model/Customer_Model.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/view/public/about.php" beforeDir="false" afterPath="$PROJECT_DIR$/site/view/public/about.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/view/public/customer_change_password.php" beforeDir="false" afterPath="$PROJECT_DIR$/site/view/public/customer_change_password.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/view/public/customer_profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/site/view/public/customer_profile.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/view/public/home.php" beforeDir="false" afterPath="$PROJECT_DIR$/site/view/public/home.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/view/public/nav.html" beforeDir="false" afterPath="$PROJECT_DIR$/site/view/public/nav.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/view/public/page-404.php" beforeDir="false" afterPath="$PROJECT_DIR$/site/view/public/page-404.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/view/public/services-detail.php" beforeDir="false" afterPath="$PROJECT_DIR$/site/view/public/services-detail.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/view/public/services.php" beforeDir="false" afterPath="$PROJECT_DIR$/site/view/public/services.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/view/public_guest/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/site/view/public_guest/login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/view/public_guest/nav.php" beforeDir="false" afterPath="$PROJECT_DIR$/site/view/public_guest/nav.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/view/public_guest/sign_up.php" beforeDir="false" afterPath="$PROJECT_DIR$/site/view/public_guest/sign_up.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -51,19 +73,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/xampp/htdocs/clean-work&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "D:/xampp/htdocs/PHP-for-Beginners",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
+    ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\xampp\htdocs\clean-work" />
@@ -96,6 +123,7 @@
       <workItem from="1678672962779" duration="3092000" />
       <workItem from="1678939092498" duration="1544000" />
       <workItem from="1679027174153" duration="1686000" />
+      <workItem from="1679107708232" duration="4458000" />
     </task>
     <task id="LOCAL-00001" summary="Sửa đường link">
       <created>1679028781525</created>

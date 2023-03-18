@@ -33,12 +33,40 @@ class Customer_Account_Controller
         // Nếu đổi thành công hiển thị thông báo
         if ($result) {
             $errTyp = "success";
-            $errMSG = "Mật khẩu đã được đổi thành công";
+            $errMSG = "Password changed successfully";
         } else {
             $errTyp = "danger";
-            $errMSG = "Đã xảy ra lỗi. Vui lòng thử lại sau";
+            $errMSG = "An error occurred. Please try again later";
         }
         return array($errTyp, $errMSG);
 
+    }
+    public function loginAction() {
+        require ('site/model/Customer_Model.php');
+        $model = new Customer_Model();
+        $result = $model->checkUserFromDB($_POST['email'], $_POST['password']);
+        if (!$result) {
+//            header('index.php?c=Guest_Display_Content_Controller&a=showLoginAction&e=1');
+            require ('site/view/Guest_View.php');
+            global $errMsg;
+            $errMsg = "Wrong email or password. Please try again!";
+            $view = new Guest_View();
+            $view->LoginView();
+        } else {
+            //add section
+            ob_start();
+            session_start();
+            $session = $_SESSION['customer_info'] = $model->getInfoFromCustomer($_POST['email']);
+            require ('site/view/Customer_View.php');
+            $view = new Customer_View();
+            $view->LogedInHomeView($session);
+        }
+    }
+    public function logoutAction() {
+        session_start();
+        session_destroy();
+        require ('site/view/Guest_View.php');
+        $view = new Guest_View();
+        $view->HomeView();
     }
 }
