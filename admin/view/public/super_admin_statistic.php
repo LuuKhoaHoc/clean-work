@@ -1,5 +1,4 @@
 <?php
-require 'admin/model/superadmin_Model.php';
 ?>
 <!doctype html>
 <html lang="en">
