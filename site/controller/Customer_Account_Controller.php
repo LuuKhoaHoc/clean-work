@@ -41,31 +41,46 @@ class Customer_Account_Controller
         return array($errTyp, $errMSG);
 
     }
-    public function loginAction() {
-        require ('site/model/Customer_Model.php');
+    public function loginAction()
+    {
+        require('site/model/Customer_Model.php');
         $model = new Customer_Model();
         $result = $model->checkUserFromDB($_POST['email'], $_POST['password']);
-        if (!$result) {
-//            header('index.php?c=Guest_Display_Content_Controller&a=showLoginAction&e=1');
-            require ('site/view/Guest_View.php');
+        if (is_null($result)) {
+            require('site/view/Guest_View.php');
             global $errMsg;
             $errMsg = "Wrong email or password. Please try again!";
             $view = new Guest_View();
             $view->LoginView();
-        } else {
+        } else if ($result == 0) {
             //add section
             ob_start();
             session_start();
             $session = $_SESSION['customer_info'] = $model->getInfoFromCustomer($_POST['email']);
-            require ('site/view/Customer_View.php');
+            require('site/view/Customer_View.php');
             $view = new Customer_View();
             $view->LogedInHomeView($session);
+        } elseif ($result == 1) {
+            ob_start();
+            session_start();
+            $session = $_SESSION['admin_info'] = $model->getInfoFromCustomer($_POST['email']);
+            require('admin/view/Admin_View.php');
+            $view = new Admin_View();
+            $view->OrderView($session);
+        } elseif ($result == 2) {
+            ob_start();
+            session_start();
+            $session = $_SESSION['superadmin_info'] = $model->getInfoFromCustomer($_POST['email']);
+            require('admin/view/Superadmin_View.php');
+            $view = new Superadmin_View();
+            $view->StatisticView($session);
         }
     }
-    public function logoutAction() {
+    public function logoutAction()
+    {
         session_start();
         session_destroy();
-        require ('site/view/Guest_View.php');
+        require('site/view/Guest_View.php');
         $view = new Guest_View();
         $view->HomeView();
     }

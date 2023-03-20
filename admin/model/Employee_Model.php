@@ -8,8 +8,7 @@ class Employee_Model extends DB {
 
     public static function chooseEmployeesIntoView(int $manpower)
     {
-        $query = "
-            CREATE VIEW team_1 AS 
+        $query = "CREATE VIEW team_1 AS 
             SELECT `id`
             FROM `employees`
             WHERE `employees`.`is_free` = 1

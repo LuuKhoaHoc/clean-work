@@ -29,13 +29,14 @@ class Customer_Model extends DB
         return mysqli_query(parent::connect(), $query);
     }
     public function checkUserFromDB($email, $password) {
-        $query  = "SELECT `email`, `password`  FROM `customer` WHERE email = '$email' AND password = '$password'";
+        $query  = "SELECT `categoryID`  FROM `customer` WHERE email = '$email' AND password = '$password'";
         $row = mysqli_query(parent::connect(),$query);
-        if ($data = mysqli_num_rows($row)) {
-            return true;
+        $data = mysqli_fetch_all($row);
+        if (mysqli_num_rows($row)) {
+            return $data[0][0];
         }
         else {
-            return false;
+            return null;
         }
     }
 

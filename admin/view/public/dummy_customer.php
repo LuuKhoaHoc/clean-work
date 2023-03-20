@@ -136,7 +136,7 @@ if (isset($_POST['action'])) {
                         </tr>
                         </thead>
                         <?php
-                        $orders = admin_Model::show_order();
+
                         foreach ($orders as $order) { ?>
                             <tr>
                                 <?php foreach ($order as $row) { ?>
