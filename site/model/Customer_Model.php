@@ -4,9 +4,9 @@ require_once('system/DB.php');
 
 class Customer_Model extends DB
 {
-    //Customer_Model for Customer to view their profile
+    //CustomerManagement_Model for Customer to view their profile
     //Working with `customer`, `customer_rank` and `person_category` tables
-    public function getInfoFromCustomer(string $cusEmail)
+    public function getInfoFromCustomer(string $cusEmail, $permission = 0)
     {
         $query = "
             SELECT 
@@ -18,7 +18,7 @@ class Customer_Model extends DB
                 cus.time
             FROM `customer` AS cus
             INNER JOIN customer_rank AS cr ON cr.`id` = cus.`rank_id`
-            WHERE categoryID = 0 AND cus.email = '$cusEmail';
+            WHERE categoryID = $permission AND cus.email = '$cusEmail';
         ";
         $row = mysqli_query(parent::connect(), $query);
         return mysqli_fetch_all($row);

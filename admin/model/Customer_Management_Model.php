@@ -2,26 +2,26 @@
 
 require_once('system/DB.php');
 
-class Customer_Model extends DB
+class CustomerManagement_Model extends DB
 {
-    //Customer_Model for Admin to manage Customer data
+    //CustomerManagement_Model for Admin to manage Customer data
     //Working with `customer`, `customer_rank` and `person_category` tables
-    public function getInfoFromCustomer(string|int $customerId)
+    public function getAdminInfoFromCustomer(string $cusEmail, $permission = 0)
     {
         $query = "
             SELECT 
             	cus.name,
                 cus.email,
                 cus.phone,
-                cr.name
+                pc.type
             FROM `customer` AS cus
-            INNER JOIN customer_rank AS cr ON cr.`id` = cus.`rank_id`
-            WHERE categoryID = 0 AND cus.id = '$customerId';
+            INNER JOIN `person_category` AS pc ON pc.`id` = cus.`categoryID`
+            WHERE categoryID = $permission AND cus.email = '$cusEmail';
         ";
         $row = mysqli_query(parent::connect(), $query);
-        return mysqli_fetch_all($row);
+        return mysqli_fetch_assoc($row);
     }
-    public static function countCusThisMonth()
+    public static function countCusThisMonth() // Ham đếm cus mới của tháng
     {
         $query = "SELECT count(*) FROM `customer`
                 WHERE `customer`.time > Last_day(adddate(now(), interval -1 month));";
@@ -33,4 +33,5 @@ class Customer_Model extends DB
         $query = "INSERT INTO customer (id, name, email, phone) VALUES (NULL, '$name', '$email', '$phone')";
         return mysqli_query(self::connect(), $query);
     }
+
 }

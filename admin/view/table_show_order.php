@@ -56,12 +56,12 @@ class table_show_order
                     </tr>
                     </thead>
                     <?php
-                    $orders = Order_Model::show_order($state_id);
-                    foreach ($orders as $order) { ?>
+                    require_once("admin/model/Order_Model.php");
+                    foreach (Order_Model::show_order($state_id) as $order) { ?>
                         <tr>
                             <?php foreach ($order as $row) { ?>
                                 <td><?= $row ?></td>
-                    <?php } ?>
+                            <?php } ?>
                             <td class="btn-group">
                                 <form action="" method="post">
                                     <?php if ($action) { ?>
@@ -85,6 +85,7 @@ class table_show_order
         </div>
         <?php
     }
+
     public static function show_pages_table(string $table_name, string $pages, string $action = null): void
     {
         ?>

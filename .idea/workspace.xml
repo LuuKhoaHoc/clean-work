@@ -4,165 +4,105 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8226da43-c5da-488b-8f80-c7f15faca93a" name="Changes" comment="Sửa đường link">
-      <change beforePath="$PROJECT_DIR$/.htaccess" beforeDir="false" afterPath="$PROJECT_DIR$/.htaccess" afterDir="false" />
+    <list default="true" id="306e221c-edb9-4616-bd79-f07250ba1696" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/admin/controller/Customer_Management_Controller.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/site/view/public_guest/contact.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_03_2023_11_02_AM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_03_2023_11_02_AM__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_03_2023_4_26_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_03_2023_4_26_PM__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_03_2023_4_28_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_03_2023_4_28_PM__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_03_2023_4_30_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_03_2023_4_30_PM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_03_2023_11_02_AM_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_03_2023_11_02_AM__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_03_2023_4_26_PM_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_03_2023_4_26_PM__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_03_2023_4_28_PM_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_03_2023_4_28_PM__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_03_2023_4_30_PM_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_03_2023_4_30_PM__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/controller/Admin_Display_Content_Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/controller/Admin_Display_Content_Controller.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/model/Customer_Model.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/model/Customer_Management_Model.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/view/public/super_admin_aside.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/view/public/super_admin_aside.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/view/public/super_admin_statistic.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/view/public/super_admin_statistic.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/view/public_admin/admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/view/public_admin/admin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/view/table_show_order.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/view/table_show_order.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/site/controller/Customer_Account_Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/site/controller/Customer_Account_Controller.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/controller/Customer_Display_Content_Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/site/controller/Customer_Display_Content_Controller.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/controller/Guest_Display_Content_Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/site/controller/Guest_Display_Content_Controller.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/model/Content_Model.php" beforeDir="false" afterPath="$PROJECT_DIR$/site/model/Content_Model.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/site/model/Customer_Model.php" beforeDir="false" afterPath="$PROJECT_DIR$/site/model/Customer_Model.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/view/Customer_View.php" beforeDir="false" afterPath="$PROJECT_DIR$/site/view/Customer_View.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/view/Guest_View.php" beforeDir="false" afterPath="$PROJECT_DIR$/site/view/Guest_View.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/site/view/public/about.php" beforeDir="false" afterPath="$PROJECT_DIR$/site/view/public/about.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/site/view/public/customer_change_password.php" beforeDir="false" afterPath="$PROJECT_DIR$/site/view/public/customer_change_password.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/site/view/public/customer_profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/site/view/public/customer_profile.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/site/view/public/home.php" beforeDir="false" afterPath="$PROJECT_DIR$/site/view/public/home.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site/view/public/nav.html" beforeDir="false" afterPath="$PROJECT_DIR$/site/view/public/nav.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/view/public/nav.php" beforeDir="false" afterPath="$PROJECT_DIR$/site/view/public/nav.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/site/view/public/page-404.php" beforeDir="false" afterPath="$PROJECT_DIR$/site/view/public/page-404.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/site/view/public/services-detail.php" beforeDir="false" afterPath="$PROJECT_DIR$/site/view/public/services-detail.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/site/view/public/services.php" beforeDir="false" afterPath="$PROJECT_DIR$/site/view/public/services.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site/view/public_guest/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/site/view/public_guest/login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/view/public_guest/about.php" beforeDir="false" afterPath="$PROJECT_DIR$/site/view/public_guest/about.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/site/view/public_guest/nav.php" beforeDir="false" afterPath="$PROJECT_DIR$/site/view/public_guest/nav.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site/view/public_guest/sign_up.php" beforeDir="false" afterPath="$PROJECT_DIR$/site/view/public_guest/sign_up.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/view/public_guest/services-detail.php" beforeDir="false" afterPath="$PROJECT_DIR$/site/view/public_guest/services-detail.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/view/public_guest/services.php" beforeDir="false" afterPath="$PROJECT_DIR$/site/view/public_guest/services.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" doNotAsk="true" notifyAboutMissingVendor="false">
-    <pharConfigPath>$PROJECT_DIR$/system/composer.json</pharConfigPath>
+  <component name="ComposerSettings">
     <execution />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="Hocc" />
-      </map>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="GitHubPullRequestSearchHistory">{
-  &quot;lastFilter&quot;: {
-    &quot;state&quot;: &quot;OPEN&quot;
-  }
-}</component>
-  <component name="GithubPullRequestsUISettings">
-    <option name="selectedUrlAndAccountId">
-      <UrlAndAccount>
-        <option name="accountId" value="1f7c40be-0a05-4ba1-aaf8-a94dedf094b0" />
-        <option name="url" value="https://github.com/LuuKhoaHoc/clean-work.git" />
-      </UrlAndAccount>
-    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP">
-    <include_path>
-      <path value="$PROJECT_DIR$/../../php" />
-    </include_path>
-  </component>
-  <component name="ProjectId" id="2McdJ7xohrYlNvcABVRizEqtaas" />
-  <component name="ProjectLevelVcsManager">
-    <ConfirmationsSetting value="1" id="Add" />
-  </component>
+  <component name="ProjectId" id="2NGKVlU3qIWA8JxOy3gpWEBoGPe" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/xampp/htdocs/PHP-for-Beginners",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/xampp/htdocs/clean-work/site/view/public_guest&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\xampp\htdocs\clean-work" />
-      <recent name="C:\xampp\htdocs\clean-work\newCleanWork" />
+      <recent name="D:\xampp\htdocs\clean-work\site\view\public_guest" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\clean-work\newCleanWork\View" />
-    </key>
-  </component>
-  <component name="RunManager">
-    <configuration default="true" type="ComposerRunConfigurationType" factoryName="Composer Script">
-      <option name="pathToComposerJson" value="D:\xampp\htdocs\clean-work\composer.json" />
-      <method v="2" />
-    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="8226da43-c5da-488b-8f80-c7f15faca93a" name="Changes" comment="" />
-      <created>1678070729259</created>
+      <changelist id="306e221c-edb9-4616-bd79-f07250ba1696" name="Changes" comment="" />
+      <created>1679285009946</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1678070729259</updated>
-      <workItem from="1678070732434" duration="602000" />
-      <workItem from="1678074111086" duration="3700000" />
-      <workItem from="1678237261417" duration="2109000" />
-      <workItem from="1678243995633" duration="884000" />
-      <workItem from="1678462472382" duration="5612000" />
-      <workItem from="1678519859155" duration="1183000" />
-      <workItem from="1678672962779" duration="3092000" />
-      <workItem from="1678939092498" duration="1544000" />
-      <workItem from="1679027174153" duration="1686000" />
-      <workItem from="1679107708232" duration="4458000" />
+      <updated>1679285009946</updated>
+      <workItem from="1679285011101" duration="3657000" />
+      <workItem from="1679292623577" duration="119000" />
+      <workItem from="1679292744743" duration="9478000" />
+      <workItem from="1679313830322" duration="4244000" />
     </task>
-    <task id="LOCAL-00001" summary="Sửa đường link">
-      <created>1679028781525</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1679028781525</updated>
-    </task>
-    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State>
-              <option name="FILTERS">
-                <map>
-                  <entry key="branch">
-                    <value>
-                      <list>
-                        <option value="Hocc" />
-                      </list>
-                    </value>
-                  </entry>
-                </map>
-              </option>
-            </State>
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="Sửa đường link" />
-    <option name="LAST_COMMIT_MESSAGE" value="Sửa đường link" />
   </component>
 </project>

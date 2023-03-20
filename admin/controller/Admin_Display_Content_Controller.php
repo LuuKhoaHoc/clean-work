@@ -9,7 +9,7 @@ class Admin_Display_Content_Controller
         $view = new Admin_View();
 
         // $data = $model->
-        $view->OrderView();
+        $view->OrderView('');
     }
     public function showProfileAction()
     {

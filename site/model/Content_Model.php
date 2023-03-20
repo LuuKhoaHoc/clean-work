@@ -12,4 +12,9 @@ class Content_Model extends DB {
         $row = mysqli_query(parent::connect(), $query);
         return mysqli_fetch_all($row);
     }
+    public function getSerFromDB(string $service) {
+        $query = "SELECT * FROM `service type` as ser WHERE ser.name = '$service'" ;
+        $row = mysqli_query(parent::connect(),$query);
+        return mysqli_fetch_assoc($row);
+    }
 }

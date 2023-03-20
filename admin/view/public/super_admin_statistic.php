@@ -1,10 +1,10 @@
 <?php
-require 'admin/model/superadmin_Model.php';
+//include 'admin/model/superadmin_Model.php';
 ?>
 <!doctype html>
 <html lang="en">
 <head>
-    <?php include "admin/view/super_admin_header.php"; ?>
+    <?php include "admin/view/public/super_admin_header.php"; ?>
     <title>Super Admin Page</title>
     <style type="text/css">/* Chart.js */
         @keyframes chartjs-render-animation {
@@ -53,11 +53,11 @@ require 'admin/model/superadmin_Model.php';
 <div class="wrapper">
 
     <!-- Navbar -->
-    <?php include "admin/view/super_admin_nav.php"; ?>
+    <?php include "admin/view/public/super_admin_nav.php"; ?>
     <!-- /.Navbar -->
 
     <!-- Main Sidebar Container -->
-    <?php include "admin/view/super_admin_aside.php"; ?>
+    <?php include "admin/view/public/super_admin_aside.php"; ?>
 <!--    ./ Main Sidebar Container -->
 
     <div class="content-wrapper" style="min-height: 1605px;">
@@ -66,11 +66,11 @@ require 'admin/model/superadmin_Model.php';
 
 
         ?>
-        <?php include "dashboard.php"; ?>
+        <?php include_once "dashboard.php"; ?>
     </div>
 
 <!--    Main Footer-->
-    <?php include "admin/view/super_admin_main-footer.php"; ?>
+    <?php include "admin/view/public/super_admin_main-footer.php"; ?>
 <!--    ./Main Footer-->
 
     <!-- Control Sidebar -->
@@ -82,6 +82,6 @@ require 'admin/model/superadmin_Model.php';
 <!-- ./wrapper -->
 
 
-<?php include "admin/view/super_admin_footer.php" ?>
+<?php include "admin/view/public/super_admin_footer.php" ?>
 </body>
 </html>

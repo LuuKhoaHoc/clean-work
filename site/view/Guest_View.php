@@ -10,7 +10,7 @@ class Guest_View {
     public function OurServiceView() {
         require('site/view/public_guest/services.php');
     }
-    public function ServiceDetailView(string $serivce) {
+    public function ServiceDetailView(array $service) {
         require('site/view/public_guest/services-detail.php');
     }
     public function Error404View() {

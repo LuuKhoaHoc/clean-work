@@ -13,22 +13,20 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="index.php">Home</a>
+                    <a class="nav-link" href="index.php?c=Guest_Display_Content_Controller&a=showHomeAction">Home</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="about.php">About Us</a>
+                    <a class="nav-link" href="index.php?c=Guest_Display_Content_Controller&a=showAboutUsAction">About Us</a>
                 </li>
 
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#section_5" id="navbarLightDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Pages</a>
 
                     <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarLightDropdownMenuLink">
-                        <li><a class="dropdown-item" href="services.php">Our Services</a></li>
+                        <li><a class="dropdown-item" href="index.php?c=Guest_Display_Content_Controller&a=showOurServiceAction">Our Services</a></li>
 
-                        <li><a class="dropdown-item active" href="coming-soon.php">Coming Soon</a></li>
-
-                        <li><a class="dropdown-item" href="page-404.php">Page 404</a></li>
+                        <li><a class="dropdown-item" href="index.php?c=Guest_Display_Content_Controller&a=showError404Action">Page 404</a></li>
                     </ul>
                 </li>
 
@@ -37,7 +35,7 @@
                 </li>
 
                 <li class="nav-item ms-3">
-                    <a class="nav-link custom-btn custom-border-btn custom-btn-bg-white btn" href="site/view/public_guest/login.php">Get started</a>
+                    <a class="nav-link custom-btn custom-border-btn custom-btn-bg-white btn" href="/../clean-work/site/view/public_guest/login.php">Get started</a>
                 </li>
             </ul>
         </div>

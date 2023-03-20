@@ -10,7 +10,7 @@ class Customer_View {
     public function LogedInOurServiceView($customerInfo) {
         require('site/view/public/services.php');
     }
-    public function LogedInServiceDetailView(string $serivce,$customerInfo) {
+    public function LogedInServiceDetailView( array $service,$customerInfo) {
         require('site/view/public/services-detail.php');
     }
     public function LogedInError404View($customerInfo) {

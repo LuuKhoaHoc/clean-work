@@ -1,5 +1,4 @@
 <?php
-
 // require 'admin/model/admin_Model.php';
 // if (isset($_POST['action'])) {
 //     switch ($_POST['action']) {
@@ -70,7 +69,11 @@
                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
                     <img src="public/dist/img/user2-160x160.jpg" class="user-image img-circle elevation-2"
                          alt="User Image">
-                    <span class="d-none d-md-inline">admin@leowind.com</span>
+                    <span class="d-none d-md-inline">
+                        <?= /** @var $adminInfo */
+                        $adminInfo['name']
+                        ?>
+                    </span>
                 </a>
                 <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                     <!-- User image -->
@@ -78,14 +81,15 @@
                         <img src="public/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
 
                         <p>
-                            admin@leowind.com
-                            <small>Member since Nov. 2012</small>
+                            <?= $adminInfo['name']  ?>
+                            <br>
+                            <?= $adminInfo['email'] ?>
                         </p>
                     </li>
                     <!-- Menu Footer-->
                     <li class="user-footer">
                         <a href="#" class="btn btn-default btn-flat">Profile</a>
-                        <a href="#" class="btn btn-default btn-flat float-right">Sign out</a>
+                        <a href="index.php?c=Customer_Account_Controller&a=logoutAction" class="btn btn-default btn-flat float-right">Sign out</a>
                     </li>
                 </ul>
             </li>

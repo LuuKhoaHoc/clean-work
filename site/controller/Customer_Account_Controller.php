@@ -43,9 +43,14 @@ class Customer_Account_Controller
     }
     public function loginAction()
     {
-        require('site/model/Customer_Model.php');
+        require "site/model/Customer_Model.php";
+        require "admin/model/Customer_Management_Model.php";
+
         $model = new Customer_Model();
+        $model_admin = new CustomerManagement_Model();
+
         $result = $model->checkUserFromDB($_POST['email'], $_POST['password']);
+
         if (is_null($result)) {
             require('site/view/Guest_View.php');
             global $errMsg;
@@ -60,17 +65,17 @@ class Customer_Account_Controller
             require('site/view/Customer_View.php');
             $view = new Customer_View();
             $view->LogedInHomeView($session);
-        } elseif ($result == 1) {
+        } else if ($result == 1) {
             ob_start();
             session_start();
-            $session = $_SESSION['admin_info'] = $model->getInfoFromCustomer($_POST['email']);
+            $session = $_SESSION['admin_info'] = $model_admin->getAdminInfoFromCustomer($_POST['email'],1);
             require('admin/view/Admin_View.php');
             $view = new Admin_View();
             $view->OrderView($session);
-        } elseif ($result == 2) {
+        } else if ($result == 2) {
             ob_start();
             session_start();
-            $session = $_SESSION['superadmin_info'] = $model->getInfoFromCustomer($_POST['email']);
+            $session = $_SESSION['superadmin_info'] = $model_admin->getAdminInfoFromCustomer($_POST['email'],2);
             require('admin/view/Superadmin_View.php');
             $view = new Superadmin_View();
             $view->StatisticView($session);
