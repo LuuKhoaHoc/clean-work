@@ -14,14 +14,14 @@ class Customer_Model extends DB
             	cus.name,
                 cus.email,
                 cus.phone,
-                cr.name,
+                rk.type,
                 cus.time
             FROM `customer` AS cus
-            INNER JOIN customer_rank AS cr ON cr.`id` = cus.`rank_id`
+            INNER JOIN customer_rank AS rk ON rk.`id` = cus.`rank_id`
             WHERE categoryID = $permission AND cus.email = '$cusEmail';
         ";
         $row = mysqli_query(parent::connect(), $query);
-        return mysqli_fetch_all($row);
+        return mysqli_fetch_array($row);
     }
     public function updatePassword($customerId, $newPassword) {
         

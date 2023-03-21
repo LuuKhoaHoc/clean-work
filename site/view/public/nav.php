@@ -33,32 +33,17 @@
 
                 <li class="nav-item dropdown show ms-3">
                     <a class="nav-link dropdown-toggle" id="navbarDropDownCustomer" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <span class="d-none d-md-inline"><?php echo $_SESSION['customer_info'][0][1] ?></span>
+                        <span class="d-none d-md-inline"><?php echo $_SESSION['customer_info']['name'] ?></span>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-light show" aria-labelledby="navbarLightDropdownMenuLink" style="right: inherit; left: -15px;">
                         <!-- User image -->
                         <li style="width: 250px; background-color: var(--primary-color)" class="text-center">
                             <img src="public/dist/img/user2-160x160.jpg"  class="rounded-circle"  alt="User Image">
                             <p class="text-white">
-                                <?php echo $_SESSION['customer_info'][0][1] . " - " . $_SESSION['customer_info'][0][4]  ?>
+                                <?php echo $_SESSION['customer_info']['name'] . " - " . ucwords($_SESSION['customer_info']['type'])  ?>
                                 <br>
-                                <small>Member since <?= $_SESSION['customer_info'][0][5] ?></small>
+                                <small>Member since <?= $_SESSION['customer_info']['time'] ?></small>
                             </p>
-                        </li>
-                        <!-- Menu Body -->
-                        <li class="my-2">
-                            <div class="row">
-                                <div class="col-4 text-center">
-                                    <a href="#">Followers</a>
-                                </div>
-                                <div class="col-4 text-center">
-                                    <a href="#">Sales</a>
-                                </div>
-                                <div class="col-4 text-center">
-                                    <a href="#">Friends</a>
-                                </div>
-                            </div>
-                            <!-- /.row -->
                         </li>
                         <!-- Menu Footer-->
                         <li class="text-center my-2">

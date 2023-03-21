@@ -55,7 +55,7 @@
     <nav class="navbar navbar-expand navbar-primary navbar-dark">
         <!-- Left navbar links -->
         <ul class="navbar-nav">
-            <a href="" class="brand-link">
+            <a href="/../clean-work/index.php?c=Customer_Display_Content_Controller&a=showHomeAction" class="brand-link">
                 <img src="public/images/bubbles.png" alt="Clean Work Logo"
                      class="brand-image img-circle elevation-3" style="opacity: .8">
                 <span class="brand-text text-white text-uppercase">Clean Work</span>
@@ -89,7 +89,7 @@
                     <!-- Menu Footer-->
                     <li class="user-footer">
                         <a href="#" class="btn btn-default btn-flat">Profile</a>
-                        <a href="index.php?c=Customer_Account_Controller&a=logoutAction" class="btn btn-default btn-flat float-right">Sign out</a>
+                        <a href="index.php?c=Customer_Management_Controller&a=adminLogoutAction" class="btn btn-default btn-flat float-right">Sign out</a>
                     </li>
                 </ul>
             </li>

@@ -1,22 +1,39 @@
 <?php
 //Routing mechanism
+require_once "admin/config/Constant.php";
 
-$controllerName = empty($_GET['c']) ? 'Guest_Display_Content_Controller' : $_GET['c'];
-$actionName = empty($_GET['a']) ? 'showHomeAction' : $_GET['a'];
+$controllerName = $_GET['c'] ?? DEFAULT_CONTROLLER;
+$actionName = $_GET['a'] ?? DEFAULT_ACTION;
 
-$controllerFile = "site/controller/$controllerName.php";
-$action = "$actionName";
+
+$controllerFile = CUSTOMER_CONTROLLER_PATH . "$controllerName.php";
+$action = $actionName;
 
 if (file_exists($controllerFile)) {
     require_once "$controllerFile";
     $controller = new $controllerName();
-    if (method_exists($controller, $action)) {
+    if (!method_exists($controller, $action)) {
+        $action = ERROR_404_ACTION;
+    }
+    $controller->$action();
+} else {
+    $controllerFile = ADMIN_CONTROLLER_PATH . "$controllerName.php";
+    if (file_exists($controllerFile)) {
+        require_once $controllerFile;
+        $controller = new $controllerName();
+        if (!method_exists($controller, $action)) {
+            $action = ERROR_404_ACTION;
+        }
         $controller->$action();
     } else {
-        $action = "showError404Action";
+        $action = ERROR_404_ACTION;
+        $controllerName = DEFAULT_CONTROLLER;
+        $controllerFile = CUSTOMER_CONTROLLER_PATH . "$controllerName.php";
+        require_once $controllerFile;
+        $controller = new $controllerName();
+        $controller->$action();
     }
-} else {
-    $action = "showError404Action";
+
 }
 
 // include 'site/controller/Guest_Display_Content_Controller.php';

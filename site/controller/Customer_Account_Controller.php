@@ -68,14 +68,14 @@ class Customer_Account_Controller
         } else if ($result == 1) {
             ob_start();
             session_start();
-            $session = $_SESSION['admin_info'] = $model_admin->getAdminInfoFromCustomer($_POST['email'],1);
+            $session = $_SESSION['customer_info'] = $model_admin->getAdminInfoFromCustomer($_POST['email'],1);
             require('admin/view/Admin_View.php');
             $view = new Admin_View();
             $view->OrderView($session);
         } else if ($result == 2) {
             ob_start();
             session_start();
-            $session = $_SESSION['superadmin_info'] = $model_admin->getAdminInfoFromCustomer($_POST['email'],2);
+            $session = $_SESSION['customer_info'] = $model_admin->getAdminInfoFromCustomer($_POST['email'],2);
             require('admin/view/Superadmin_View.php');
             $view = new Superadmin_View();
             $view->StatisticView($session);
@@ -85,8 +85,7 @@ class Customer_Account_Controller
     {
         session_start();
         session_destroy();
-        require('site/view/Guest_View.php');
-        $view = new Guest_View();
-        $view->HomeView();
+        header("location: index.php");
+        exit();
     }
 }

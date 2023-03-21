@@ -13,7 +13,8 @@ class CustomerManagement_Model extends DB
             	cus.name,
                 cus.email,
                 cus.phone,
-                pc.type
+                pc.type,
+                cus.time
             FROM `customer` AS cus
             INNER JOIN `person_category` AS pc ON pc.`id` = cus.`categoryID`
             WHERE categoryID = $permission AND cus.email = '$cusEmail';
