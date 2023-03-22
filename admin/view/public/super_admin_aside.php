@@ -1,6 +1,6 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="" class="brand-link">
+    <a href="index.php?c=Customer_Display_Content_Controller&a=showHomeAction" class="brand-link">
         <img src="public/images/bubbles.png" alt="Clean Work Logo"
              class="brand-image img-circle elevation-3" style="opacity: .8">
         <span class="brand-text text-white text-uppercase">Clean Work</span>
@@ -8,14 +8,15 @@
     <!-- Sidebar -->
     <div class="sidebar">
         <!-- Sidebar user (optional) -->
-        <div class="user-panel mt-3 pb-3 mb-3 d-flex align-items-center justify-content-center">
-            <div class="image">
-                <img src="public/dist/img/user2-160x160.jpg"
+        <div class="user-panel mt-3 pb-3 mb-3 d-flex flex-column align-items-center justify-content-center">
+            <div class="user-image">
+                <img  src="public/dist/img/user2-160x160.jpg"
                      class="img-circle elevation-2" alt="User Image">
             </div>
-            <div class="info">
+            <div class="info text-center">
+                <a href="" class="d-block"><?= $_SESSION['customer_info']['name'] ?></a>
                 <a href="" class="d-block">SuperAdmin@gmail.com</a>
-                <a href="" class="d-block text-center text-danger">Đăng xuất</a>
+                <a href="index.php?c=Customer_Management_Controller&a=superAdminLogoutAction" class="d-block text-center text-danger">Đăng xuất</a>
             </div>
         </div>
         <!-- Sidebar Menu -->

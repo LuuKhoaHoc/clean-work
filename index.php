@@ -24,15 +24,14 @@ if (file_exists($controllerFile)) {
         if (!method_exists($controller, $action)) {
             $action = ERROR_404_ACTION;
         }
-        $controller->$action();
     } else {
         $action = ERROR_404_ACTION;
         $controllerName = DEFAULT_CONTROLLER;
         $controllerFile = CUSTOMER_CONTROLLER_PATH . "$controllerName.php";
         require_once $controllerFile;
         $controller = new $controllerName();
-        $controller->$action();
     }
+    $controller->$action();
 
 }
 

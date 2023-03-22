@@ -4,16 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="306e221c-edb9-4616-bd79-f07250ba1696" name="Changes" comment="Fix lại các path cũng như đổi tên 1 số thứ, thêm thông số để lấy thông tin của admin được xây dựng trong Customer_Management_Controller.php. Thêm Customer_Management_Controller.php để xây dựng chỉnh sửa cho admin.">
-      <change afterPath="$PROJECT_DIR$/admin/config/Constant.php" afterDir="false" />
+    <list default="true" id="306e221c-edb9-4616-bd79-f07250ba1696" name="Changes" comment="Thêm gitignore">
+      <change afterPath="$PROJECT_DIR$/site/view/public/view-order.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/controller/Customer_Management_Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/controller/Customer_Management_Controller.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/model/Customer_Management_Model.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/model/Customer_Management_Model.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/view/public_admin/admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/view/public_admin/admin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/controller/Admin_Display_Content_Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/controller/Admin_Display_Content_Controller.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/controller/Superadmin_Display_Content_Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/controller/Superadmin_Display_Content_Controller.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/view/public/super_admin_aside.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/view/public/super_admin_aside.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/view/public/super_admin_nav.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/view/public/super_admin_nav.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/site/controller/Customer_Account_Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/site/controller/Customer_Account_Controller.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site/model/Customer_Model.php" beforeDir="false" afterPath="$PROJECT_DIR$/site/model/Customer_Model.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/controller/Customer_Display_Content_Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/site/controller/Customer_Display_Content_Controller.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/model/Content_Model.php" beforeDir="false" afterPath="$PROJECT_DIR$/site/model/Content_Model.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/view/Customer_View.php" beforeDir="false" afterPath="$PROJECT_DIR$/site/view/Customer_View.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/view/public/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/site/view/public/footer.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/site/view/public/nav.php" beforeDir="false" afterPath="$PROJECT_DIR$/site/view/public/nav.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/view/public/sign_up.php" beforeDir="false" afterPath="$PROJECT_DIR$/site/view/public/sign-up.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,7 +76,9 @@
       <workItem from="1679292744743" duration="9478000" />
       <workItem from="1679313830322" duration="5859000" />
       <workItem from="1679369797436" duration="608000" />
-      <workItem from="1679384372768" duration="8530000" />
+      <workItem from="1679384372768" duration="9279000" />
+      <workItem from="1679458029938" duration="6443000" />
+      <workItem from="1679486115733" duration="3090000" />
     </task>
     <task id="LOCAL-00001" summary="Fix lại các path cũng như đổi tên 1 số thứ, thêm thông số để lấy thông tin của admin được xây dựng trong Customer_Management_Controller.php. Thêm Customer_Management_Controller.php để xây dựng chỉnh sửa cho admin.">
       <created>1679318247535</created>
@@ -80,7 +87,21 @@
       <option name="project" value="LOCAL" />
       <updated>1679318247536</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Optimize lại routing, thêm chức năng logout cho admin, điều chỉnh lại 1 số thứ">
+      <created>1679393919724</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1679393919724</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Thêm gitignore">
+      <created>1679394153435</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1679394153435</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -99,6 +120,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Fix lại các path cũng như đổi tên 1 số thứ, thêm thông số để lấy thông tin của admin được xây dựng trong Customer_Management_Controller.php. Thêm Customer_Management_Controller.php để xây dựng chỉnh sửa cho admin." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix lại các path cũng như đổi tên 1 số thứ, thêm thông số để lấy thông tin của admin được xây dựng trong Customer_Management_Controller.php. Thêm Customer_Management_Controller.php để xây dựng chỉnh sửa cho admin." />
+    <MESSAGE value="Optimize lại routing, thêm chức năng logout cho admin, điều chỉnh lại 1 số thứ" />
+    <MESSAGE value="Thêm gitignore" />
+    <option name="LAST_COMMIT_MESSAGE" value="Thêm gitignore" />
   </component>
 </project>

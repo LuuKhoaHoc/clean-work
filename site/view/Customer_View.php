@@ -25,4 +25,7 @@ class Customer_View {
     public function ChangePasswordView($customerInfo) {
         require('site/view/public/customer_change_password.php');
     }
+    public function ViewOrder($customerInfo, $orders) {
+        require('site/view/public/view-order.php');
+    }
 }

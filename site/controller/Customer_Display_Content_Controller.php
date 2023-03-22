@@ -64,4 +64,12 @@ class Customer_Display_Content_Controller
         $view->ChangePasswordView($customerInfo);
     }
 
+    public function showViewOrder()
+    {
+        $model = new Content_Model();
+        $view = new Customer_View();
+        $customerInfo = $_SESSION['customer_info'];
+        $orders = $model->showOrder($customerInfo['email']);
+        $view->ViewOrder($customerInfo, $orders);
+    }
 }

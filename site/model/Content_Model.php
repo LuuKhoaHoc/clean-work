@@ -17,4 +17,26 @@ class Content_Model extends DB {
         $row = mysqli_query(parent::connect(),$query);
         return mysqli_fetch_assoc($row);
     }
+        public function showOrder($email): array
+    {
+        $query = "
+            SELECT
+                row_number() over (order by email) as id,
+                ord.time AS time,
+                cus.name AS customer_name,
+                cus.email AS email,
+                cus.phone AS phone,
+                ser.name AS service,
+                ser.price as price,
+                ord.address AS address,
+                sta.name AS state
+            FROM `customer_order` AS ord
+            INNER JOIN `customer` AS cus ON cus.id = ord.customer_id
+            INNER JOIN `service type` AS ser ON ser.id = ord.service_type_id
+            INNER JOIN `order_state` AS sta ON sta.id = ord.state
+            WHERE cus.email = '$email'
+        ";
+        $row = mysqli_query(parent::connect(), $query);
+        return mysqli_fetch_assoc($row);
+    }
 }
