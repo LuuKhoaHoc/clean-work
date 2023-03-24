@@ -1,6 +1,8 @@
 <?php
-require('admin/model/Order_Model.php');
-require('admin/view/Admin_View.php');
+require_once('admin/model/Order_Model.php');
+require_once('admin/view/Admin_View.php');
+require_once "system/core/Controller.php";
+
 class Admin_Display_Content_Controller
 {
     public function showOrdersAction()
@@ -8,17 +10,9 @@ class Admin_Display_Content_Controller
         session_start();
         $model = new Order_Model();
         $view = new Admin_View();
-        // $data = $model->
-        $view->OrderView($_SESSION['customer_info']);
+        $controller = new Controller();
+        $customerInfo = $controller->getCustomerInfo();
+        $view->OrderView($customerInfo);
     }
-    public function showProfileAction()
-    {
-        session_start();
-        require('admin/model/Content_Model.php');
-        $model = new Content_Model();
-        $view = new Admin_View();
-        
-        $data = $model->getDataFromPage('');
-        $view->ProfileView($data);
-    }
+
 }

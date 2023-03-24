@@ -21,23 +21,42 @@ class Customer_Model extends DB
             WHERE categoryID = $permission AND cus.email = '$cusEmail';
         ";
         $row = mysqli_query(parent::connect(), $query);
-        return mysqli_fetch_array($row);
+        return mysqli_fetch_assoc($row);
     }
-    public function updatePassword($customerId, $newPassword) {
-        
+
+    public function updatePassword($customerId, $newPassword)
+    {
+
         $query = "UPDATE customer SET password = '$newPassword' WHERE customer.id = '$customerId'";
         return mysqli_query(parent::connect(), $query);
     }
-    public function checkUserFromDB($email, $password) {
-        $query  = "SELECT `categoryID`  FROM `customer` WHERE email = '$email' AND password = '$password'";
-        $row = mysqli_query(parent::connect(),$query);
+
+    public function checkUserFromDB($email, $password)
+    {
+        $query = "SELECT `categoryID`  FROM `customer` WHERE email = '$email' AND password = '$password'";
+        $row = mysqli_query(parent::connect(), $query);
         $data = mysqli_fetch_all($row);
         if (mysqli_num_rows($row)) {
             return $data[0][0];
-        }
-        else {
+        } else {
             return null;
         }
+    }
+    public function checkUserByEmail($email) {
+        $query = "SELECT `categoryID`  FROM `customer` WHERE email = '$email'";
+        $row = mysqli_query(parent::connect(), $query);
+        $data = mysqli_fetch_array($row);
+        if (mysqli_num_rows($row)) {
+            return $data[0];
+        } else {
+            return null;
+        }
+    }
+
+    public function updateInfo($customerId, $name, $email, $phone)
+    {
+        $query = "UPDATE customer SET `name` = '$name' , `email` = '$email', `phone` = '$phone' WHERE id = $customerId";
+        return mysqli_query(parent::connect(), $query);
     }
 
 }

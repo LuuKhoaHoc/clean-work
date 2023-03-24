@@ -1,31 +1,33 @@
 <?php
-include('site/model/Content_Model.php');
-include('site/view/Customer_View.php');
+require_once ('site/model/Content_Model.php');
+require_once ('site/view/Customer_View.php');
+require_once ('system/core/Controller.php');
+
 session_start();
 
 class Customer_Display_Content_Controller
 {
     public function showHomeAction()
     {
-        $model = new Content_Model();
         $view = new Customer_View();
-        $customerInfo = $_SESSION['customer_info'];
+        $controller = new Controller();
+        $customerInfo = $controller->getCustomerInfo();
         $view->LogedInHomeView($customerInfo);
     }
 
     public function showAboutUsAction()
     {
-        $model = new Content_Model();
         $view = new Customer_View();
-        $customerInfo = $_SESSION['customer_info'];
+        $controller = new Controller();
+        $customerInfo = $controller->getCustomerInfo();
         $view->LogedInAboutUsView($customerInfo);
     }
 
     public function showOurServiceAction()
     {
-        $model = new Content_Model();
         $view = new Customer_View();
-        $customerInfo = $_SESSION['customer_info'];
+        $controller = new Controller();
+        $customerInfo = $controller->getCustomerInfo();
         $view->LogedInOurServiceView($customerInfo);
     }
 
@@ -36,31 +38,32 @@ class Customer_Display_Content_Controller
         $model = new Content_Model();
         $service = $model->getSerFromDB($service);
         $view = new Customer_View();
-        $customerInfo = $_SESSION['customer_info'];
+        $controller = new Controller();
+        $customerInfo = $controller->getCustomerInfo();
         $view->LogedInServiceDetailView($service, $customerInfo);
     }
 
     public function showError404Action()
     {
-        $model = new Content_Model();
         $view = new Customer_View();
-        $customerInfo = $_SESSION['customer_info'];
+        $controller = new Controller();
+        $customerInfo = $controller->getCustomerInfo();
         $view->LogedInError404View($customerInfo);
     }
 
     public function showProfileAction()
     {
-        $model = new Content_Model();
         $view = new Customer_View();
-        $customerInfo = $_SESSION['customer_info'];
+        $controller = new Controller();
+        $customerInfo = $controller->getCustomerInfo();
         $view->ProfileView($customerInfo);
     }
 
     public function showChangePasswordAction()
     {
-        $model = new Content_Model();
         $view = new Customer_View();
-        $customerInfo = $_SESSION['customer_info'];
+        $controller = new Controller();
+        $customerInfo = $controller->getCustomerInfo();
         $view->ChangePasswordView($customerInfo);
     }
 
@@ -68,8 +71,22 @@ class Customer_Display_Content_Controller
     {
         $model = new Content_Model();
         $view = new Customer_View();
-        $customerInfo = $_SESSION['customer_info'];
+        $controller = new Controller();
+        $customerInfo = $controller->getCustomerInfo();
         $orders = $model->showOrder($customerInfo['email']);
-        $view->ViewOrder($customerInfo, $orders);
+        $view->OrderView($customerInfo, $orders);
+    }
+    public function showChangeInfoAction()
+    {
+        $view = new Customer_View();
+        $controller = new Controller();
+        $customerInfo = $controller->getCustomerInfo();
+        $view->ChangeProfileView($customerInfo);
+    }
+    public function showNavAction() {
+        $view = new Customer_View();
+        $controller = new Controller();
+        $customerInfo = $controller->getCustomerInfo();
+        $view->NavView($customerInfo);
     }
 }

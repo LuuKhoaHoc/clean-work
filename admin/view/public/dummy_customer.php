@@ -46,7 +46,7 @@ if (isset($_POST['action'])) {
             <!-- Navbar Search -->
             <li class="nav-item dropdown mr-2">
                 <a class="nav-item user-panel d-flex align-items-center" href="#">
-                    <img src="../../public/dist/img/avatar.png"
+                    <img src="../../public/dist/img/user_blank.png"
                          class="img-circle" alt="User Image">
                     <span class="text-center text-white ml-2">0778978372</span>
                 </a>

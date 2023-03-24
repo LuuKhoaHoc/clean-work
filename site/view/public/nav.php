@@ -14,7 +14,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="index.php?c=Customer_Display_Content_Controller">Home</a>
+                    <a class="nav-link" href="index.php?c=Customer_Display_Content_Controller&a=showHomeAction">Home</a>
                 </li>
 
                 <li class="nav-item">
@@ -41,22 +41,26 @@
                 <li class="nav-item dropdown show">
                     <a class="nav-link dropdown-toggle" id="navbarDropDownCustomer" role="button"
                        data-bs-toggle="dropdown" aria-expanded="false">
-                        <span class="d-none d-md-inline"><?php echo $_SESSION['customer_info']['name'] ?></span>
+                        <span class="d-none d-md-inline">
+                            <?php /** @var  $customerInfo */
+                            echo $customerInfo['name']
+                            ?>
+                        </span>
                     </a>
                     <ul class="dropdown-menu dropdown dropdown-menu-light show" aria-labelledby="navbarDropDownCustomer"
                         style=" left: -15px;">
                         <!-- User image -->
                         <li style="width: 250px; background-color: var(--primary-color)" class="text-center">
-                            <img src="public/dist/img/user2-160x160.jpg" class="rounded-circle" alt="User Image">
+                            <img src="public/dist/img/user_blank.png" class="rounded-circle" alt="User Image">
                             <p class="text-white">
-                                <?php echo $_SESSION['customer_info']['name'] . " - " . strtoupper($_SESSION['customer_info']['type']) ?>
+                                <?php echo $customerInfo['name'] . " - " . strtoupper($customerInfo['type']) ?>
                                 <br>
-                                <small>Member since <?= $_SESSION['customer_info']['time'] ?></small>
+                                <small>Member since <?= $customerInfo['time'] ?></small>
                             </p>
                         </li>
                         <!-- Menu Footer-->
                         <li class="text-center my-2 d-flex flex-column">
-                            <a href="#" class="btn btn-outline-info btn-flat m-1">Profile</a>
+                            <a href="index.php?c=Customer_Display_Content_Controller&a=showProfileAction" class="btn btn-outline-info btn-flat m-1">Profile</a>
                             <?php
                             if ($_SESSION['customer_info']['type'] == "superadmin") {
                                 echo '<a href="index.php?c=Superadmin_Display_Content_Controller&a=showDashboard" class="btn btn-outline-warning btn-flat m-1">Super Admin Page</a>';

@@ -6,10 +6,11 @@ class CustomerManagement_Model extends DB
 {
     //CustomerManagement_Model for Admin to manage Customer data
     //Working with `customer`, `customer_rank` and `person_category` tables
-    public function getAdminInfoFromCustomer(string $cusEmail, $permission = 0)
+    public function getAdminInfoFromCustomer(string $cusEmail, $permission = 1)
     {
         $query = "
             SELECT 
+                cus.id,
             	cus.name,
                 cus.email,
                 cus.phone,

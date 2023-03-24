@@ -25,7 +25,13 @@ class Customer_View {
     public function ChangePasswordView($customerInfo) {
         require('site/view/public/customer_change_password.php');
     }
-    public function ViewOrder($customerInfo, $orders) {
+    public function OrderView($customerInfo, $orders) {
         require('site/view/public/view-order.php');
+    }
+    public function ChangeProfileView($customerInfo) {
+        require ('site/view/public/customer_edit_profile.php');
+    }
+    public function NavView($customerInfo) {
+        require ('site/view/public/nav.php');
     }
 }

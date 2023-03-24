@@ -38,6 +38,7 @@
 <?php include 'header.html'?>
 
 <?php include 'nav.php' ?>
+<?php /** @var $customerInfo */ ?>
 
 <main>
 
@@ -54,7 +55,7 @@
                 <div class="col-lg-4 col-12 d-flex justify-content-lg-end align-items-center ms-auto">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb justify-content-center">
-                            <li class="breadcrumb-item"><a href="/../clean-work/index.php">Home</a></li>
+                            <li class="breadcrumb-item"><a href="/../clean-work/index.php?c=Customer_Display_Content_Controller&a=showHomeAction">Home</a></li>
 
                             <li class="breadcrumb-item active" aria-current="page">Profile</li>
                         </ol>
@@ -75,66 +76,24 @@
                     <div class="card card-primary card-outline">
                         <div class="card-body box-profile">
                             <div class="text-center mb-3">
-                                <img class="profile-user-img img-fluid img-circle" src="/../clean-work/public/dist/img/user4-128x128.jpg" alt="User profile picture">
+                                <img class="profile-user-img img-fluid img-circle" src="/../clean-work/public/dist/img/user_blank.png" alt="User profile picture">
                             </div>
 
-                            <h3 class="profile-username text-center">Customer Name</h3>
+                            <h3 class="profile-username text-center"><?= $customerInfo['name'] ?></h3>
 
-                            <p class="text-muted text-center">New Customer</p>
-                            <p class="text-muted text-center">Customer Email</p>
-                            <p class="text-muted text-center">Customer Phone</p>
+                            <p class="text-muted text-center"><?= ucwords($customerInfo['type']) ?></p>
+                            <p class="text-muted text-center"><?= $customerInfo['email'] ?></p>
+                            <p class="text-muted text-center"><?= $customerInfo['phone'] ?></p>
 
+                        </div>
+                        <div class="text-center mb-3">
+                            <a class="btn btn-info" href="index.php?c=Customer_Display_Content_Controller&a=showChangeInfoAction">Edit Profile</a>
                         </div>
                         <!-- /.card-body -->
                     </div>
                     <!-- /.card -->
 
                     <!-- About Me Box -->
-                    <!-- /.card -->
-                </div>
-                <!-- /.col -->
-                <div class="col-md-12">
-                    <div class="card">
-                        <div class="card-header p-2">
-                            <ul class="nav nav-pills">
-                                <li class="nav-item"><a class="nav-link" href="#settings" data-toggle="tab">Settings</a></li>
-                            </ul>
-                        </div><!-- /.card-header -->
-                        <div class="card-body">
-                            <div class="tab-content">
-                                <div class="tab-pane active" id="settings">
-                                    <form class="form-horizontal">
-                                        <div class="form-group row mb-3">
-                                            <label for="inputName" class="col-sm-2 col-form-label">Name</label>
-                                            <div class="col-sm-10">
-                                                <input type="email" class="form-control" id="inputName" placeholder="Name">
-                                            </div>
-                                        </div>
-                                        <div class="form-group row mb-3">
-                                            <label for="inputEmail" class="col-sm-2 col-form-label">Email</label>
-                                            <div class="col-sm-10">
-                                                <input type="email" class="form-control" id="inputEmail" placeholder="Email">
-                                            </div>
-                                        </div>
-                                        <div class="form-group row mb-3">
-                                            <label for="inputName2" class="col-sm-2 col-form-label">Phone</label>
-                                            <div class="col-sm-10">
-                                                <input type="tel" class="form-control" id="inputName2" placeholder="Phone">
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group row mb-3">
-                                            <div class="offset-sm-2 col-sm-10">
-                                                <button type="submit" class="btn btn-danger">Submit</button>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
-                                <!-- /.tab-pane -->
-                            </div>
-                            <!-- /.tab-content -->
-                        </div><!-- /.card-body -->
-                    </div>
                     <!-- /.card -->
                 </div>
                 <!-- /.col -->

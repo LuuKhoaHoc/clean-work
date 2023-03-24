@@ -1,7 +1,25 @@
 <?php
-
+require_once "site/model/Customer_Model.php";
+require_once "admin/model/Customer_Management_Model.php";
+require_once "site/view/Customer_View.php";
+require_once "system/core/Controller.php";
 class Customer_Account_Controller
 {
+    public function changeInformation()
+    {
+        session_start();
+        $model = new Customer_Model();
+        $model_admin =  new CustomerManagement_Model();
+        $controller = new Controller();
+        $session = $_SESSION['customer_info'];
+        $model->updateInfo($session['id'],$_POST['name'],$_POST['email'],$_POST['phone']);
+        $customerInfo = $controller->getCustomerInfo();
+        session_reset();
+        $view = new Customer_View();
+        $view->ProfileView($customerInfo);
+
+    }
+
     public function changePasswordAction()
     {
         $error = false;
@@ -44,9 +62,6 @@ class Customer_Account_Controller
 
     public function loginAction()
     {
-        require "site/model/Customer_Model.php";
-        require "admin/model/Customer_Management_Model.php";
-
         $model = new Customer_Model();
         $model_admin = new CustomerManagement_Model();
 
@@ -63,14 +78,12 @@ class Customer_Account_Controller
             ob_start();
             session_start();
             $session = $_SESSION['customer_info'] = $model->getInfoFromCustomer($_POST['email']);
-            require('site/view/Customer_View.php');
             $view = new Customer_View();
             $view->LogedInHomeView($session);
         } else if ($result == 1) {
             ob_start();
             session_start();
             $session = $_SESSION['customer_info'] = $model_admin->getAdminInfoFromCustomer($_POST['email'], 1);
-            require('site/view/Customer_View.php');
             $view = new Customer_View();
             $view->LogedInHomeView($session);
 //            require('admin/view/Admin_View.php');
@@ -80,7 +93,6 @@ class Customer_Account_Controller
             ob_start();
             session_start();
             $session = $_SESSION['customer_info'] = $model_admin->getAdminInfoFromCustomer($_POST['email'], 2);
-            require('site/view/Customer_View.php');
             $view = new Customer_View();
             $view->LogedInHomeView($session);
 //            require('admin/view/Superadmin_View.php');

@@ -1,6 +1,6 @@
 <?php
 //Routing mechanism
-require_once "admin/config/Constant.php";
+require_once "system/config/Constant.php";
 
 $controllerName = $_GET['c'] ?? DEFAULT_CONTROLLER;
 $actionName = $_GET['a'] ?? DEFAULT_ACTION;

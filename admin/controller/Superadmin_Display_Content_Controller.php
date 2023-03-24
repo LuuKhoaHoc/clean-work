@@ -1,9 +1,12 @@
 <?php
-require('admin/model/Order_Model.php');
-require('admin/model/History_Model.php');
-require('admin/model/Content_Model.php');
-require('admin/model/Employee_Model.php');
-require('admin/view/Superadmin_View.php');
+require_once('admin/model/Order_Model.php');
+require_once('admin/model/History_Model.php');
+require_once('admin/model/Content_Model.php');
+require_once('admin/model/Employee_Model.php');
+require_once('admin/view/Superadmin_View.php');
+require_once('system/core/Controller.php');
+require_once('system/core/Model.php');
+
 class Superadmin_Display_Content_Controller
 {
     public function showDashboard()

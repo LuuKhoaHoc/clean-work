@@ -67,7 +67,7 @@
             <!--            Navbar user-->
             <li class="nav-item dropdown user-menu">
                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
-                    <img src="public/dist/img/user2-160x160.jpg" class="user-image img-circle elevation-2"
+                    <img src="public/dist/img/user_blank.png" class="user-image img-circle elevation-2"
                          alt="User Image">
                     <span class="d-none d-md-inline">
                         <?= /** @var $adminInfo */
@@ -78,7 +78,7 @@
                 <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                     <!-- User image -->
                     <li class="user-header bg-primary">
-                        <img src="public/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+                        <img src="public/dist/img/user_blank.png" class="img-circle elevation-2" alt="User Image">
 
                         <p>
                             <?= $adminInfo['name']  ?>
@@ -88,7 +88,7 @@
                     </li>
                     <!-- Menu Footer-->
                     <li class="user-footer">
-                        <a href="#" class="btn btn-default btn-flat">Profile</a>
+                        <a href="index.php?c=Customer_Display_Content_Controller&a=showProfileAction" class="btn btn-default btn-flat">Profile</a>
                         <a href="index.php?c=Customer_Management_Controller&a=adminLogoutAction" class="btn btn-default btn-flat float-right">Sign out</a>
                     </li>
                 </ul>
