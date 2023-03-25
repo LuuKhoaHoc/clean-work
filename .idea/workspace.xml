@@ -4,24 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="306e221c-edb9-4616-bd79-f07250ba1696" name="Changes" comment="Thêm admin, super admin profile, tinh chỉnh một số thứ, thêm folder core trong system để chứa các file controller, model, view cơ bản của web">
-      <change afterPath="$PROJECT_DIR$/admin/view/public/edit_profile.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/view/public/employees_list.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/view/public/orders.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/system/core/BaseView.php" afterDir="false" />
+    <list default="true" id="306e221c-edb9-4616-bd79-f07250ba1696" name="Changes" comment="Fix được dashboard trong super admin, thêm order, employee list, đang thêm edit employee, chuẩn bị thêm customer list.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin/controller/Superadmin_Display_Content_Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/controller/Superadmin_Display_Content_Controller.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/model/Customer_Management_Model.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/model/Customer_Management_Model.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin/model/Employee_Model.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/model/Employee_Model.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/model/History_Model.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/model/History_Model.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/model/Order_Model.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/model/Order_Model.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/view/Superadmin_View.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/view/Superadmin_View.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/view/public/super_admin_aside.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/view/public/super_admin_aside.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/view/public/super_admin_nav.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/view/public/super_admin_nav.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/view/public/super_admin_statistic.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/view/public/super_admin_statistic.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/view/small_box_info.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/view/small_box_info.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site/controller/Customer_Account_Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/site/controller/Customer_Account_Controller.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/system/core/Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/system/core/Controller.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/view/public/edit_profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/view/public/edit_profile.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/view/public/employees_list.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/view/public/employees_list.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,7 +84,7 @@
       <workItem from="1679587095892" duration="6202000" />
       <workItem from="1679646152863" duration="1006000" />
       <workItem from="1679659673217" duration="4106000" />
-      <workItem from="1679723783513" duration="10192000" />
+      <workItem from="1679723783513" duration="12060000" />
     </task>
     <task id="LOCAL-00001" summary="Fix lại các path cũng như đổi tên 1 số thứ, thêm thông số để lấy thông tin của admin được xây dựng trong Customer_Management_Controller.php. Thêm Customer_Management_Controller.php để xây dựng chỉnh sửa cho admin.">
       <created>1679318247535</created>
@@ -133,7 +121,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679659942370</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Fix được dashboard trong super admin, thêm order, employee list, đang thêm edit employee, chuẩn bị thêm customer list.">
+      <created>1679734140889</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1679734140889</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -156,6 +151,7 @@
     <MESSAGE value="Thêm gitignore" />
     <MESSAGE value="Thêm logout Super Amin, Thêm View Order của Customer" />
     <MESSAGE value="Thêm admin, super admin profile, tinh chỉnh một số thứ, thêm folder core trong system để chứa các file controller, model, view cơ bản của web" />
-    <option name="LAST_COMMIT_MESSAGE" value="Thêm admin, super admin profile, tinh chỉnh một số thứ, thêm folder core trong system để chứa các file controller, model, view cơ bản của web" />
+    <MESSAGE value="Fix được dashboard trong super admin, thêm order, employee list, đang thêm edit employee, chuẩn bị thêm customer list." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix được dashboard trong super admin, thêm order, employee list, đang thêm edit employee, chuẩn bị thêm customer list." />
   </component>
 </project>

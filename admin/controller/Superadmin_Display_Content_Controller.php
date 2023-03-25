@@ -47,8 +47,11 @@ class Superadmin_Display_Content_Controller
         $view = new Superadmin_View();
         $view->EmployeeListView($data);
     }
-    public function editEmp() {
-
+    public function showEditEmp() {
+        $model = new Employee_Model();
+        $data = $model->showEmp($_GET['id']);
+        $view = new Superadmin_View();
+        $view->EmployeeEditView($data[0]);
     }
 
     public function showProfileAction()

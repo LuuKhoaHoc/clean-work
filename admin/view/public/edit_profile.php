@@ -9,8 +9,9 @@
             </div>
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
-                    <li class="breadcrumb-item"><a href="#">Home</a></li>
-                    <li class="breadcrumb-item active">Edit Profile</li>
+                    <li class="breadcrumb-item"><a href="index.php?c=Customer_Display_Content_Controller&a=showHomeAction">Home</a></li>
+                    <li class="breadcrumb-item active">Employees</li>
+                    <li class="breadcrumb-item active">Edit</li>
                 </ol>
             </div>
         </div>
@@ -22,22 +23,18 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-3">
-                <?php
-                foreach ($data as $item) {
-
-                ?>
                 <!-- Profile Image -->
                 <div class="card card-primary card-outline">
                     <div class="card-body box-profile">
                         <div class="text-center">
-                            <img class="profile-user-img img-fluid img-circle" src="../../../public/dist/img/user_blank.png"
+                            <img class="profile-user-img img-fluid img-circle" src="/../clean-work/public/dist/img/user_blank.png"
                                  alt="User profile picture">
                         </div>
 
-                        <h3 class="profile-username text-center"><?= $item[1] ?></h3>
+                        <h3 class="profile-username text-center"><?= $data['name'] ?></h3>
 
-                        <p class="text-muted text-center text-red"><?= $item[3] ?></p>
-                        <p class="text-muted text-center"><?= $item[2] ?></p>
+                        <p class="text-muted text-center text-red"><?= $data['type'] ?></p>
+                        <p class="text-muted text-center"><?= $data['phone'] ?></p>
                     </div>
                     <!-- /.card-body -->
                 </div>
@@ -57,19 +54,19 @@
                     <div class="card-body">
                         <div class="tab-content">
                             <div class="active tab-pane" id="settings">
-                                <form class="form-horizontal" method="post">
+                                <form class="form-horizontal" method="post" action="index.php?c=">
 
                                     <div class="form-group row">
                                         <label for="inputName2" class="col-sm-2 col-form-label">Name</label>
                                         <div class="col-sm-10">
-                                            <input type="text" name="name" class="form-control" id="inputName2" placeholder="Name" value="<?= $item[1] ?>">
+                                            <input required type="text" name="name" class="form-control" id="inputName2" placeholder="Name" value="<?= $data['name'] ?>">
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label for="inputAddress" class="col-sm-2 col-form-label">Phone</label>
                                         <div class="col-sm-10">
-                                            <input type="number" class="form-control" id="inputAddress"
-                                                   placeholder="Phone" name="phone" value="<?= $item[2] ?>" required>
+                                            <input type="tel" class="form-control" id="inputAddress"
+                                                   placeholder="Phone" name="phone" value="<?= $data['phone'] ?>" required>
                                         </div>
                                     </div>
 
@@ -88,7 +85,6 @@
                 <!-- /.card -->
             </div>
             <!-- /.col -->
-            <?php } ?>
         </div>
         <!-- /.row -->
 

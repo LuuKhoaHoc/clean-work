@@ -100,7 +100,7 @@
                                                             <a class="btn btn-secondary"
                                                                href="
                                                                <?php $id = $emp['id'];
-                                                               echo "index.php?c=Superadmin_Display_Content_Controller&a=editEmp&id=$id"
+                                                               echo "index.php?c=Superadmin_Display_Content_Controller&a=showEditEmp&id=$id"
                                                                ?>"
                                                                type="button">Edit</a>
                                                         </label>
