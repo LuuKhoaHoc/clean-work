@@ -4,26 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="306e221c-edb9-4616-bd79-f07250ba1696" name="Changes" comment="Thêm logout Super Amin, Thêm View Order của Customer">
-      <change afterPath="$PROJECT_DIR$/public/dist/img/user_blank.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/site/view/public/customer_edit_profile.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/system/core/Controller.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/system/core/Model.php" afterDir="false" />
+    <list default="true" id="306e221c-edb9-4616-bd79-f07250ba1696" name="Changes" comment="Thêm admin, super admin profile, tinh chỉnh một số thứ, thêm folder core trong system để chứa các file controller, model, view cơ bản của web">
+      <change afterPath="$PROJECT_DIR$/admin/view/public/edit_profile.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin/view/public/employees_list.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin/view/public/orders.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/system/core/BaseView.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/controller/Admin_Display_Content_Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/controller/Admin_Display_Content_Controller.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin/controller/Superadmin_Display_Content_Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/controller/Superadmin_Display_Content_Controller.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin/model/Customer_Management_Model.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/model/Customer_Management_Model.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/view/Admin_View.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/view/Admin_View.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/view/public/dummy_customer.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/view/public/dummy_customer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/model/Employee_Model.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/model/Employee_Model.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/model/History_Model.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/model/History_Model.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/model/Order_Model.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/model/Order_Model.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/view/Superadmin_View.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/view/Superadmin_View.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin/view/public/super_admin_aside.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/view/public/super_admin_aside.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/view/public_admin/admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/view/public_admin/admin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/view/public_admin/admin_edit.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/view/public_admin/admin_edit.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/view/public/super_admin_nav.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/view/public/super_admin_nav.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/view/public/super_admin_statistic.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/view/public/super_admin_statistic.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/view/small_box_info.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/view/small_box_info.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/site/controller/Customer_Account_Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/site/controller/Customer_Account_Controller.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site/controller/Customer_Display_Content_Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/site/controller/Customer_Display_Content_Controller.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site/model/Customer_Model.php" beforeDir="false" afterPath="$PROJECT_DIR$/site/model/Customer_Model.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site/view/Customer_View.php" beforeDir="false" afterPath="$PROJECT_DIR$/site/view/Customer_View.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site/view/public/customer_profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/site/view/public/customer_profile.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site/view/public/nav.php" beforeDir="false" afterPath="$PROJECT_DIR$/site/view/public/nav.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system/core/Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/system/core/Controller.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,31 +43,37 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/xampp/htdocs/clean-work/site/view/public&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "D:/xampp/htdocs/clean-work_old",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
     ],
-    &quot;com.intellij.ide.scratch.LRUPopupBuilder$1/SQL Dialect&quot;: [
-      &quot;MySQL&quot;
+    "com.intellij.ide.scratch.LRUPopupBuilder$1/SQL Dialect": [
+      "MySQL"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\xampp\htdocs\clean-work\admin\view\public" />
       <recent name="D:\xampp\htdocs\clean-work\site\view\public" />
       <recent name="D:\xampp\htdocs\clean-work\site\view\public_guest" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\xampp\htdocs\clean-work\system\core" />
+      <recent name="D:\xampp\htdocs\clean-work\admin\view" />
+      <recent name="D:\xampp\htdocs\clean-work\system" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -91,6 +95,8 @@
       <workItem from="1679552678653" duration="7717000" />
       <workItem from="1679587095892" duration="6202000" />
       <workItem from="1679646152863" duration="1006000" />
+      <workItem from="1679659673217" duration="4106000" />
+      <workItem from="1679723783513" duration="10192000" />
     </task>
     <task id="LOCAL-00001" summary="Fix lại các path cũng như đổi tên 1 số thứ, thêm thông số để lấy thông tin của admin được xây dựng trong Customer_Management_Controller.php. Thêm Customer_Management_Controller.php để xây dựng chỉnh sửa cho admin.">
       <created>1679318247535</created>
@@ -120,7 +126,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679489449034</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Thêm admin, super admin profile, tinh chỉnh một số thứ, thêm folder core trong system để chứa các file controller, model, view cơ bản của web">
+      <created>1679659942370</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1679659942370</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -142,6 +155,7 @@
     <MESSAGE value="Optimize lại routing, thêm chức năng logout cho admin, điều chỉnh lại 1 số thứ" />
     <MESSAGE value="Thêm gitignore" />
     <MESSAGE value="Thêm logout Super Amin, Thêm View Order của Customer" />
-    <option name="LAST_COMMIT_MESSAGE" value="Thêm logout Super Amin, Thêm View Order của Customer" />
+    <MESSAGE value="Thêm admin, super admin profile, tinh chỉnh một số thứ, thêm folder core trong system để chứa các file controller, model, view cơ bản của web" />
+    <option name="LAST_COMMIT_MESSAGE" value="Thêm admin, super admin profile, tinh chỉnh một số thứ, thêm folder core trong system để chứa các file controller, model, view cơ bản của web" />
   </component>
 </project>

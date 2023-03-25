@@ -2,7 +2,7 @@
 
 class small_box_info
 {
-    public static function show_box(string $title, string $value, string $color_theme, string $icon): void
+    public static function show_box(string $title, $value, string $color_theme, string $icon): void
     {
         ?>
 

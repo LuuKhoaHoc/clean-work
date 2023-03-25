@@ -85,6 +85,6 @@ class Order_Model extends DB
     {
         $query = "SELECT COUNT(*) FROM `customer_order`;";
         $row = mysqli_query(self::connect(), $query);
-        echo mysqli_fetch_all($row)[0][0];
+        return mysqli_fetch_all($row)[0][0];
     }
 }

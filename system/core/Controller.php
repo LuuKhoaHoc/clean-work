@@ -6,7 +6,7 @@ class Controller
 {
     public function getCustomerInfo() {
         $model = new Customer_Model();
-        $model_admin =  new CustomerManagement_Model();
+        $model_admin =  new Customer_Management_Model();
         $session = $_SESSION['customer_info'];
         $check = $model->checkUserByEmail($session['email']);
         $customerInfo = "";

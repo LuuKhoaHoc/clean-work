@@ -37,4 +37,16 @@ class Employee_Model extends DB {
         ";
         return mysqli_query(parent::connect(), $query);
     }
+    public function showEmp() {
+        $query = "
+        SELECT emp.id, emp.name, emp.phone, employee_rank.name as type
+        FROM employees AS emp
+        INNER JOIN  employee_rank ON `emp`.rank_id = employee_rank.id;
+    ";
+        $row = mysqli_query(parent::connect(), $query);
+        return mysqli_fetch_all($row, MYSQLI_ASSOC);
+    }
+    public function editEmp() {
+        $query = "";
+    }
 }

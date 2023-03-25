@@ -9,7 +9,7 @@ class Customer_Account_Controller
     {
         session_start();
         $model = new Customer_Model();
-        $model_admin =  new CustomerManagement_Model();
+        $model_admin =  new Customer_Management_Model();
         $controller = new Controller();
         $session = $_SESSION['customer_info'];
         $model->updateInfo($session['id'],$_POST['name'],$_POST['email'],$_POST['phone']);
@@ -63,7 +63,7 @@ class Customer_Account_Controller
     public function loginAction()
     {
         $model = new Customer_Model();
-        $model_admin = new CustomerManagement_Model();
+        $model_admin = new Customer_Management_Model();
 
         $result = $model->checkUserFromDB($_POST['email'], $_POST['password']);
 

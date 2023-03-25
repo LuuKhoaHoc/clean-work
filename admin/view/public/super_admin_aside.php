@@ -1,4 +1,4 @@
-<aside class="main-sidebar sidebar-dark-primary elevation-4">
+<aside style="position: fixed " class=" main-sidebar sidebar-dark-primary elevation-4 ">
     <!-- Brand Logo -->
     <a href="index.php?c=Customer_Display_Content_Controller&a=showHomeAction" class="brand-link">
         <img src="public/images/bubbles.png" alt="Clean Work Logo"
@@ -15,7 +15,7 @@
             </div>
             <div class="info text-center">
                 <a href="" class="d-block"><?= $_SESSION['customer_info']['name'] ?></a>
-                <a href="" class="d-block">SuperAdmin@gmail.com</a>
+                <a href="" class="d-block"><?= $_SESSION['customer_info']['email'] ?></a>
                 <a href="index.php?c=Customer_Management_Controller&a=superAdminLogoutAction" class="d-block text-center text-danger">Đăng xuất</a>
             </div>
         </div>
@@ -25,7 +25,7 @@
                 data-widget="treeview" role="menu" data-accordion="false">
 
                 <li class="nav-item">
-                    <a href="superadmin.php" class="nav-link">
+                    <a href="index.php?c=Superadmin_Display_Content_Controller&a=showDashboard" class="nav-link">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>
                             Dashboard
@@ -33,7 +33,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="index.php?c=Superadmin_Display_Content_Controller&a=showOrders" class="nav-link">
                         <i class="nav-icon fas fa-clipboard-check"></i>
                         <p>
                              Orders
@@ -58,7 +58,7 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="index.php?module=user&action=index" class="nav-link">
+                            <a href="index.php?c=Superadmin_Display_Content_Controller&a=showEmp" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>List</p>
                             </a>

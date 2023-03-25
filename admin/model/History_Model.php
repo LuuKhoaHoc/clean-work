@@ -7,9 +7,9 @@ class History_Model extends DB
     //History_Model for Admin to store data of the past orders
     //Working with `order_history`, `history_result` tables
 
-    public static function InsertIntoHistory($ord_id, int $result)
+    public function InsertIntoHistory($ord_id, int $result)
     {
-        $query = 
+        $query =
             "INSERT INTO order_history(
                 `id`,
                 `start`,
@@ -41,7 +41,8 @@ class History_Model extends DB
             WHERE ORD.id = $ord_id;";
         return mysqli_query(parent::connect(), $query);
     }
-    public static function UpdateHistoryResult(int $result_id, int $ord_id)
+
+    public function UpdateHistoryResult(int $result_id, int $ord_id)
     {
         $query = "
             UPDATE `order_history`
@@ -50,30 +51,32 @@ class History_Model extends DB
         ";
         return mysqli_query(parent::connect(), $query);
     }
-    public static function earnThisMonth()
+
+    public function earnThisMonth()
     {
         $query = "SELECT SUM(ser.price)
             FROM order_history AS ord
             INNER JOIN `service type` AS ser ON ser.id = ord.service_type_id
             WHERE result > 0 AND month(end) = month(now());";
         $row = mysqli_query(parent::connect(), $query);
-        echo '$' . mysqli_fetch_all($row)[0][0];
+        return mysqli_fetch_all($row)[0][0];
     }
-    public static function totalOrders()
+
+    public function totalOrders()
     {
         $query = "SELECT COUNT(*) FROM `order_history` WHERE result > 0;";
         $row = mysqli_query(parent::connect(), $query);
-        echo mysqli_fetch_all($row)[0][0];
+        return mysqli_fetch_all($row)[0][0];
     }
 
-    public static function totalMoney()
+    public function totalMoney()
     {
         $query = "SELECT SUM(ser.price)
             FROM `order_history` AS ORD
             INNER JOIN `service type` AS ser ON ser.id = ORD.service_type_id
             WHERE ord.result > 0;";
         $row = mysqli_query(DB::connect(), $query);
-        echo mysqli_fetch_all($row)[0][0];
+        return mysqli_fetch_all($row)[0][0];
     }
 
     public static function monthWithMoney()
