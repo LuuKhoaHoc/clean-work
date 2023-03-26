@@ -75,8 +75,8 @@ Free Bootstrap 5 HTML Template
                                     <div class="col-lg-5 col-md-5 col-12">
                                         <div class="services-image-wrap">
                                             <a href="index.php?c=Guest_Display_Content_Controller&a=showServiceDetailAction&s=office-cleaning">
-                                                <img src="/../clean-work/public/images/services/people-taking-care-office-cleaning.jpg" class="services-image img-fluid" alt="">
-                                                <img src="/../clean-work/public/images/services/person-taking-care-office.jpg" class="services-image services-image-hover img-fluid" alt="">
+                                                <img src="public/images/services/people-taking-care-office-cleaning.jpg" class="services-image img-fluid" alt="">
+                                                <img src="public/images/services/person-taking-care-office.jpg" class="services-image services-image-hover img-fluid" alt="">
 
                                                 <div class="services-icon-wrap">
                                                     <div class="d-flex justify-content-between align-items-center">
@@ -137,8 +137,8 @@ Free Bootstrap 5 HTML Template
                                     <div class="col-lg-5 col-md-5 col-12">
                                         <div class="services-image-wrap">
                                             <a href="index.php?c=Guest_Display_Content_Controller&a=showServiceDetailAction&s=kitchen-cleaning">
-                                                <img src="/../clean-work/public/images/services/young-smiling-woman-wearing-rubber-gloves-cleaning-stove.jpg" class="services-image img-fluid" alt="">
-                                                <img src="/../clean-work/public/images/services/woman-holding-rag-detergent-cleaning-cooker.jpg" class="services-image services-image-hover img-fluid" alt="">
+                                                <img src="public/images/services/young-smiling-woman-wearing-rubber-gloves-cleaning-stove.jpg" class="services-image img-fluid" alt="">
+                                                <img src="public/images/services/woman-holding-rag-detergent-cleaning-cooker.jpg" class="services-image services-image-hover img-fluid" alt="">
 
                                                 <div class="services-icon-wrap">
                                                     <div class="d-flex justify-content-between align-items-center">
@@ -208,8 +208,8 @@ Free Bootstrap 5 HTML Template
                                     <div class="col-lg-5 col-md-5 col-12">
                                         <div class="services-image-wrap">
                                             <a href="index.php?c=Guest_Display_Content_Controller&a=showServiceDetailAction&s=car-washing">
-                                                <img src="/../clean-work/public/images/services/man-polishing-car-inside-car-service.jpg" class="services-image img-fluid" alt="">
-                                                <img src="/../clean-work/public/images/services/man-polishing-car-inside.jpg" class="services-image services-image-hover img-fluid" alt="">
+                                                <img src="public/images/services/man-polishing-car-inside-car-service.jpg" class="services-image img-fluid" alt="">
+                                                <img src="public/images/services/man-polishing-car-inside.jpg" class="services-image services-image-hover img-fluid" alt="">
 
                                                 <div class="services-icon-wrap">
                                                     <div class="d-flex justify-content-between align-items-center">
@@ -270,8 +270,8 @@ Free Bootstrap 5 HTML Template
                                     <div class="col-lg-5 col-md-5 col-12">
                                         <div class="services-image-wrap">
                                             <a href="index.php?c=Guest_Display_Content_Controller&a=showServiceDetailAction&s=factory-cleaning">
-                                                <img src="/../clean-work/public/images/services/professional-industrial-cleaner-protective-uniform-cleaning-floor-food-processing-plant.jpg" class="services-image img-fluid" alt="">
-                                                <img src="/../clean-work/public/images/services/close-up-mop-cleaning-industrial-plant-floor.jpg" class="services-image services-image-hover img-fluid" alt="">
+                                                <img src="public/images/services/professional-industrial-cleaner-protective-uniform-cleaning-floor-food-processing-plant.jpg" class="services-image img-fluid" alt="">
+                                                <img src="public/images/services/close-up-mop-cleaning-industrial-plant-floor.jpg" class="services-image services-image-hover img-fluid" alt="">
 
                                                 <div class="services-icon-wrap">
                                                     <div class="d-flex justify-content-between align-items-center">
@@ -340,23 +340,23 @@ Free Bootstrap 5 HTML Template
                         </div>
 
                         <div class="col-lg-2 col-md-4 col-6">
-                            <img src="/../clean-work/public/images/partners/toprak-leasing.svg" class="partners-image img-fluid">
+                            <img src="public/images/partners/toprak-leasing.svg" class="partners-image img-fluid">
                         </div>
 
                         <div class="col-lg-2 col-md-4 col-6">
-                            <img src="/../clean-work/public/images/partners/glorix.svg" class="partners-image img-fluid">
+                            <img src="public/images/partners/glorix.svg" class="partners-image img-fluid">
                         </div>
 
                         <div class="col-lg-2 col-md-4 col-6">
-                            <img src="/../clean-work/public/images/partners/woocommerce.svg" class="partners-image img-fluid">
+                            <img src="public/images/partners/woocommerce.svg" class="partners-image img-fluid">
                         </div>
 
                         <div class="col-lg-2 col-md-4 col-6">
-                            <img src="/../clean-work/public/images/partners/rolf-leasing.svg" class="partners-image img-fluid">
+                            <img src="public/images/partners/rolf-leasing.svg" class="partners-image img-fluid">
                         </div>
 
                         <div class="col-lg-2 col-md-4 col-6">
-                            <img src="/../clean-work/public/images/partners/unilabs.svg" class="partners-image img-fluid">
+                            <img src="public/images/partners/unilabs.svg" class="partners-image img-fluid">
                         </div>
 
                     </div>
@@ -366,15 +366,15 @@ Free Bootstrap 5 HTML Template
 
     <?php include 'footer.html'?>
         <!-- JAVASCRIPT FILES -->
-        <script src="/../clean-work/public/js/jquery.min.js"></script>
-        <script src="/../clean-work/public/js/bootstrap.min.js"></script>
-        <script src="/../clean-work/public/js/jquery.backstretch.min.js"></script>
-        <script src="/../clean-work/public/js/counter.js"></script>
-        <script src="/../clean-work/public/js/countdown.js"></script>
-        <script src="/../clean-work/public/js/init.js"></script>
-        <script src="/../clean-work/public/js/modernizr.js"></script>
-        <script src="/../clean-work/public/js/animated-headline.js"></script>
-        <script src="/../clean-work/public/js/custom.js"></script>
+        <script src="public/js/jquery.min.js"></script>
+        <script src="public/js/bootstrap.min.js"></script>
+        <script src="public/js/jquery.backstretch.min.js"></script>
+        <script src="public/js/counter.js"></script>
+        <script src="public/js/countdown.js"></script>
+        <script src="public/js/init.js"></script>
+        <script src="public/js/modernizr.js"></script>
+        <script src="public/js/animated-headline.js"></script>
+        <script src="public/js/custom.js"></script>
 
     </body>
 </html>

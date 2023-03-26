@@ -9,27 +9,27 @@
 <link rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&amp;display=fallback">
 <!-- Font Awesome -->
-<link rel="stylesheet" href="/../clean-work/public/plugins/fontawesome-free/css/all.min.css">
+<link rel="stylesheet" href="public/plugins/fontawesome-free/css/all.min.css">
 <!-- Ionicons -->
 <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 <!-- DataTables -->
-<link rel="stylesheet" href="/../clean-work/public/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
-<link rel="stylesheet" href="/../clean-work/public/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
-<link rel="stylesheet" href="/../clean-work/public/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+<link rel="stylesheet" href="public/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+<link rel="stylesheet" href="public/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+<link rel="stylesheet" href="public/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
 <!-- Theme style -->
-<link rel="stylesheet" href="/../clean-work/public/dist/css/adminlte.min.css">
+<link rel="stylesheet" href="public/dist/css/adminlte.min.css">
 <!-- overlayScrollbars -->
-<link rel="stylesheet" href="/../clean-work/public/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+<link rel="stylesheet" href="public/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
 <!-- Daterange picker -->
-<link rel="stylesheet" href="/../clean-work/public/plugins/daterangepicker/daterangepicker.css">
+<link rel="stylesheet" href="public/plugins/daterangepicker/daterangepicker.css">
 <!-- summernote -->
-<link rel="stylesheet" href="/../clean-work/public/plugins/summernote/summernote-bs4.min.css">
+<link rel="stylesheet" href="public/plugins/summernote/summernote-bs4.min.css">
 <!-- JQVMap -->
-<link rel="stylesheet" href="/../clean-work/public/plugins/jqvmap/jqvmap.min.css">
+<link rel="stylesheet" href="public/plugins/jqvmap/jqvmap.min.css">
 <!-- iCheck -->
-<link rel="stylesheet" href="/../clean-work/public/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+<link rel="stylesheet" href="public/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
 <!-- Tempusdominus Bootstrap 4 -->
-<link rel="stylesheet" href="/../clean-work/public/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+<link rel="stylesheet" href="public/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
   <title>Sign Up - Clean Work</title>
 
 </head>
@@ -39,7 +39,7 @@
     <div class="card card-outline card-primary">
       <div class="card-header text-center">
         <a href="/../clean-work/index.php" class="h1 d-flex align-items-center justify-content-around">
-          <img src="/../clean-work/public/images/bubbles.png" alt="Clean Work Logo" class="img-circle w-25 "
+          <img src="public/images/bubbles.png" alt="Clean Work Logo" class="img-circle w-25 "
             style="object-fit: cover; opacity: .8">
           <b>Clean Work</b>
         </a>
@@ -96,13 +96,13 @@
   <!-- /.register-box -->
 
   <!-- Add on functions -->
-  <script src="/../clean-work/public/js/addOnFunction.js"></script>
+  <script src="public/js/addOnFunction.js"></script>
   <!-- jQuery -->
-  <script src="/../clean-work/public/plugins/jquery/jquery.min.js"></script>
+  <script src="public/plugins/jquery/jquery.min.js"></script>
   <!-- Bootstrap 4 -->
-  <script src="/../clean-work/public/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="public/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
   <!-- AdminLTE App -->
-  <script src="/../clean-work/public//dist/js/adminlte.min.js"></script>
+  <script src="public//dist/js/adminlte.min.js"></script>
 
 
 </body>
