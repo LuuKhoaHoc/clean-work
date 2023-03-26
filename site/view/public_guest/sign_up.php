@@ -88,7 +88,7 @@
           </div>
         </form>
 
-        <a href="login.php" class="text-center">I already have a membership</a>
+        <a href="index.php?c=&a=showLoginAction" class="text-center">I already have a membership</a>
       </div>
       <!-- /.form-box -->
     </div><!-- /.card -->
