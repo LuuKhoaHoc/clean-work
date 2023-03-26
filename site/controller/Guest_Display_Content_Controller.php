@@ -21,7 +21,7 @@ class Guest_Display_Content_Controller {
         $service = $_GET['s']; //== '' ? 'Office' : $_GET['s'];
         // $service = ucwords(str_replace('-',' ',$service));
         $model = new Content_Model();
-        $service = $model->getSerFromDB($service);
+        $service = '1'; //$model->getSerFromDB($service);
         $view = new Guest_View();
         $view->ServiceDetailView($service);
     }
