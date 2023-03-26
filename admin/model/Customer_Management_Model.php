@@ -36,7 +36,7 @@ class Customer_Management_Model extends DB
         return mysqli_query(self::connect(), $query);
     }
     public function showCustomer() {
-        $query = "SELECT id, name, email, phone, time FROM customer";
+        $query = "SELECT id, name, email, phone, time FROM customer WHERE categoryID = 0";
         $row = mysqli_query(parent::connect(), $query);
         return mysqli_fetch_all($row, MYSQLI_ASSOC);
     }
