@@ -363,7 +363,7 @@
                             <div class="col-lg-7 col-md-7 col-12 d-flex align-items-center">
                                 <div class="services-info mt-4 mt-lg-0 mt-md-0">
                                     <h4 class="services-title mb-1 mb-lg-2">
-                                        <a class="services-title-link" href="index.php?c=&a=">Factory
+                                        <a class="services-title-link" href="index.php?c=&a=showServiceDetailAction">Factory
                                             Cleaning</a>
                                     </h4>
 
