@@ -31,11 +31,11 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="contact.php">Contact</a>
+                    <a class="nav-link" href="index.php?c=&a=showLoginAction">Contact</a>
                 </li>
 
                 <li class="nav-item ms-3">
-                    <a class="nav-link custom-btn custom-border-btn custom-btn-bg-white btn" href="/../clean-work/site/view/public_guest/login.php">Get started</a>
+                    <a class="nav-link custom-btn custom-border-btn custom-btn-bg-white btn" href="index.php?c=&a=showLoginAction">Get started</a>
                 </li>
             </ul>
         </div>

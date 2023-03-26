@@ -2,8 +2,8 @@
 //Routing mechanism
 require_once "system/config/Constant.php";
 
-$controllerName = $_GET['c'] ?? DEFAULT_CONTROLLER;
-$actionName = $_GET['a'] ?? DEFAULT_ACTION;
+$controllerName = $_GET['c'] == '' ? DEFAULT_CONTROLLER : $_GET['c'];
+$actionName = $_GET['a'] == '' ? DEFAULT_ACTION : $_GET['a'];
 
 
 $controllerFile = CUSTOMER_CONTROLLER_PATH . "$controllerName.php";
