@@ -5,7 +5,7 @@ $model = new Customer_Model();
 // $model_admin = new Customer_Management_Model();
 
 $result = $model->checkUserFromDB('viphongly2804@gmail', '123456');
-echo $result;
+echo var_dump($result);
 // if (is_null($result)) {
 //     require('site/view/Guest_View.php');
 //     global $errMsg;
