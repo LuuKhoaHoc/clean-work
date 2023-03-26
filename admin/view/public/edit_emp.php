@@ -10,7 +10,7 @@
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
                     <li class="breadcrumb-item"><a href="index.php?c=Customer_Display_Content_Controller&a=showHomeAction">Home</a></li>
-                    <li class="breadcrumb-item active">Employees</li>
+                    <li class="breadcrumb-item">Employees</li>
                     <li class="breadcrumb-item active">Edit</li>
                 </ol>
             </div>
@@ -54,7 +54,7 @@
                     <div class="card-body">
                         <div class="tab-content">
                             <div class="active tab-pane" id="settings">
-                                <form class="form-horizontal" method="post" action="index.php?c=">
+                                <form class="form-horizontal" method="post" action="index.php?c=Superadmin_Display_Content_Controller&a=updateEmpProfile&id=<?=$data['id']?>">
 
                                     <div class="form-group row">
                                         <label for="inputName2" class="col-sm-2 col-form-label">Name</label>

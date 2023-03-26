@@ -49,8 +49,29 @@ class Employee_Model extends DB {
         $row = mysqli_query(parent::connect(), $query);
         return mysqli_fetch_all($row, MYSQLI_ASSOC);
     }
+    public function getEmpByName($name) {
+        $query = "SELECT * FROM employees WHERE `name` = '$name'";
+        return mysqli_query(parent::connect(), $query);
+    }
+    public function getEmpByPhone($phone) {
+        $query = "SELECT * FROM employees WHERE `phone` = '$phone'";
+        return mysqli_query(parent::connect(), $query);
+    }
     public function updateEmp($id, $name, $phone) {
         $query = "UPDATE `employees` SET `name` = '$name', `phone` = '$phone' WHERE id = $id";
         return mysqli_query(parent::connect(), $query);
+    }
+    public function addEmp($name, $phone){
+        $query = "INSERT INTO `employees`(`id`, `name`, `phone`) VALUES (NULL,'$name','$phone')";
+
+        if (mysqli_num_rows(self::getEmpByName($name)) > 0) {
+            return false;
+        }
+        else if (mysqli_num_rows(self::getEmpByPhone($phone)) > 0) {
+            return false;
+        } else {
+            return mysqli_query(parent::connect(), $query);
+        }
+
     }
 }

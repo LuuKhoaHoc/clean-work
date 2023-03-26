@@ -4,12 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="306e221c-edb9-4616-bd79-f07250ba1696" name="Changes" comment="Fix được dashboard trong super admin, thêm order, employee list, đang thêm edit employee, chuẩn bị thêm customer list.">
+    <list default="true" id="306e221c-edb9-4616-bd79-f07250ba1696" name="Changes" comment="Thêm được edit employee chưa thay đổi được dưới DB">
+      <change afterPath="$PROJECT_DIR$/admin/controller/Superadmin_Management_Action_Controller.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin/view/public/customer_list.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin/view/public/edit_emp.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin/controller/Superadmin_Display_Content_Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/controller/Superadmin_Display_Content_Controller.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/model/Customer_Management_Model.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/model/Customer_Management_Model.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin/model/Employee_Model.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/model/Employee_Model.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/view/public/edit_profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/view/public/edit_profile.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/view/public/employees_list.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/view/public/employees_list.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/view/Superadmin_View.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/view/Superadmin_View.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/view/public/edit_profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/view/public/add_emp.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/view/public/super_admin_aside.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/view/public/super_admin_aside.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/view/table_show_order.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/view/table_show_order.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/model/Customer_Model.php" beforeDir="false" afterPath="$PROJECT_DIR$/site/model/Customer_Model.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,27 +38,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/xampp/htdocs/clean-work_old",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/xampp/htdocs/clean-work/admin/view/public&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ],
-    "com.intellij.ide.scratch.LRUPopupBuilder$1/SQL Dialect": [
-      "MySQL"
+    &quot;com.intellij.ide.scratch.LRUPopupBuilder$1/SQL Dialect&quot;: [
+      &quot;MySQL&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\xampp\htdocs\clean-work\admin\view\public" />
@@ -85,6 +92,9 @@
       <workItem from="1679646152863" duration="1006000" />
       <workItem from="1679659673217" duration="4106000" />
       <workItem from="1679723783513" duration="12060000" />
+      <workItem from="1679737622710" duration="380000" />
+      <workItem from="1679797953369" duration="5976000" />
+      <workItem from="1679830574851" duration="6270000" />
     </task>
     <task id="LOCAL-00001" summary="Fix lại các path cũng như đổi tên 1 số thứ, thêm thông số để lấy thông tin của admin được xây dựng trong Customer_Management_Controller.php. Thêm Customer_Management_Controller.php để xây dựng chỉnh sửa cho admin.">
       <created>1679318247535</created>
@@ -128,7 +138,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679734140889</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Thêm được edit employee chưa thay đổi được dưới DB">
+      <created>1679737996328</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1679737996328</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -152,6 +169,7 @@
     <MESSAGE value="Thêm logout Super Amin, Thêm View Order của Customer" />
     <MESSAGE value="Thêm admin, super admin profile, tinh chỉnh một số thứ, thêm folder core trong system để chứa các file controller, model, view cơ bản của web" />
     <MESSAGE value="Fix được dashboard trong super admin, thêm order, employee list, đang thêm edit employee, chuẩn bị thêm customer list." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix được dashboard trong super admin, thêm order, employee list, đang thêm edit employee, chuẩn bị thêm customer list." />
+    <MESSAGE value="Thêm được edit employee chưa thay đổi được dưới DB" />
+    <option name="LAST_COMMIT_MESSAGE" value="Thêm được edit employee chưa thay đổi được dưới DB" />
   </component>
 </project>

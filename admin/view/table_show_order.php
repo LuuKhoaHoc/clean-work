@@ -70,10 +70,15 @@ class table_show_order
                                             <?= $action ?>
                                         </button>
                                     <?php } ?>
+                                    <?php if ($_SESSION['customer_info']['type'] == 'superadmin') { ?>
+                                    <button disabled class="rounded-lg btn-secondary w-100" type="submit" name="action" value="0">
+                                        Disproved
+                                    </button>
+                                    <?php } else { ?>
                                     <button class="rounded-lg btn-danger w-100" type="submit" name="action" value="0">
                                         Disproved
                                     </button>
-
+                            <?php } ?>
                                     <input type="hidden" name="order-id" value="<?= $order[0] ?>">
                                 </form>
                             </td>

@@ -64,7 +64,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="index.php?module=user&action=create" class="nav-link">
+                            <a href="index.php?c=Superadmin_Display_Content_Controller&a=showAddEmp" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Add Employees</p>
                             </a>
@@ -72,7 +72,7 @@
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="index.php?c=Superadmin_Display_Content_Controller&a=showCustomer" class="nav-link">
                         <i class="nav-icon fas fa-users"></i>
                         <p>
                             Customer

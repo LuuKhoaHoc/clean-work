@@ -58,5 +58,4 @@ class Customer_Model extends DB
         $query = "UPDATE customer SET `name` = '$name' , `email` = '$email', `phone` = '$phone' WHERE id = $customerId";
         return mysqli_query(parent::connect(), $query);
     }
-
 }

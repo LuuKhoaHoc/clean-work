@@ -18,6 +18,14 @@ class Superadmin_View
     }
     public function EmployeeEditView($data) {
         $view = new BaseView();
-        $view->render("admin/view/public/edit_profile.php", $data);
+        $view->render("admin/view/public/edit_emp.php", $data);
+    }
+    public function EmployeeAddView() {
+        $view = new BaseView();
+        $view->render("admin/view/public/add_emp.php");
+    }
+    public function CustomerListView($data) {
+        $view = new BaseView();
+        $view->render("admin/view/public/customer_list.php", $data);
     }
 }

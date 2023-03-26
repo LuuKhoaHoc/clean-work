@@ -35,4 +35,9 @@ class Customer_Management_Model extends DB
         $query = "INSERT INTO customer (`id`, `name`, `email`, `phone`) VALUES (NULL, '$name', '$email', '$phone')";
         return mysqli_query(self::connect(), $query);
     }
+    public function showCustomer() {
+        $query = "SELECT id, name, email, phone, time FROM customer";
+        $row = mysqli_query(parent::connect(), $query);
+        return mysqli_fetch_all($row, MYSQLI_ASSOC);
+    }
 }

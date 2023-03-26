@@ -1,4 +1,5 @@
 <?php
+// Khai báo thư viện
 require_once('admin/model/Order_Model.php');
 require_once('admin/model/History_Model.php');
 require_once('admin/model/Content_Model.php');
@@ -25,6 +26,7 @@ class Superadmin_Display_Content_Controller
         $ctm = $customer_manage->countCusThisMonth();
         $total = $history_model->totalOrders();
         $total_money = $history_model->totalMoney();
+        // Cho biến data là 1 mảng chứa các mảng nhỏ, mỗi mảng nhỏ là 1 dữ liệu
         $data = [
             'superadminInfo' => $superadminInfo,
             'orders' => $orders,
@@ -53,14 +55,14 @@ class Superadmin_Display_Content_Controller
         $view = new Superadmin_View();
         $view->EmployeeEditView($data[0]);
     }
-
-    public function showProfileAction()
-    {
-        require('admin/model/Content_Model.php');
-        $model = new Content_Model();
-        $view = new Admin_View();
-        
-        $data = $model->getDataFromPage('');
-        $view->ProfileView($data);
+    public function showAddEmp() {
+        $view = new Superadmin_View();
+        $view->EmployeeAddView();
+    }
+    public function showCustomer() {
+        $model = new Customer_Management_Model();
+        $data = $model->showCustomer();
+        $view = new Superadmin_View();
+        $view->CustomerListView($data);
     }
 }
