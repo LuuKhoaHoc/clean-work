@@ -18,8 +18,8 @@ class Guest_Display_Content_Controller {
         $view->OurServiceView();
     }
     public function showServiceDetailAction() {
-        $service = $_GET['s'] == '' ? 'Office' : $_GET['s'];
-        $service = ucwords(str_replace('-',' ',$service));
+        $service = $_GET['s']; //== '' ? 'Office' : $_GET['s'];
+        // $service = ucwords(str_replace('-',' ',$service));
         $model = new Content_Model();
         $service = $model->getSerFromDB($service);
         $view = new Guest_View();
