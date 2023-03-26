@@ -35,9 +35,9 @@
 </head>
 
 <body>
-<?php include 'site/view/public_guest/header.html' ?>
+<?php include 'site/view/public/header.html' ?>
 
-<?php include "site/view/public_guest/nav.php"; ?>
+<?php include "site/view/public/nav.php"; ?>
 
 <main>
 
@@ -582,7 +582,7 @@
     </section>
 </main>
 
-<?php include "site/view/public_guest/footer.html"; ?>
+<?php include "site/view/public/footer.html"; ?>
 
 
 <!-- JAVASCRIPT FILES -->
