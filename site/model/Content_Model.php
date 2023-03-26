@@ -13,7 +13,7 @@ class Content_Model extends DB {
         return mysqli_fetch_all($row);
     }
     public function getSerFromDB(string $service) {
-        $query = "SELECT * FROM `service type` as ser WHERE ser.name = '$service'" ;
+        $query = "SELECT * FROM `service_type` as ser WHERE ser.name = '$service'" ;
         $row = mysqli_query(parent::connect(),$query);
         return mysqli_fetch_assoc($row);
     }
@@ -32,7 +32,7 @@ class Content_Model extends DB {
                 sta.name AS state
             FROM `customer_order` AS ord
             INNER JOIN `customer` AS cus ON cus.id = ord.customer_id
-            INNER JOIN `service type` AS ser ON ser.id = ord.service_type_id
+            INNER JOIN `service_type` AS ser ON ser.id = ord.service_type_id
             INNER JOIN `order_state` AS sta ON sta.id = ord.state
             WHERE cus.email = '$email'
         ";

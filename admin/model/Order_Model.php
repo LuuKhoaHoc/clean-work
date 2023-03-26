@@ -5,7 +5,7 @@ require_once('system/DB.php');
 class Order_Model extends DB
 {
     //Order_Model for Admin to regulate orders from customers
-    //Working with `order`, `order_state`, `service type`, `team` tables
+    //Working with `order`, `order_state`, `service_type`, `team` tables
 
     public static function SelectOrderByID(int $ord_id): array // Hàm tìm order theo ID rồi in ra
     {
@@ -28,7 +28,7 @@ class Order_Model extends DB
                  sta.name AS state
             FROM `customer_order` AS ORD
             INNER JOIN `customer` AS cus ON cus.id = ord.customer_id
-            INNER JOIN `service type` AS ser ON ser.id = ord.service_type_id
+            INNER JOIN `service_type` AS ser ON ser.id = ord.service_type_id
             INNER JOIN `order_state` AS sta ON sta.id = ord.state
         ";
         if ($state_id != -1) {
