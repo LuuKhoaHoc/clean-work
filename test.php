@@ -1,7 +1,8 @@
 <?php
-
+include('site/model/Customer_Model.php');
+// include('site/model/Customer_Manager_Model.php');
 $model = new Customer_Model();
-$model_admin = new Customer_Management_Model();
+// $model_admin = new Customer_Management_Model();
 
 $result = $model->checkUserFromDB('viphongly2804@gmail', '123456');
 
