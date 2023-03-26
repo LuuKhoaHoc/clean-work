@@ -17,14 +17,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,700;1,400&display=swap"
           rel="stylesheet">
 
-    <link href="/../clean-work/public/css/bootstrap.min.css" rel="stylesheet">
+    <link href="public/css/bootstrap.min.css" rel="stylesheet">
 
-    <link href="/../clean-work/public/css/bootstrap-icons.css" rel="stylesheet">
+    <link href="public/css/bootstrap-icons.css" rel="stylesheet">
 
-    <link href="/../clean-work/public/css/tooplate-clean-work.css" rel="stylesheet">
-    <link rel="stylesheet" href="/../clean-work/public/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
-    <link rel="stylesheet" href="/../clean-work/public/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
-    <link rel="stylesheet" href="/../clean-work/public/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+    <link href="public/css/tooplate-clean-work.css" rel="stylesheet">
+    <link rel="stylesheet" href="public/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="public/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+    <link rel="stylesheet" href="public/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
     <!--
 
     Tooplate 2132 Clean Work
@@ -57,7 +57,7 @@
                 <div class="col-lg-4 col-12 d-flex justify-content-lg-end align-items-center ms-auto">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb justify-content-center">
-                            <li class="breadcrumb-item"><a href="/../clean-work/index.php?c=Customer_Display_Content_Controller">Home</a></li>
+                            <li class="breadcrumb-item"><a href="index.php?c=Customer_Display_Content_Controller">Home</a></li>
 
                             <li class="breadcrumb-item active" aria-current="page">View Order</li>
                         </ol>
@@ -158,20 +158,20 @@
 
 <!-- ./wrapper -->
 <!-- jQuery -->
-<script src="/../clean-work/public/plugins/jquery/jquery.min.js"></script>
+<script src="public/plugins/jquery/jquery.min.js"></script>
 <!-- Bootstrap 4 -->
-<script src="/../clean-work/public/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="public/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- AdminLTE App -->
 <!-- bs-custom-file-input -->
-<script src="/../clean-work/public/plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
-<script src="/../clean-work/public/dist/js/adminlte.min.js"></script>
+<script src="public/plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
+<script src="public/dist/js/adminlte.min.js"></script>
 <!-- AdminLTE for demo purposes -->
 
 <!-- DataTables  -->
-<script src="/../clean-work/public/plugins/datatables/jquery.dataTables.min.js"></script>
-<script src="/../clean-work/public/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
-<script src="/../clean-work/public/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
-<script src="/../clean-work/public/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+<script src="public/plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="public/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+<script src="public/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+<script src="public/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
 <script>
     $(function () {
         $('#example10').DataTable({
@@ -186,13 +186,13 @@
     });
 </script>
 <!-- JAVASCRIPT FILES -->
-<script src="/../clean-work/public/js/jquery.backstretch.min.js"></script>
-<script src="/../clean-work/public/js/counter.js"></script>
-<script src="/../clean-work/public/js/countdown.js"></script>
-<script src="/../clean-work/public/js/init.js"></script>
-<script src="/../clean-work/public/js/modernizr.js"></script>
-<script src="/../clean-work/public/js/animated-headline.js"></script>
-<script src="/../clean-work/public/js/custom.js"></script>
+<script src="public/js/jquery.backstretch.min.js"></script>
+<script src="public/js/counter.js"></script>
+<script src="public/js/countdown.js"></script>
+<script src="public/js/init.js"></script>
+<script src="public/js/modernizr.js"></script>
+<script src="public/js/animated-headline.js"></script>
+<script src="public/js/custom.js"></script>
 
 </body>
 </html>

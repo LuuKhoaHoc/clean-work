@@ -16,11 +16,11 @@
 
         <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
 
-        <link href="/../clean-work/public/css/bootstrap.min.css" rel="stylesheet">
+        <link href="public/css/bootstrap.min.css" rel="stylesheet">
 
-        <link href="/../clean-work/public/css/bootstrap-icons.css" rel="stylesheet">
+        <link href="public/css/bootstrap-icons.css" rel="stylesheet">
 
-        <link href="/../clean-work/public/css/tooplate-clean-work.css" rel="stylesheet">
+        <link href="public/css/tooplate-clean-work.css" rel="stylesheet">
 <!--
 
 Tooplate 2132 Clean Work
@@ -53,7 +53,7 @@ Free Bootstrap 5 HTML Template
                         <div class="col-lg-4 col-12 d-flex justify-content-lg-end align-items-center ms-auto">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb justify-content-center">
-                                    <li class="breadcrumb-item"><a href="/../clean-work/index.php">Home</a></li>
+                                    <li class="breadcrumb-item"><a href="index.php">Home</a></li>
 
                                     <li class="breadcrumb-item active" aria-current="page">About Us</li>
                                 </ol>
@@ -70,7 +70,7 @@ Free Bootstrap 5 HTML Template
                     <div class="row">
 
                         <div class="col-lg-6 col-12">
-                            <img src="/../clean-work/public/images/cleaning-concept-with-man-showing-business-card.jpg" class="featured-image img-fluid">
+                            <img src="public/images/cleaning-concept-with-man-showing-business-card.jpg" class="featured-image img-fluid">
                         </div>
 
                         <div class="col-lg-6 col-12">
@@ -110,7 +110,7 @@ Free Bootstrap 5 HTML Template
                         </div>
 
                         <div class="col-lg-3 col-md-6 col-12 mb-lg-0 mb-md-5">
-                            <img src="/../clean-work/public/images/teams/young-cleaning-man-wearing-casual-clothes.jpg" class="team-image img-fluid">
+                            <img src="public/images/teams/young-cleaning-man-wearing-casual-clothes.jpg" class="team-image img-fluid">
                         </div>
 
                         <div class="col-lg-3 col-md-6 col-12 d-flex justify-content-lg-center mt-4 mt-lg-0 mt-md-0 mb-5 mb-lg-0">
@@ -132,7 +132,7 @@ Free Bootstrap 5 HTML Template
                         </div>
 
                         <div class="col-lg-3 col-md-6 col-12">
-                            <img src="/../clean-work/public/images/teams/happy-young-woman-wiping-kitchen-counter-wearing-yellow-gloves.jpg" class="team-image img-fluid">
+                            <img src="public/images/teams/happy-young-woman-wiping-kitchen-counter-wearing-yellow-gloves.jpg" class="team-image img-fluid">
                         </div>
 
                         <div class="col-lg-3 col-md-6 col-12 d-flex justify-content-lg-center mt-4 mt-lg-0 mt-md-0">
@@ -167,23 +167,23 @@ Free Bootstrap 5 HTML Template
                         </div>
 
                         <div class="col-lg-2 col-md-4 col-6">
-                            <img src="/../clean-work/public/images/partners/toprak-leasing.svg" class="partners-image img-fluid">
+                            <img src="public/images/partners/toprak-leasing.svg" class="partners-image img-fluid">
                         </div>
 
                         <div class="col-lg-2 col-md-4 col-6">
-                            <img src="/../clean-work/public/images/partners/glorix.svg" class="partners-image img-fluid">
+                            <img src="public/images/partners/glorix.svg" class="partners-image img-fluid">
                         </div>
 
                         <div class="col-lg-2 col-md-4 col-6">
-                            <img src="/../clean-work/public/images/partners/woocommerce.svg" class="partners-image img-fluid">
+                            <img src="public/images/partners/woocommerce.svg" class="partners-image img-fluid">
                         </div>
 
                         <div class="col-lg-2 col-md-4 col-6">
-                            <img src="/../clean-work/public/images/partners/rolf-leasing.svg" class="partners-image img-fluid">
+                            <img src="public/images/partners/rolf-leasing.svg" class="partners-image img-fluid">
                         </div>
 
                         <div class="col-lg-2 col-md-4 col-6">
-                            <img src="/../clean-work/public/images/partners/unilabs.svg" class="partners-image img-fluid">
+                            <img src="public/images/partners/unilabs.svg" class="partners-image img-fluid">
                         </div>
 
                     </div>
@@ -192,15 +192,15 @@ Free Bootstrap 5 HTML Template
         </main>
         <?php include 'footer.html'?>
         <!-- JAVASCRIPT FILES -->
-        <script src="/../clean-work/public/js/jquery.min.js"></script>
-        <script src="/../clean-work/public/js/bootstrap.min.js"></script>
-        <script src="/../clean-work/public/js/jquery.backstretch.min.js"></script>
-        <script src="/../clean-work/public/js/counter.js"></script>
-        <script src="/../clean-work/public/js/countdown.js"></script>
-        <script src="/../clean-work/public/js/init.js"></script>
-        <script src="/../clean-work/public/js/modernizr.js"></script>
-        <script src="/../clean-work/public/js/animated-headline.js"></script>
-        <script src="/../clean-work/public/js/custom.js"></script>
+        <script src="public/js/jquery.min.js"></script>
+        <script src="public/js/bootstrap.min.js"></script>
+        <script src="public/js/jquery.backstretch.min.js"></script>
+        <script src="public/js/counter.js"></script>
+        <script src="public/js/countdown.js"></script>
+        <script src="public/js/init.js"></script>
+        <script src="public/js/modernizr.js"></script>
+        <script src="public/js/animated-headline.js"></script>
+        <script src="public/js/custom.js"></script>
 
     </body>
 </html>
