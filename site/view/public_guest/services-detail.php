@@ -12,7 +12,10 @@
             /** @var $service */
             $service['name']; ?> | Bootstrap 5 Theme
         </title>
+        
 
+
+        <link href="public/css/magnific-popup.css" rel="stylesheet">
         <!-- CSS FILES -->        
         <link rel="preconnect" href="https://fonts.googleapis.com">
         
@@ -20,13 +23,11 @@
         
         <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
 
-        <link href="/../clean-work/public/css/bootstrap.min.css" rel="stylesheet">
+        <link href="public/css/bootstrap.min.css" rel="stylesheet">
 
-        <link href="/../clean-work/public/css/bootstrap-icons.css" rel="stylesheet">
+        <link href="public/css/bootstrap-icons.css" rel="stylesheet">
 
-        <link href="/../clean-work/public/css/magnific-popup.css" rel="stylesheet">
-
-        <link href="/../clean-work/public/css/tooplate-clean-work.css" rel="stylesheet">
+        <link href="public/css/tooplate-clean-work.css" rel="stylesheet">
 <!--
 
 Tooplate 2132 Clean Work
