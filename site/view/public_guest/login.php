@@ -36,7 +36,7 @@ session_start()
     <!-- /.login-logo -->
     <div class="card card-outline card-primary">
         <div class="card-header text-center">
-            <a href="/../clean-work/index.php" class="h1 d-flex align-items-center justify-content-around">
+            <a href="index.php" class="h1 d-flex align-items-center justify-content-around">
                 <img src="public/images/bubbles.png" alt="Clean Work Logo"
                      class="img-circle w-25 " style="object-fit: cover; opacity: .8">
                 <b>Clean Work</b>
@@ -45,7 +45,7 @@ session_start()
         <div class="card-body">
             <p class="login-box-msg">Sign in to start your services</p>
 
-            <form action="/../clean-work/index.php?c=Customer_Account_Controller&a=loginAction" method="post">
+            <form action="index.php?c=Customer_Account_Controller&a=loginAction" method="post">
 
                 <div class="input-group mb-3">
                     <input type="email" class="form-control" placeholder="Email" name="email" required>
@@ -73,7 +73,7 @@ session_start()
                 </div>
             </form>
             <p class="mb-0">
-                <a href="sign_up.php" class="text-center">Sign up a new membership</a>
+                <a href="index.php?c=&a=showSignUpAction" class="text-center">Sign up a new membership</a>
             </p>
         </div>
         <!-- /.card-body -->
