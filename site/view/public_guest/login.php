@@ -18,6 +18,18 @@ session_start()
     <link rel="stylesheet" href="/../clean-work/public/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="/../clean-work/public/dist/css/adminlte.min.css">
+    <!-- CSS FILES -->        
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+
+        <link href="public/css/bootstrap.min.css" rel="stylesheet">
+
+        <link href="public/css/bootstrap-icons.css" rel="stylesheet">
+
+        <link href="public/css/tooplate-clean-work.css" rel="stylesheet">
 </head>
 <body class="login-page" style="min-height: 466px;">
 <div class="login-box">
