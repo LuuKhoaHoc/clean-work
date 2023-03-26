@@ -139,7 +139,7 @@
                         <div class="row">
                             <div class="col-lg-5 col-md-5 col-12">
                                 <div class="services-image-wrap">
-                                    <a href="index.php?c=&a=">
+                                    <a href="index.php?c=&a=showServiceDetailAction">
                                         <img src="public/images/services/people-taking-care-office-cleaning.jpg"
                                              class="services-image img-fluid" alt="">
                                         <img src="public/images/services/person-taking-care-office.jpg"
@@ -165,7 +165,7 @@
                             <div class="col-lg-7 col-md-7 col-12 d-flex align-items-center">
                                 <div class="services-info mt-4 mt-lg-0 mt-md-0">
                                     <h4 class="services-title mb-1 mb-lg-2">
-                                        <a class="services-title-link" href="index.php?c=&a=">Office
+                                        <a class="services-title-link" href="index.php?c=&a=showServiceDetailAction">Office
                                             Cleaning</a>
                                     </h4>
 
@@ -180,7 +180,7 @@
                                             <i class="bi-star"></i>
                                         </div>
 
-                                        <a href="index.php?c=&a="
+                                        <a href="index.php?c=&a=showServiceDetailAction"
                                            class="custom-btn btn button button--atlas mt-2 ms-auto">
                                             <span>Learn More</span>
 
@@ -205,7 +205,7 @@
                         <div class="row">
                             <div class="col-lg-5 col-md-5 col-12">
                                 <div class="services-image-wrap">
-                                    <a href="index.php?c=&a=">
+                                    <a href="index.php?c=&a=showServiceDetailAction">
                                         <img src="public/images/services/young-smiling-woman-wearing-rubber-gloves-cleaning-stove.jpg"
                                              class="services-image img-fluid" alt="">
                                         <img src="public/images/services/woman-holding-rag-detergent-cleaning-cooker.jpg"
@@ -231,7 +231,7 @@
                             <div class="col-lg-7 col-md-7 col-12 d-flex align-items-center">
                                 <div class="services-info mt-4 mt-lg-0 mt-md-0">
                                     <h4 class="services-title mb-1 mb-lg-2">
-                                        <a class="services-title-link" href="index.php?c=&a=">Kitchen
+                                        <a class="services-title-link" href="index.php?c=&a=showServiceDetailAction">Kitchen
                                             Cleaning</a>
                                     </h4>
 
@@ -246,7 +246,7 @@
                                             <i class="bi-star-fill"></i>
                                         </div>
 
-                                        <a href="index.php?c=&a="
+                                        <a href="index.php?c=&a=showServiceDetailAction"
                                            class="custom-btn btn button button--atlas mt-2 ms-auto">
                                             <span>Learn More</span>
 
@@ -271,7 +271,7 @@
                         <div class="row">
                             <div class="col-lg-5 col-md-5 col-12">
                                 <div class="services-image-wrap">
-                                    <a href="index.php?c=&a=">
+                                    <a href="index.php?c=&a=showServiceDetailAction">
                                         <img src="public/images/services/man-polishing-car-inside-car-service.jpg"
                                              class="services-image img-fluid" alt="">
                                         <img src="public/images/services/man-polishing-car-inside.jpg"
@@ -297,7 +297,7 @@
                             <div class="col-lg-7 col-md-7 col-12 d-flex align-items-center">
                                 <div class="services-info mt-4 mt-lg-0 mt-md-0">
                                     <h4 class="services-title mb-1 mb-lg-2">
-                                        <a class="services-title-link" href="index.php?c=&a=">Car
+                                        <a class="services-title-link" href="index.php?c=&a=showServiceDetailAction">Car
                                             Washing</a>
                                     </h4>
 
@@ -312,7 +312,7 @@
                                             <i class="bi-star-fill"></i>
                                         </div>
 
-                                        <a href="index.php?c=&a="
+                                        <a href="index.php?c=&a=showServiceDetailAction"
                                            class="custom-btn btn button button--atlas mt-2 ms-auto">
                                             <span>Learn More</span>
 
@@ -337,7 +337,7 @@
                         <div class="row">
                             <div class="col-lg-5 col-md-5 col-12">
                                 <div class="services-image-wrap">
-                                    <a href="index.php?c=&a=">
+                                    <a href="index.php?c=&a=showServiceDetailAction">
                                         <img src="public/images/services/professional-industrial-cleaner-protective-uniform-cleaning-floor-food-processing-plant.jpg"
                                              class="services-image img-fluid" alt="">
                                         <img src="public/images/services/close-up-mop-cleaning-industrial-plant-floor.jpg"
@@ -378,7 +378,7 @@
                                             <i class="bi-star"></i>
                                         </div>
 
-                                        <a href="index.php?c=&a="
+                                        <a href="index.php?c=&a=showServiceDetailAction"
                                            class="custom-btn btn button button--atlas mt-2 ms-auto">
                                             <span>Learn More</span>
 
