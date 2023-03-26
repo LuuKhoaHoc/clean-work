@@ -55,7 +55,7 @@
     <nav class="navbar navbar-expand navbar-primary navbar-dark">
         <!-- Left navbar links -->
         <ul class="navbar-nav">
-            <a href="/../clean-work/index.php?c=Customer_Display_Content_Controller&a=showHomeAction" class="brand-link">
+            <a href="index.php?c=Customer_Display_Content_Controller&a=showHomeAction" class="brand-link">
                 <img src="public/images/bubbles.png" alt="Clean Work Logo"
                      class="brand-image img-circle elevation-3" style="opacity: .8">
                 <span class="brand-text text-white text-uppercase">Clean Work</span>
