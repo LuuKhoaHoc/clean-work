@@ -26,7 +26,7 @@ class Order_Model extends DB
                 ser.price as price,
                 ord.address AS address,
                  sta.name AS state
-            FROM `customer_order` AS ORD
+            FROM `customer_order` AS ord
             INNER JOIN `customer` AS cus ON cus.id = ord.customer_id
             INNER JOIN `service_type` AS ser ON ser.id = ord.service_type_id
             INNER JOIN `order_state` AS sta ON sta.id = ord.state
