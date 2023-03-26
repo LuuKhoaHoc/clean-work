@@ -16,7 +16,6 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,700;1,400&display=swap"
           rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&amp;display=fallback">
 
     <link href="public/css/bootstrap.min.css" rel="stylesheet">
 
@@ -36,9 +35,9 @@
 </head>
 
 <body>
-<?php include 'site/view/public/header.html' ?>
+<?php include 'site/view/public_guest/header.html' ?>
 
-<?php include "site/view/public/nav.php"; ?>
+<?php include "site/view/public_guest/nav.php"; ?>
 
 <main>
 
@@ -140,7 +139,7 @@
                         <div class="row">
                             <div class="col-lg-5 col-md-5 col-12">
                                 <div class="services-image-wrap">
-                                    <a href="index.php?c=Customer_Display_Content_Controller&a=showServiceDetailAction&s=office-cleaning">
+                                    <a href="index.php?c=&a=showServiceDetailAction&s=Office-Cleaning">
                                         <img src="public/images/services/people-taking-care-office-cleaning.jpg"
                                              class="services-image img-fluid" alt="">
                                         <img src="public/images/services/person-taking-care-office.jpg"
@@ -166,7 +165,7 @@
                             <div class="col-lg-7 col-md-7 col-12 d-flex align-items-center">
                                 <div class="services-info mt-4 mt-lg-0 mt-md-0">
                                     <h4 class="services-title mb-1 mb-lg-2">
-                                        <a class="services-title-link" href="index.php?c=Customer_Display_Content_Controller&a=showServiceDetailAction&s=office-cleaning">Office
+                                        <a class="services-title-link" href="index.php?c=&a=showServiceDetailAction&s=Office-Cleaning">Office
                                             Cleaning</a>
                                     </h4>
 
@@ -181,7 +180,7 @@
                                             <i class="bi-star"></i>
                                         </div>
 
-                                        <a href="index.php?c=Customer_Display_Content_Controller&a=showServiceDetailAction&s=office-cleaning"
+                                        <a href="index.php?c=&a=showServiceDetailAction&s=Office-Cleaning"
                                            class="custom-btn btn button button--atlas mt-2 ms-auto">
                                             <span>Learn More</span>
 
@@ -206,7 +205,7 @@
                         <div class="row">
                             <div class="col-lg-5 col-md-5 col-12">
                                 <div class="services-image-wrap">
-                                    <a href="index.php?c=Customer_Display_Content_Controller&a=showServiceDetailAction&s=kitchen-cleaning">
+                                    <a href="index.php?c=&a=showServiceDetailAction&s=Kitchen-Cleaning">
                                         <img src="public/images/services/young-smiling-woman-wearing-rubber-gloves-cleaning-stove.jpg"
                                              class="services-image img-fluid" alt="">
                                         <img src="public/images/services/woman-holding-rag-detergent-cleaning-cooker.jpg"
@@ -232,7 +231,7 @@
                             <div class="col-lg-7 col-md-7 col-12 d-flex align-items-center">
                                 <div class="services-info mt-4 mt-lg-0 mt-md-0">
                                     <h4 class="services-title mb-1 mb-lg-2">
-                                        <a class="services-title-link" href="index.php?c=Customer_Display_Content_Controller&a=showServiceDetailAction&s=kitchen-cleaning">Kitchen
+                                        <a class="services-title-link" href="index.php?c=&a=showServiceDetailAction&s=Kitchen-Cleaning">Kitchen
                                             Cleaning</a>
                                     </h4>
 
@@ -247,7 +246,7 @@
                                             <i class="bi-star-fill"></i>
                                         </div>
 
-                                        <a href="index.php?c=Customer_Display_Content_Controller&a=showServiceDetailAction&s=kitchen-cleaning"
+                                        <a href="index.php?c=&a=showServiceDetailAction&s=Kitchen-Cleaning"
                                            class="custom-btn btn button button--atlas mt-2 ms-auto">
                                             <span>Learn More</span>
 
@@ -272,7 +271,7 @@
                         <div class="row">
                             <div class="col-lg-5 col-md-5 col-12">
                                 <div class="services-image-wrap">
-                                    <a href="index.php?c=Customer_Display_Content_Controller&a=showServiceDetailAction&s=car-washing">
+                                    <a href="index.php?c=&a=showServiceDetailAction&s=Car-Washing">
                                         <img src="public/images/services/man-polishing-car-inside-car-service.jpg"
                                              class="services-image img-fluid" alt="">
                                         <img src="public/images/services/man-polishing-car-inside.jpg"
@@ -298,7 +297,7 @@
                             <div class="col-lg-7 col-md-7 col-12 d-flex align-items-center">
                                 <div class="services-info mt-4 mt-lg-0 mt-md-0">
                                     <h4 class="services-title mb-1 mb-lg-2">
-                                        <a class="services-title-link" href="index.php?c=Customer_Display_Content_Controller&a=showServiceDetailAction&s=car-washing">Car
+                                        <a class="services-title-link" href="index.php?c=&a=showServiceDetailAction&s=Car-Washing">Car
                                             Washing</a>
                                     </h4>
 
@@ -313,7 +312,7 @@
                                             <i class="bi-star-fill"></i>
                                         </div>
 
-                                        <a href="index.php?c=Customer_Display_Content_Controller&a=showServiceDetailAction&s=car-washing"
+                                        <a href="index.php?c=&a=showServiceDetailAction&s=Car-Washing"
                                            class="custom-btn btn button button--atlas mt-2 ms-auto">
                                             <span>Learn More</span>
 
@@ -338,7 +337,7 @@
                         <div class="row">
                             <div class="col-lg-5 col-md-5 col-12">
                                 <div class="services-image-wrap">
-                                    <a href="index.php?c=Customer_Display_Content_Controller&a=showServiceDetailAction&s=factory-cleaning">
+                                    <a href="index.php?c=&a=showServiceDetailAction&s=Factory-Cleaning">
                                         <img src="public/images/services/professional-industrial-cleaner-protective-uniform-cleaning-floor-food-processing-plant.jpg"
                                              class="services-image img-fluid" alt="">
                                         <img src="public/images/services/close-up-mop-cleaning-industrial-plant-floor.jpg"
@@ -364,7 +363,7 @@
                             <div class="col-lg-7 col-md-7 col-12 d-flex align-items-center">
                                 <div class="services-info mt-4 mt-lg-0 mt-md-0">
                                     <h4 class="services-title mb-1 mb-lg-2">
-                                        <a class="services-title-link" href="index.php?c=Customer_Display_Content_Controller&a=showServiceDetailAction&s=factory-cleaning">Factory
+                                        <a class="services-title-link" href="index.php?c=&a=showServiceDetailAction&s=Factory-Cleaning">Factory
                                             Cleaning</a>
                                     </h4>
 
@@ -379,7 +378,7 @@
                                             <i class="bi-star"></i>
                                         </div>
 
-                                        <a href="index.php?c=Customer_Display_Content_Controller&a=showServiceDetailAction&s=factory-cleaning"
+                                        <a href="index.php?c=&a=showServiceDetailAction&s=Factory-Cleaning"
                                            class="custom-btn btn button button--atlas mt-2 ms-auto">
                                             <span>Learn More</span>
 
@@ -583,157 +582,14 @@
     </section>
 </main>
 
-<footer class="site-footer">
-    <div class="container">
-        <div class="row">
+<?php include "site/view/public_guest/footer.html"; ?>
 
-            <div class="col-lg-12 col-12 d-flex align-items-center mb-4 pb-2">
-                <div>
-                    <img src="public/images/bubbles.png" class="logo img-fluid" alt="">
-                </div>
-
-                <ul class="footer-menu d-flex flex-wrap ms-5">
-                    <li class="footer-menu-item"><a href="#" class="footer-menu-link">About Us</a></li>
-
-                    <li class="footer-menu-item"><a href="#" class="footer-menu-link">Blog</a></li>
-
-                    <li class="footer-menu-item"><a href="#" class="footer-menu-link">Reviews</a></li>
-
-                    <li class="footer-menu-item"><a href="#" class="footer-menu-link">Contact</a></li>
-                </ul>
-            </div>
-
-            <div class="col-lg-5 col-12 mb-4 mb-lg-0">
-                <h5 class="site-footer-title mb-3">Our Services</h5>
-
-                <ul class="footer-menu">
-                    <li class="footer-menu-item">
-                        <a href="#" class="footer-menu-link">
-                            <i class="bi-chevron-double-right footer-menu-link-icon me-2"></i>
-                            House Cleaning
-                        </a>
-                    </li>
-
-                    <li class="footer-menu-item">
-                        <a href="#" class="footer-menu-link">
-                            <i class="bi-chevron-double-right footer-menu-link-icon me-2"></i>
-                            Car Washing
-                        </a>
-                    </li>
-
-                    <li class="footer-menu-item">
-                        <a href="#" class="footer-menu-link">
-                            <i class="bi-chevron-double-right footer-menu-link-icon me-2"></i>
-                            Laundry
-                        </a>
-                    </li>
-
-                    <li class="footer-menu-item">
-                        <a href="#" class="footer-menu-link">
-                            <i class="bi-chevron-double-right footer-menu-link-icon me-2"></i>
-                            Office Cleaning
-                        </a>
-                    </li>
-
-                    <li class="footer-menu-item">
-                        <a href="#" class="footer-menu-link">
-                            <i class="bi-chevron-double-right footer-menu-link-icon me-2"></i>
-                            Toilet Cleaning
-                        </a>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0 mb-md-0">
-                <h5 class="site-footer-title mb-3">Office</h5>
-
-                <p class="text-white d-flex mt-3 mb-2">
-                    <i class="bi-geo-alt-fill me-2"></i>
-                    Akershusstranda 20, 0150 Oslo, Norway
-                </p>
-
-                <p class="text-white d-flex mb-2">
-                    <i class="bi-telephone-fill me-2"></i>
-
-                    <a href="tel: 110-220-9800" class="site-footer-link">
-                        110-220-9800
-                    </a>
-                </p>
-
-                <p class="text-white d-flex">
-                    <i class="bi-envelope-fill me-2"></i>
-
-                    <a href="mailto:info@company.com" class="site-footer-link">
-                        info@company.com
-                    </a>
-                </p>
-
-                <ul class="social-icon mt-4">
-                    <li class="social-icon-item">
-                        <a href="#" class="social-icon-link button button--skoll">
-                            <span></span>
-                            <span class="bi-twitter"></span>
-                        </a>
-                    </li>
-
-                    <li class="social-icon-item">
-                        <a href="#" class="social-icon-link button button--skoll">
-                            <span></span>
-                            <span class="bi-facebook"></span>
-                        </a>
-                    </li>
-
-                    <li class="social-icon-item">
-                        <a href="#" class="social-icon-link button button--skoll">
-                            <span></span>
-                            <span class="bi-instagram"></span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="col-lg-3 col-md-6 col-6 mt-3 mt-lg-0 mt-md-0">
-                <div class="featured-block">
-                    <h5 class="text-white mb-3">Service Hours</h5>
-
-                    <strong class="d-block text-white mb-1">Mon - Fri</strong>
-
-                    <p class="text-white mb-3">8:00 AM - 5:30 PM</p>
-
-                    <strong class="d-block text-white mb-1">Sat</strong>
-
-                    <p class="text-white mb-0">6:00 AM - 2:30 PM</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="site-footer-bottom">
-        <div class="container">
-            <div class="row">
-
-                <div class="col-lg-6 col-12">
-                    <p class="copyright-text mb-0">Copyright © 2036 Clean Work Co., Ltd.</p>
-                </div>
-
-                <div class="col-lg-6 col-12 text-end">
-                    <p class="copyright-text mb-0">
-                        // Designed by <a href="https://www.tooplate.com" target="_parent">Tooplate</a> //</p>
-                </div>
-
-            </div>
-        </div>
-    </div>
-</footer>
 
 <!-- JAVASCRIPT FILES -->
 <script src="public/js/jquery.min.js"></script>
-<script src="public/plugins/jquery/jquery.min.js"></script>
 <script src="public/js/bootstrap.min.js"></script>
-<script src="public/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <script src="public/js/jquery.backstretch.min.js"></script>
 <script src="public/js/counter.js"></script>
-<script src="public/dist/js/adminlte.min.js"></script>
 <script src="public/js/countdown.js"></script>
 <script src="public/js/init.js"></script>
 <script src="public/js/modernizr.js"></script>
