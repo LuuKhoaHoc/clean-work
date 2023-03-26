@@ -1,4 +1,5 @@
 <?php
+require('admin/model/Order_Model.php');
 foreach (Order_Model::show_order($state_id) as $order) { ?>
     <tr>
         <?php foreach ($order as $row) { ?>
