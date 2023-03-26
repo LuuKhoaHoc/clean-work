@@ -1,5 +1,6 @@
 <?php
 require('admin/model/Order_Model.php');
+$state_id = 2;
 foreach (Order_Model::show_order($state_id) as $order) { ?>
     <tr>
         <?php foreach ($order as $row) { ?>
