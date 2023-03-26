@@ -45,7 +45,12 @@ class Superadmin_Display_Content_Controller
     }
     public function showEmp() {
         $model = new Employee_Model();
-        $data =  $model->showEmp();
+        $emp =  $model->showEmp();
+        $empRank = $model->showEmpRank();
+        $data = [
+          'emp' => $emp,
+          'empRank' => $empRank
+        ];
         $view = new Superadmin_View();
         $view->EmployeeListView($data);
     }

@@ -4,19 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="306e221c-edb9-4616-bd79-f07250ba1696" name="Changes" comment="Thêm được edit employee chưa thay đổi được dưới DB">
-      <change afterPath="$PROJECT_DIR$/admin/controller/Superadmin_Management_Action_Controller.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/view/public/customer_list.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/view/public/edit_emp.php" afterDir="false" />
+    <list default="true" id="306e221c-edb9-4616-bd79-f07250ba1696" name="Changes" comment="Hoàn thành add employee, có được customer list">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin/controller/Superadmin_Display_Content_Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/controller/Superadmin_Display_Content_Controller.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/model/Customer_Management_Model.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/model/Customer_Management_Model.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/controller/Superadmin_Management_Action_Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/controller/Superadmin_Management_Action_Controller.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin/model/Employee_Model.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/model/Employee_Model.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/view/Superadmin_View.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/view/Superadmin_View.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/view/public/edit_profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/view/public/add_emp.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/view/public/super_admin_aside.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/view/public/super_admin_aside.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/view/table_show_order.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/view/table_show_order.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site/model/Customer_Model.php" beforeDir="false" afterPath="$PROJECT_DIR$/site/model/Customer_Model.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/view/public/employees_list.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/view/public/employees_list.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,7 +87,8 @@
       <workItem from="1679723783513" duration="12060000" />
       <workItem from="1679737622710" duration="380000" />
       <workItem from="1679797953369" duration="5976000" />
-      <workItem from="1679830574851" duration="6270000" />
+      <workItem from="1679830574851" duration="9757000" />
+      <workItem from="1679845842535" duration="3943000" />
     </task>
     <task id="LOCAL-00001" summary="Fix lại các path cũng như đổi tên 1 số thứ, thêm thông số để lấy thông tin của admin được xây dựng trong Customer_Management_Controller.php. Thêm Customer_Management_Controller.php để xây dựng chỉnh sửa cho admin.">
       <created>1679318247535</created>
@@ -145,7 +139,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679737996328</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Hoàn thành add employee, có được customer list">
+      <created>1679836957397</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1679836957397</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -170,6 +171,7 @@
     <MESSAGE value="Thêm admin, super admin profile, tinh chỉnh một số thứ, thêm folder core trong system để chứa các file controller, model, view cơ bản của web" />
     <MESSAGE value="Fix được dashboard trong super admin, thêm order, employee list, đang thêm edit employee, chuẩn bị thêm customer list." />
     <MESSAGE value="Thêm được edit employee chưa thay đổi được dưới DB" />
-    <option name="LAST_COMMIT_MESSAGE" value="Thêm được edit employee chưa thay đổi được dưới DB" />
+    <MESSAGE value="Hoàn thành add employee, có được customer list" />
+    <option name="LAST_COMMIT_MESSAGE" value="Hoàn thành add employee, có được customer list" />
   </component>
 </project>

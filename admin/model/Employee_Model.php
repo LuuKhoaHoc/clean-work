@@ -39,7 +39,7 @@ class Employee_Model extends DB {
     }
     public function showEmp($id = null) {
         $query = "
-        SELECT emp.id, emp.name, emp.phone, employee_rank.name as type
+        SELECT emp.id, emp.name, emp.phone ,employee_rank.name as type
         FROM employees AS emp
         INNER JOIN  employee_rank ON `emp`.rank_id = employee_rank.id
     ";
@@ -72,6 +72,27 @@ class Employee_Model extends DB {
         } else {
             return mysqli_query(parent::connect(), $query);
         }
-
+    }
+    public function showEmpRank() {
+        $query = "        
+        SELECT employee_rank.id, employee_rank.name as type
+        FROM employees AS emp
+        INNER JOIN  employee_rank ON `emp`.rank_id = employee_rank.id
+        GROUP BY type
+        ";
+        $row = mysqli_query(parent::connect(), $query);
+        return mysqli_fetch_all($row, MYSQLI_ASSOC);
+    }
+    public function promoteEmp($id, $position) {
+        $query = "UPDATE `employees` as emp SET emp.rank_id = '$position' WHERE id = $id";
+        return mysqli_query(parent::connect(), $query);
+    }
+    public function demoteEmp($id) {
+        $query = "UPDATE `employees` as emp SET emp.rank_id = emp.rank_id - 1 WHERE id = $id";
+        return mysqli_query(parent::connect(), $query);
+    }
+    public function dismissedEmp($id) {
+        $query = "UPDATE employees SET rank_id = 0 WHERE id = '$id'";
+        return mysqli_query(parent::connect(), $query);
     }
 }
