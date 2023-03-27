@@ -7,14 +7,13 @@ class Order_Controller
     {
         include_once "classes/Manager.php";
         $manager = new Manager();
-        var_dump($_POST);
         $name = testInput($_POST["customer-name"]);
         $email = testInput($_POST["customer-email"]);
         $phone = testInput($_POST["customer-phone"]);
         $address = testInput($_POST["customer-address"]);
         $sti = testInput((int) $_POST["service-type-id"]);
         $cmt = testInput($_POST["comment"]);
-
+        
 
         $manager->receiveOrder($name, $email, $phone, $address, $sti, $cmt);
     }
