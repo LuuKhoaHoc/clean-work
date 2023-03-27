@@ -5,7 +5,6 @@ require_once "classes/DB.php";
 
 class Manager extends DB
 {
-
     public function receiveOrder(string $name, string $email, string $phone, string $address, int $sti, string $cmt)
     {
         if (empty(DB::SelectCustomerByEmail($email))) {
