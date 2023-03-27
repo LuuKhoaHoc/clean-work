@@ -45,7 +45,12 @@ class Superadmin_Display_Content_Controller
     }
     public function showEmp() {
         $model = new Employee_Model();
-        $data =  $model->showEmp();
+        $emp =  $model->showEmp();
+        $empRank = $model->showEmpRank();
+        $data = [
+          'emp' => $emp,
+          'empRank' => $empRank
+        ];
         $view = new Superadmin_View();
         $view->EmployeeListView($data);
     }
@@ -64,5 +69,16 @@ class Superadmin_Display_Content_Controller
         $data = $model->showCustomer();
         $view = new Superadmin_View();
         $view->CustomerListView($data);
+    }
+    public function showContentManager() {
+        $page = $_GET['p'];
+        $model = new Content_Model();
+        $data = $model->getDataFromPage($page);
+        $view = new Superadmin_View();
+        $view->ContentManagerView($data);
+    }
+    public function showContentEdit() {
+        $id = $_GET['id'];
+        $model = new Content_Model();
     }
 }

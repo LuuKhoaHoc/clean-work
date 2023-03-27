@@ -33,4 +33,38 @@ class Superadmin_Management_Action_Controller extends Superadmin_Display_Content
         self::showEmp();
         }
     }
+    
+    public function upgradeRankEmp()
+    {
+
+        if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['action'])) {
+            $model = new Employee_Model();
+            $action = $_POST['action'];
+            $selectedIds = $_POST['selected'];
+            $position = $_POST['position'];
+            if ($action == "promote") {
+                foreach ($selectedIds as $id) {
+                    $employee = $model->showEmp($id);
+                    if ($employee) {
+                        $model->promoteEmp($id, $position);
+                    }
+                }
+            } elseif ($action == "demote") {
+                foreach ($selectedIds as $id) {
+                    $employee = $model->showEmp($id);
+                    if ($employee) {
+                        $model->demoteEmp($id);
+                    }
+                }
+            } elseif ($action == "dismissed") {
+                foreach ($selectedIds as $id) {
+                    $employee = $model->showEmp($id);
+                    if ($employee) {
+                        $model->dismissedEmp($id);
+                    }
+                }
+            }
+            parent::showEmp();
+        }
+    }
 }
