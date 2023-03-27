@@ -3,7 +3,7 @@
 require_once "interfaces.php";
 require_once "classes/DB.php";
 
-class Manager
+class Manager extends DB
 {
 
     public function receiveOrder(string $name, string $email, string $phone, string $address, int $sti, string $cmt)
