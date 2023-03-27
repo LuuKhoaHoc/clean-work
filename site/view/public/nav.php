@@ -36,7 +36,9 @@
                         </li>
                     </ul>
                 </li>
-
+                <li class="nav-item">
+                    <a class="nav-link" href="index.php?c=Customer_Display_Content_Controller&a=showContactAction">Contact</a>
+                </li>
 
                 <li class="nav-item dropdown show">
                     <a class="nav-link dropdown-toggle" id="navbarDropDownCustomer" role="button"

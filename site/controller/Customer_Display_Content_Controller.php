@@ -89,4 +89,10 @@ class Customer_Display_Content_Controller
         $customerInfo = $controller->getCustomerInfo();
         $view->NavView($customerInfo);
     }
+    public function showContactAction() {
+        $view = new Customer_View();
+        $controller = new Controller();
+        $customerInfo = $controller->getCustomerInfo();
+        $view->ContactView($customerInfo);
+    }
 }

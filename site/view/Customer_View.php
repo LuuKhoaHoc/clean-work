@@ -34,4 +34,7 @@ class Customer_View {
     public function NavView($customerInfo) {
         require ('site/view/public/nav.php');
     }
+    public function ContactView($customerInfo) {
+        require('site/view/public/contact.php');
+    }
 }
