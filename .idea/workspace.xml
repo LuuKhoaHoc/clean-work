@@ -4,14 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="306e221c-edb9-4616-bd79-f07250ba1696" name="Changes" comment="Thêm thành công chức năng thăng giáng chức">
+    <list default="true" id="306e221c-edb9-4616-bd79-f07250ba1696" name="Changes" comment="Lấy ra các page thêm vào aside, còn chỉnh sửa mai làm tiếp">
+      <change afterPath="$PROJECT_DIR$/admin/view/public/content_manager.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin/view/public/edit_content.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin/controller/Superadmin_Display_Content_Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/controller/Superadmin_Display_Content_Controller.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/model/Content_Model.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/model/Admin_Content_Model.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/model/Customer_Management_Model.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/model/Customer_Management_Model.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/model/Content_Model.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/model/Content_Model.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/view/Superadmin_View.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/view/Superadmin_View.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin/view/public/super_admin_aside.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/view/public/super_admin_aside.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site/controller/Customer_Display_Content_Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/site/controller/Customer_Display_Content_Controller.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site/controller/Guest_Display_Content_Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/site/controller/Guest_Display_Content_Controller.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/model/Content_Model.php" beforeDir="false" afterPath="$PROJECT_DIR$/site/model/Content_Model.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,7 +91,8 @@
       <workItem from="1679737622710" duration="380000" />
       <workItem from="1679797953369" duration="5976000" />
       <workItem from="1679830574851" duration="9757000" />
-      <workItem from="1679845842535" duration="6093000" />
+      <workItem from="1679845842535" duration="6371000" />
+      <workItem from="1679874599729" duration="2992000" />
     </task>
     <task id="LOCAL-00001" summary="Fix lại các path cũng như đổi tên 1 số thứ, thêm thông số để lấy thông tin của admin được xây dựng trong Customer_Management_Controller.php. Thêm Customer_Management_Controller.php để xây dựng chỉnh sửa cho admin.">
       <created>1679318247535</created>
@@ -155,7 +157,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679849859712</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Lấy ra các page thêm vào aside, còn chỉnh sửa mai làm tiếp">
+      <created>1679852230125</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1679852230125</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -182,6 +191,7 @@
     <MESSAGE value="Thêm được edit employee chưa thay đổi được dưới DB" />
     <MESSAGE value="Hoàn thành add employee, có được customer list" />
     <MESSAGE value="Thêm thành công chức năng thăng giáng chức" />
-    <option name="LAST_COMMIT_MESSAGE" value="Thêm thành công chức năng thăng giáng chức" />
+    <MESSAGE value="Lấy ra các page thêm vào aside, còn chỉnh sửa mai làm tiếp" />
+    <option name="LAST_COMMIT_MESSAGE" value="Lấy ra các page thêm vào aside, còn chỉnh sửa mai làm tiếp" />
   </component>
 </project>

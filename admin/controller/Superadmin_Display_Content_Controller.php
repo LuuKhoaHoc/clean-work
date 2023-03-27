@@ -70,4 +70,15 @@ class Superadmin_Display_Content_Controller
         $view = new Superadmin_View();
         $view->CustomerListView($data);
     }
+    public function showContentManager() {
+        $page = $_GET['p'];
+        $model = new Content_Model();
+        $data = $model->getDataFromPage($page);
+        $view = new Superadmin_View();
+        $view->ContentManagerView($data);
+    }
+    public function showContentEdit() {
+        $id = $_GET['id'];
+        $model = new Content_Model();
+    }
 }

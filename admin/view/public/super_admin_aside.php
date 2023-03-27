@@ -94,7 +94,7 @@
                         $pages = $model->getPageList();
                         foreach ($pages as $page) { ?>
                         <li class="nav-item">
-                            <a href="" class="nav-link">
+                            <a href="index.php?c=Superadmin_Display_Content_Controller&a=showContentManager&p=<?= $page ?>" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p><?= $page ?></p>
                             </a>

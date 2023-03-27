@@ -28,4 +28,12 @@ class Superadmin_View
         $view = new BaseView();
         $view->render("admin/view/public/customer_list.php", $data);
     }
+    public function ContentManagerView($data) {
+        $view = new BaseView();
+        $view->render("admin/view/public/content_manager.php", $data);
+    }
+    public function ContentEditView($data) {
+        $view = new BaseView();
+        $view->render("admin/view/public/edit_content.php", $data);
+    }
 }
