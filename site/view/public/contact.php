@@ -104,7 +104,7 @@
 
                 <div class="col-lg-6 col-12">
                     <form class="custom-form consulting-form bg-white shadow-lg mb-5 mb-lg-0"
-                          action="<?php echo htmlspecialchars("/site/controller/receiveOrder.php")?>" method="post" role="form">
+                          action="<?php echo htmlspecialchars("index.php?c=Order_Controller&a=receiveOrder")?>" method="post" role="form">
                         <div class="consulting-form-header d-flex align-items-center">
                             <h3 class="mb-4">Get a Free Quotation</h3>
                         </div>
