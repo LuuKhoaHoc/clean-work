@@ -101,6 +101,22 @@ class Customer_Account_Controller
         }
     }
 
+    public function checkInput($data)
+    {
+        return htmlspecialchars(stripslashes(trim($data)));
+    }
+
+    public function signUpAction()
+    {
+        $name = self::checkInput($_POST['name']);
+        $email =  self::checkInput($_POST['email']);
+        $password = self::checkInput($_POST['password']);
+        $password_retype = self::checkInput($_POST['password_retype']);
+        $model = new Customer_Model();
+        $model->signUpAccount("$name", "$email", "$password", "$password_retype");
+        $view =  new Guest_View();
+        $view->LoginView();
+    }
     public function logoutAction()
     {
         session_start();

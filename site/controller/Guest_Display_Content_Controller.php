@@ -40,4 +40,5 @@ class Guest_Display_Content_Controller {
         $view = new Guest_View();
         $view->SignUpView();
     }
+    
 }

@@ -58,4 +58,9 @@ class Customer_Model extends DB
         $query = "UPDATE customer SET `name` = '$name' , `email` = '$email', `phone` = '$phone' WHERE id = $customerId";
         return mysqli_query(parent::connect(), $query);
     }
+    public function signUpAccount($name, $email, $password, $password_retype, $categoryID = 0 ) {
+        $query = "INSERT INTO `customer` (name, email, phone, password, categoryID) 
+                VALUES ('$name', '$email', '$password', '$password_retype', '$categoryID')";
+        return mysqli_query(parent::connect(), $query);
+    }
 }
