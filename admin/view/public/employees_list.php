@@ -83,7 +83,7 @@
                                             <tbody>
 
                                             <?php
-                                            foreach ($data as $emp) {
+                                            foreach ($data['emp'] as $emp) {
                                                 ?>
                                                 <tr>
                                                     <?php

@@ -16,6 +16,9 @@ class Guest_View {
     public function Error404View() {
         require('site/view/public_guest/page-404.php');
     }
+    public function ContactView() {
+        require('site/view/public_guest/contact.php');
+    }
     public function LoginView() {
         require('site/view/public_guest/login.php');
     }

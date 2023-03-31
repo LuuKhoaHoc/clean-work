@@ -14,14 +14,13 @@
 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,700;1,400&display=swap"
-          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
 
-    <link href="../../public/css/bootstrap.min.css" rel="stylesheet">
+    <link href="public/css/bootstrap.min.css" rel="stylesheet">
 
-    <link href="../../public/css/bootstrap-icons.css" rel="stylesheet">
+    <link href="public/css/bootstrap-icons.css" rel="stylesheet">
 
-    <link href="../../public/css/tooplate-clean-work.css" rel="stylesheet">
+    <link href="public/css/tooplate-clean-work.css" rel="stylesheet">
     <!--
 
     Tooplate 2132 Clean Work
@@ -37,7 +36,7 @@
 
 <?php include 'header.html'?>
 
-<?php include 'nav.html'?>
+<?php include 'nav.php'?>
 
 <main>
 
@@ -54,7 +53,7 @@
                 <div class="col-lg-4 col-12 d-flex justify-content-lg-end align-items-center ms-auto">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb justify-content-center">
-                            <li class="breadcrumb-item"><a href="../../index.php">Home</a></li>
+                            <li class="breadcrumb-item"><a href="/../clean-work/index.php">Home</a></li>
 
                             <li class="breadcrumb-item active" aria-current="page">Contact</li>
                         </ol>
@@ -162,15 +161,15 @@
 <?php include 'footer.html'?>
 
 <!-- JAVASCRIPT FILES -->
-<script src="../../public/js/jquery.min.js"></script>
-<script src="../../public/js/bootstrap.min.js"></script>
-<script src="../../public/js/jquery.backstretch.min.js"></script>
-<script src="../../public/js/counter.js"></script>
-<script src="../../public/js/countdown.js"></script>
-<script src="../../public/js/init.js"></script>
-<script src="../../public/js/modernizr.js"></script>
-<script src="../../public/js/animated-headline.js"></script>
-<script src="../../public/js/custom.js"></script>
+<script src="public/js/jquery.min.js"></script>
+<script src="public/js/bootstrap.min.js"></script>
+<script src="public/js/jquery.backstretch.min.js"></script>
+<script src="public/js/counter.js"></script>
+<script src="public/js/countdown.js"></script>
+<script src="public/js/init.js"></script>
+<script src="public/js/modernizr.js"></script>
+<script src="public/js/animated-headline.js"></script>
+<script src="public/js/custom.js"></script>
 
 </body>
 </html>

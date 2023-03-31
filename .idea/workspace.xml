@@ -5,18 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="306e221c-edb9-4616-bd79-f07250ba1696" name="Changes" comment="Thêm được edit employee chưa thay đổi được dưới DB">
-      <change afterPath="$PROJECT_DIR$/admin/controller/Superadmin_Management_Action_Controller.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/view/public/customer_list.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/view/public/edit_emp.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/controller/Superadmin_Display_Content_Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/controller/Superadmin_Display_Content_Controller.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/model/Customer_Management_Model.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/model/Customer_Management_Model.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/model/Employee_Model.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/model/Employee_Model.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/view/Superadmin_View.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/view/Superadmin_View.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/view/public/edit_profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/view/public/add_emp.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/view/public/super_admin_aside.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/view/public/super_admin_aside.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/view/table_show_order.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/view/table_show_order.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site/model/Customer_Model.php" beforeDir="false" afterPath="$PROJECT_DIR$/site/model/Customer_Model.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/DB.php" beforeDir="false" afterPath="$PROJECT_DIR$/classes/DB.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/controller/Guest_Display_Content_Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/site/controller/Guest_Display_Content_Controller.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/view/Guest_View.php" beforeDir="false" afterPath="$PROJECT_DIR$/site/view/Guest_View.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/view/public_guest/contact.php" beforeDir="false" afterPath="$PROJECT_DIR$/site/view/public_guest/contact.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/view/public_guest/nav.php" beforeDir="false" afterPath="$PROJECT_DIR$/site/view/public_guest/nav.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/system/config.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +23,11 @@
     <execution />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="Foq" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -95,6 +96,7 @@
       <workItem from="1679737622710" duration="380000" />
       <workItem from="1679797953369" duration="5976000" />
       <workItem from="1679830574851" duration="6270000" />
+      <workItem from="1680230087462" duration="830000" />
     </task>
     <task id="LOCAL-00001" summary="Fix lại các path cũng như đổi tên 1 số thứ, thêm thông số để lấy thông tin của admin được xây dựng trong Customer_Management_Controller.php. Thêm Customer_Management_Controller.php để xây dựng chỉnh sửa cho admin.">
       <created>1679318247535</created>

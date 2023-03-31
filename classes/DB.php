@@ -66,7 +66,7 @@ class DB
                  sta.name AS state
             FROM `customer_order` AS ORD
             INNER JOIN `customer` AS cus ON cus.id = ord.customer_id
-            INNER JOIN `service type` AS ser ON ser.id = ord.service_type_id
+            INNER JOIN service_type AS ser ON ser.id = ord.service_type_id
             INNER JOIN `order_state` AS sta ON sta.id = ord.state
         ";
         if ($state_id != -1) {
@@ -262,7 +262,7 @@ class DB
     {
         $query = "SELECT SUM(ser.price)
             FROM order_history AS ord
-            INNER JOIN `service type` AS ser ON ser.id = ord.service_type_id
+            INNER JOIN service_type AS ser ON ser.id = ord.service_type_id
             WHERE result > 0 AND month(end) = month(now());";
         $row = mysqli_query(self::connect(), $query);
         echo '$' . mysqli_fetch_all($row)[0][0];
@@ -287,7 +287,7 @@ class DB
     {
         $query = "SELECT SUM(ser.price)
             FROM `order_history` AS ORD
-            INNER JOIN `service type` AS ser ON ser.id = ORD.service_type_id
+            INNER JOIN service_type AS ser ON ser.id = ORD.service_type_id
             WHERE ord.result > 0;";
         $row = mysqli_query(DB::connect(), $query);
         echo mysqli_fetch_all($row)[0][0];
@@ -297,7 +297,7 @@ class DB
     {
         $query = "
         SELECT MONTH(ORD.`end`) as MONTH, SUM(ser.price) as Money
-        FROM `order_history` AS ORD INNER JOIN `service type` AS ser ON ser.id = ORD.service_type_id
+        FROM `order_history` AS ORD INNER JOIN service_type AS ser ON ser.id = ORD.service_type_id
         WHERE ORD.result > 0 GROUP BY MONTH ORDER BY MONTH;";
         $row = mysqli_query(DB::connect(), $query);
         return mysqli_fetch_all($row);

@@ -30,6 +30,11 @@ class Guest_Display_Content_Controller {
         $view = new Guest_View();
         $view->Error404View();
     }
+    public function showContactAction() {
+        $model = new Content_Model();
+        $view = new Guest_View();
+        $view->ContactView();
+    }
     public function showLoginAction() {
         $model = new Content_Model();
         $view = new Guest_View();
